@@ -1,10 +1,12 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { Flame, Award, Coffee, TrendingUp, Sparkles, Shield } from 'lucide-react';
+import { Flame, Award, Coffee, TrendingUp } from 'lucide-react';
 import { assetUrl } from '../utils/assetUrl';
+import { useLanguage } from '../context/LanguageContext';
 
 const StatsShowcase = () => {
   const ref = useRef(null);
+  const { t } = useLanguage();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end start'],
@@ -17,26 +19,26 @@ const StatsShowcase = () => {
   const statsCards = [
     {
       icon: <Coffee className="w-5 h-5 text-amber-400" />,
-      title: 'Tageslimit im Blick',
-      value: '400 mg',
-      desc: 'Standardmäßiger Richtwert für gesunde Erwachsene. Die App summiert transparent jede Tasse auf.',
-      tag: 'Tages-Sollwert',
+      title: t.stats.card1Title,
+      value: t.stats.card1Value,
+      desc: t.stats.card1Desc,
+      tag: t.stats.card1Tag,
       color: 'border-amber-500/20',
     },
     {
       icon: <Flame className="w-5 h-5 text-orange-500" />,
-      title: 'Tages-Streaks',
-      value: '7 Tage+',
-      desc: 'Halte deine Protokoll-Routine aufrecht. Kontinuität hält Maskottchen Bean glücklich!',
-      tag: 'Motivation',
+      title: t.stats.card2Title,
+      value: t.stats.card2Value,
+      desc: t.stats.card2Desc,
+      tag: t.stats.card2Tag,
       color: 'border-orange-500/20',
     },
     {
       icon: <Award className="w-5 h-5 text-yellow-400" />,
-      title: 'XP & Level-System',
-      value: 'Level & Badges',
-      desc: 'Sammle virtuelle Erfahrungspunkte (XP) bei jedem Log und schalte thematische Abzeichen frei.',
-      tag: 'Gamification',
+      title: t.stats.card3Title,
+      value: t.stats.card3Value,
+      desc: t.stats.card3Desc,
+      tag: t.stats.card3Tag,
       color: 'border-yellow-500/20',
     },
   ];
@@ -55,14 +57,14 @@ const StatsShowcase = () => {
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs text-amber-300 font-medium mb-4">
                   <TrendingUp className="w-3.5 h-3.5" />
-                  <span>Statistiken &amp; Fortschritt</span>
+                  <span>{t.stats.badge}</span>
                 </div>
                 <h2 className="text-3xl sm:text-5xl font-black mb-4 tracking-tight text-white leading-tight">
-                  Deine Kaffeereise.{' '}
-                  <span className="text-gradient-coffee">Visualisiert.</span>
+                  {t.stats.title1}
+                  <span className="text-gradient-coffee">{t.stats.title2}</span>
                 </h2>
                 <p className="text-base sm:text-lg text-gray-400 font-light leading-relaxed">
-                  Erkenne deine Konsummuster auf einen Blick. Beanie berechnet den Tagesverlauf verständlich und ohne unverständliche biochemische Kurven.
+                  {t.stats.subtitle}
                 </p>
               </div>
 
@@ -97,7 +99,7 @@ const StatsShowcase = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right: Phone Frame with Screenshots */}
+          {/* Right: Phone Frame with User's Stats Screenshot */}
           <motion.div style={{ y: y2 }} className="relative flex justify-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -109,10 +111,10 @@ const StatsShowcase = () => {
               {/* Primary Screenshot: Stats Screen */}
               <div className="relative mx-auto w-[250px] sm:w-[280px]">
                 <div className="glass-card rounded-[2.8rem] p-3 shadow-2xl border border-white/15 bg-gradient-to-b from-white/10 via-black/40 to-black/80">
-                  <div className="rounded-[2.2rem] overflow-hidden bg-[#141210] aspect-[9/19.5]">
+                  <div className="rounded-[2.2rem] overflow-hidden bg-[#FBF9F1] aspect-[9/19.5]">
                     <img
                       src={assetUrl('assets/beanie-stats.png')}
-                      alt="Beanie Fortschritts- und Verlaufsansicht"
+                      alt="Beanie Stats Screen - Weekly Intake &amp; Caffeine Breakdown"
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         e.currentTarget.src = assetUrl('assets/beanie-dashboard.png');
@@ -120,29 +122,6 @@ const StatsShowcase = () => {
                     />
                   </div>
                 </div>
-
-                {/* Secondary Floating Card: Badges Showcase */}
-                <motion.div
-                  className="absolute -bottom-8 -right-6 sm:-right-10 w-48 sm:w-56 glass-ultra rounded-2xl p-2.5 shadow-2xl border border-amber-500/30 overflow-hidden hidden xs:block z-20 backdrop-blur-2xl"
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                >
-                  <div className="rounded-xl overflow-hidden bg-[#181411]">
-                    <img
-                      src={assetUrl('assets/beanie-achievements.png')}
-                      alt="Beanie Abzeichen und Errungenschaften"
-                      className="w-full h-auto object-cover"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                      }}
-                    />
-                  </div>
-                  <div className="mt-2 text-center">
-                    <span className="text-[10px] font-bold text-amber-300">
-                      🏆 Sammle Badges &amp; Meilensteine
-                    </span>
-                  </div>
-                </motion.div>
               </div>
 
               {/* Background Aura */}
@@ -160,10 +139,10 @@ const StatsShowcase = () => {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4"
         >
           {[
-            { value: '100% Lokal', label: 'Keine Server / Kein Cloud-Sync' },
-            { value: 'iOS & Watch', label: 'Widgets & WatchConnectivity' },
-            { value: 'Keine Werbung', label: 'Vollständig kostenlos' },
-            { value: 'DSGVO-Konform', label: 'Art. 6 Abs. 1 DSGVO' },
+            { value: t.stats.metric1Value, label: t.stats.metric1Label },
+            { value: t.stats.metric2Value, label: t.stats.metric2Label },
+            { value: t.stats.metric3Value, label: t.stats.metric3Label },
+            { value: t.stats.metric4Value, label: t.stats.metric4Label },
           ].map((item, index) => (
             <div
               key={index}

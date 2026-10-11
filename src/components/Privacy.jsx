@@ -1,10 +1,9 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { ShieldCheck, CheckCircle2, Lock, Smartphone, Globe, Mail, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 const Privacy = () => {
-  const [lang, setLang] = useState('de'); // 'de' | 'en'
+  const { lang, setLang } = useLanguage();
 
   return (
     <div className="container mx-auto px-6 py-28 max-w-4xl text-gray-200">
@@ -15,7 +14,7 @@ const Privacy = () => {
           className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-amber-400 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Zurück zur Startseite</span>
+          <span>{lang === 'de' ? 'Zurück zur Startseite' : 'Back to Home'}</span>
         </Link>
 
         {/* Language Switcher */}

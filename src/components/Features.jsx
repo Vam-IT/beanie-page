@@ -4,48 +4,56 @@ import {
   Sparkles, 
   Watch, 
   ShieldCheck, 
-  Flame, 
-  Sliders, 
-  Bell, 
-  Lock,
-  Layers,
-  MapPin,
-  CheckCircle2,
-  XCircle
+  CheckCircle2 
 } from 'lucide-react';
 import { assetUrl } from '../utils/assetUrl';
+import { useLanguage } from '../context/LanguageContext';
 
 const Features = () => {
+  const { t } = useLanguage();
+
   const mainFeatures = [
     {
       icon: <Coffee className="w-8 h-8" />,
-      badge: 'Tagebuch & Intake',
-      title: 'Kaffee- & Koffeintagebuch',
-      description:
-        'Erfasse Espresso, Cappuccino, Flat White oder Filterkaffee mit wenigen Fingertipps. Wähle Portionen in ml oder oz, sieh geschätzte Koffeinwerte in mg und füge manuelle Orts-Labels (Home, Office, Cafe) sowie Notizen hinzu.',
+      badge: t.features.card1.badge,
+      title: t.features.card1.title,
+      description: t.features.card1.desc,
       gradient: 'from-amber-500 via-orange-500 to-amber-600',
       glowColor: 'rgba(245, 158, 11, 0.25)',
-      highlights: ['Espresso, Cappuccino, Flat White u.v.m.', 'Portionen in ml & oz mit mg-Koffeinwerten', 'Manuelle Orts-Tags: Home, Office, Cafe', 'Tageslimit-Abgleich (z. B. 400 mg)'],
+      highlights: [
+        t.features.card1.h1,
+        t.features.card1.h2,
+        t.features.card1.h3,
+        t.features.card1.h4,
+      ],
     },
     {
       icon: <Sparkles className="w-8 h-8" />,
-      badge: 'Gamification',
-      title: 'Interaktiver Begleiter „Bean“',
-      description:
-        'Dein persönliches Bohnen-Maskottchen Bean reagiert auf deine Konsumgewohnheiten mit dynamischen Launen und Animationen. Verdiene Erfahrungspunkte (XP), halte Tages-Streaks aufrecht und schalte Level & Badges frei.',
+      badge: t.features.card2.badge,
+      title: t.features.card2.title,
+      description: t.features.card2.desc,
       gradient: 'from-orange-500 via-rose-500 to-amber-500',
       glowColor: 'rgba(255, 87, 34, 0.25)',
-      highlights: ['Animiertes Maskottchen mit Launen', 'Erfahrungspunkte (XP) für jeden Brew', 'Tages-Streaks (z. B. 7-Tage-Streak)', 'Freischaltbare Abzeichen & Level'],
+      highlights: [
+        t.features.card2.h1,
+        t.features.card2.h2,
+        t.features.card2.h3,
+        t.features.card2.h4,
+      ],
     },
     {
       icon: <Watch className="w-8 h-8" />,
-      badge: 'iOS & watchOS',
-      title: 'Apple Watch & WidgetKit',
-      description:
-        'Bleibe stets im Bilde – direkt auf deinem Sperrbildschirm, Home-Screen oder am Handgelenk. Volle Unterstützung für iOS Lockscreen- und Homescreen-Widgets sowie native Apple Watch Komplikationen mit zuverlässigem Sync.',
+      badge: t.features.card3.badge,
+      title: t.features.card3.title,
+      description: t.features.card3.desc,
       gradient: 'from-sky-500 via-blue-600 to-indigo-500',
       glowColor: 'rgba(56, 189, 248, 0.25)',
-      highlights: ['Eigenständige Apple Watch Begleit-App', 'Watch Face Komplikationen', 'iOS Home- & Lockscreen-Widgets', 'Nahtloser WatchConnectivity-Sync'],
+      highlights: [
+        t.features.card3.h1,
+        t.features.card3.h2,
+        t.features.card3.h3,
+        t.features.card3.h4,
+      ],
     },
   ];
 
@@ -65,15 +73,15 @@ const Features = () => {
         >
           <div className="inline-flex items-center gap-2 glass-ultra px-5 py-2 rounded-full mb-6 border border-amber-500/20 text-xs font-semibold text-amber-300">
             <Sparkles className="w-4 h-4 text-amber-400" />
-            <span>Fokus auf das Wesentliche</span>
+            <span>{t.features.badge}</span>
           </div>
 
           <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tight text-white">
-            Alles, was du für deinen{' '}
-            <span className="text-gradient-coffee">Kaffeefluss</span> brauchst
+            {t.features.title1}
+            <span className="text-gradient-coffee">{t.features.title2}</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
-            Keine überladenen Diät-Apps, kein Abo-Zwang. Beanie kombiniert intuitives Tracking mit Freude und Ästhetik.
+            {t.features.subtitle}
           </p>
         </motion.div>
 
@@ -137,7 +145,7 @@ const Features = () => {
           ))}
         </div>
 
-        {/* Feature Spotlight: App Screenshot & Drink Selection */}
+        {/* Feature Spotlight: User's Add Brew Screenshot */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -149,42 +157,41 @@ const Features = () => {
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs text-amber-300 font-medium mb-4">
                 <Coffee className="w-3.5 h-3.5" />
-                <span>Vielfalt im Handumdrehen</span>
+                <span>{t.features.spotlight.badge}</span>
               </div>
               <h3 className="text-3xl md:text-4xl font-black mb-4 tracking-tight text-white">
-                Für jeden Kaffeeliebhaber die passende Auswahl
+                {t.features.spotlight.title}
               </h3>
               <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-6 font-light">
-                Ob morgendlicher doppelter Espresso, samtiger Cappuccino oder Cold Brew im Sommer: 
-                Beanie berechnet die geschätzte Koffeinmenge transparent auf Basis erprobter Durchschnittswerte und gleicht sie mit deinem persönlichen Tagesziel ab.
+                {t.features.spotlight.desc}
               </p>
 
-              <div className="grid grid-cols-2 gap-3 text-xs text-gray-300">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-300">
                 <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
-                  <span className="font-bold text-white block mb-0.5">☕ Beliebte Sorten</span>
-                  Espresso, Lungo, Cappuccino, Latte, Flat White, Cold Brew, Pour Over
+                  <span className="font-bold text-white block mb-0.5">{t.features.spotlight.item1Title}</span>
+                  {t.features.spotlight.item1Desc}
                 </div>
                 <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
-                  <span className="font-bold text-white block mb-0.5">🏷️ Manuelle Orte</span>
-                  Einfache Tags für Home, Office oder Cafe – ohne Akku-fressendes GPS
+                  <span className="font-bold text-white block mb-0.5">{t.features.spotlight.item2Title}</span>
+                  {t.features.spotlight.item2Desc}
                 </div>
                 <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
-                  <span className="font-bold text-white block mb-0.5">🔔 Lokale Reminder</span>
-                  Morgendliche Erinnerung (z. B. 09:00 Uhr) – rein lokal ausgelöst
+                  <span className="font-bold text-white block mb-0.5">{t.features.spotlight.item3Title}</span>
+                  {t.features.spotlight.item3Desc}
                 </div>
                 <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
-                  <span className="font-bold text-white block mb-0.5">⚡ WatchConnectivity</span>
-                  Spiegelung in Echtzeit zwischen iPhone und Apple Watch
+                  <span className="font-bold text-white block mb-0.5">{t.features.spotlight.item4Title}</span>
+                  {t.features.spotlight.item4Desc}
                 </div>
               </div>
             </div>
 
             <div className="flex justify-center">
               <div className="relative max-w-[260px] glass-card rounded-[2.2rem] p-2.5 shadow-2xl border border-white/10">
-                <div className="rounded-[1.8rem] overflow-hidden bg-[#181411]">
+                <div className="rounded-[1.8rem] overflow-hidden bg-[#FBF9F1]">
                   <img
                     src={assetUrl('assets/beanie-add-brew.png')}
-                    alt="Beanie Kaffee Auswahlansicht"
+                    alt="Beanie Add Brew Screen - Coffee Catalogue &amp; Caffeine Slider"
                     className="w-full h-auto object-cover"
                     onError={(e) => {
                       e.currentTarget.src = assetUrl('assets/beanie-dashboard.png');
@@ -214,44 +221,44 @@ const Features = () => {
                 </div>
                 <div>
                   <span className="text-xs uppercase font-bold tracking-wider text-emerald-400">
-                    Transparenz &amp; Datenschutz
+                    {t.features.privacyBox.badge}
                   </span>
                   <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight">
-                    Was Beanie ganz bewusst <span className="text-emerald-400">NICHT</span> tut
+                    {t.features.privacyBox.title}
+                    <span className="text-emerald-400">{t.features.privacyBox.titleHighlight}</span>
                   </h3>
                 </div>
               </div>
 
               <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-8 max-w-3xl font-light">
-                Deine Konsumgewohnheiten gehen niemanden etwas an. Beanie wurde nach dem Prinzip
-                <strong className="text-white"> Privacy by Design</strong> entwickelt.
+                {t.features.privacyBox.desc}
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {[
                   {
-                    title: 'Keine Server & Kein Backend',
-                    desc: 'Wir betreiben keine Serverinfrastruktur. Alle Daten verbleiben auf deinen Endgeräten.',
+                    title: t.features.privacyBox.p1Title,
+                    desc: t.features.privacyBox.p1Desc,
                   },
                   {
-                    title: 'Keine Benutzerkonten',
-                    desc: 'Kein Login, keine Registrierung, kein Cloud-Profil. Öffnen und direkt nutzen.',
+                    title: t.features.privacyBox.p2Title,
+                    desc: t.features.privacyBox.p2Desc,
                   },
                   {
-                    title: 'Kein GPS-Tracking',
-                    desc: 'Die Orts-Labels (Home, Office, Cafe) sind rein manuelle Kategorien ohne Geodaten.',
+                    title: t.features.privacyBox.p3Title,
+                    desc: t.features.privacyBox.p3Desc,
                   },
                   {
-                    title: 'Keine Tracker & Werbe-SDKs',
-                    desc: 'Kein Google Firebase, kein Meta SDK, kein Mixpanel und keine Werbenetzwerke.',
+                    title: t.features.privacyBox.p4Title,
+                    desc: t.features.privacyBox.p4Desc,
                   },
                   {
-                    title: 'Keine Bezahlschranken / Abos',
-                    desc: 'Die App ist aktuell komplett kostenlos ohne versteckte In-App-Käufe oder Abos.',
+                    title: t.features.privacyBox.p5Title,
+                    desc: t.features.privacyBox.p5Desc,
                   },
                   {
-                    title: 'Keine medizinische Diagnostik',
-                    desc: 'Rein informative Aufsummierung von Schätzwerten ohne medizinische Abbaukurven.',
+                    title: t.features.privacyBox.p6Title,
+                    desc: t.features.privacyBox.p6Desc,
                   },
                 ].map((item, idx) => (
                   <div
