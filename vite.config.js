@@ -2,13 +2,13 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
-  base: '/',
+  base: process.env.VITE_BASE || (mode === 'development' ? '/' : '/beanie-page/'),
   
   build: {
     // Optimierungen für Production Build
-    minify: 'esbuild', // Schneller als terser, bereits in Vite enthalten
+    minify: 'esbuild',
     rollupOptions: {
       input: {
         main: 'index.html',
@@ -25,7 +25,7 @@ export default defineConfig({
       },
     },
     chunkSizeWarningLimit: 1000,
-    sourcemap: false, // Für Production
+    sourcemap: false,
   },
   
   // Optimierte Server-Konfiguration
@@ -39,4 +39,4 @@ export default defineConfig({
     port: 4173,
     host: true,
   },
-})
+}))

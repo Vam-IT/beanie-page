@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { Coffee, Menu, X, Shield, FileText, Sparkles } from 'lucide-react';
+import { assetUrl } from '../utils/assetUrl';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -55,7 +56,7 @@ const Navbar = () => {
             <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-amber-600 p-[1px] shadow-lg shadow-orange-500/20 group-hover:scale-105 transition-transform duration-300">
               <div className="w-full h-full bg-[#181411] rounded-[15px] flex items-center justify-center overflow-hidden">
                 <img
-                  src="/assets/icon-1024.png"
+                  src={assetUrl('assets/icon-1024.png')}
                   alt="Beanie Icon"
                   className="w-full h-full object-cover rounded-[14px]"
                   onError={(e) => {

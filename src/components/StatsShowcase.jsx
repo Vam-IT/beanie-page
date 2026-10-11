@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Flame, Award, Coffee, TrendingUp, Sparkles, Shield } from 'lucide-react';
+import { assetUrl } from '../utils/assetUrl';
 
 const StatsShowcase = () => {
   const ref = useRef(null);
@@ -110,11 +111,11 @@ const StatsShowcase = () => {
                 <div className="glass-card rounded-[2.8rem] p-3 shadow-2xl border border-white/15 bg-gradient-to-b from-white/10 via-black/40 to-black/80">
                   <div className="rounded-[2.2rem] overflow-hidden bg-[#141210] aspect-[9/19.5]">
                     <img
-                      src="/assets/beanie-stats.png"
+                      src={assetUrl('assets/beanie-stats.png')}
                       alt="Beanie Fortschritts- und Verlaufsansicht"
                       className="w-full h-full object-cover"
                       onError={(e) => {
-                        e.currentTarget.src = '/assets/beanie-dashboard.png';
+                        e.currentTarget.src = assetUrl('assets/beanie-dashboard.png');
                       }}
                     />
                   </div>
@@ -128,7 +129,7 @@ const StatsShowcase = () => {
                 >
                   <div className="rounded-xl overflow-hidden bg-[#181411]">
                     <img
-                      src="/assets/beanie-achievements.png"
+                      src={assetUrl('assets/beanie-achievements.png')}
                       alt="Beanie Abzeichen und Errungenschaften"
                       className="w-full h-auto object-cover"
                       onError={(e) => {

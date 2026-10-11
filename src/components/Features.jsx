@@ -13,6 +13,7 @@ import {
   CheckCircle2,
   XCircle
 } from 'lucide-react';
+import { assetUrl } from '../utils/assetUrl';
 
 const Features = () => {
   const mainFeatures = [
@@ -182,11 +183,11 @@ const Features = () => {
               <div className="relative max-w-[260px] glass-card rounded-[2.2rem] p-2.5 shadow-2xl border border-white/10">
                 <div className="rounded-[1.8rem] overflow-hidden bg-[#181411]">
                   <img
-                    src="/assets/beanie-add-brew.png"
+                    src={assetUrl('assets/beanie-add-brew.png')}
                     alt="Beanie Kaffee Auswahlansicht"
                     className="w-full h-auto object-cover"
                     onError={(e) => {
-                      e.currentTarget.src = '/assets/beanie-dashboard.png';
+                      e.currentTarget.src = assetUrl('assets/beanie-dashboard.png');
                     }}
                   />
                 </div>

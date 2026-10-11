@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Coffee, ShieldCheck, Watch, Sparkles, Check } from 'lucide-react';
+import { assetUrl } from '../utils/assetUrl';
 
 const DownloadCTA = () => {
   return (
@@ -29,7 +30,7 @@ const DownloadCTA = () => {
               className="inline-block p-1 bg-gradient-to-br from-amber-400 via-orange-500 to-amber-600 rounded-3xl mb-6 shadow-xl shadow-orange-500/20"
             >
               <img
-                src="/assets/icon-1024.png"
+                src={assetUrl('assets/icon-1024.png')}
                 alt="Beanie Logo"
                 className="w-16 h-16 md:w-20 md:h-20 rounded-[22px] object-cover"
                 onError={(e) => {

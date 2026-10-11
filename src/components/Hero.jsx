@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Coffee, ShieldCheck, Flame, Watch, Sparkles, CheckCircle2 } from 'lucide-react';
 import { useState } from 'react';
+import { assetUrl } from '../utils/assetUrl';
 
 const Hero = () => {
   const [imgLoaded, setImgLoaded] = useState(false);
@@ -99,7 +100,7 @@ const Hero = () => {
                   </div>
                 )}
                 <img
-                  src="/assets/beanie-dashboard.png"
+                  src={assetUrl('assets/beanie-dashboard.png')}
                   alt="Beanie App Dashboard mit Kaffee-Übersicht und Maskottchen"
                   onLoad={() => setImgLoaded(true)}
                   className={`w-full h-full object-cover transition-opacity duration-700 ${
