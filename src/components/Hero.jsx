@@ -154,9 +154,9 @@ import { useLanguage } from '../context/LanguageContext';
           <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/20 via-amber-500/15 to-transparent blur-3xl -z-10 scale-125" />
         </motion.div>
 
-        {/* CTA Buttons */}
+        {/* CTA Button */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-3 w-full max-w-sm justify-center items-center"
+          className="flex justify-center items-center w-full max-w-xs mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.7 }}
@@ -166,7 +166,7 @@ import { useLanguage } from '../context/LanguageContext';
             onClick={openComingSoon}
             whileTap={{ scale: 0.97 }}
             whileHover={{ scale: 1.02 }}
-            className="w-full sm:w-auto flex-1 bg-black hover:bg-neutral-900 text-white px-7 py-3.5 rounded-2xl transition-all shadow-2xl flex items-center justify-center gap-3 touch-manipulation border border-white/20 cursor-pointer"
+            className="w-full bg-black hover:bg-neutral-900 text-white px-8 py-3.5 rounded-2xl transition-all shadow-2xl flex items-center justify-center gap-3 touch-manipulation border border-white/20 cursor-pointer"
             style={{ WebkitTapHighlightColor: 'transparent' }}
             aria-label="Download Beanie on the Apple App Store (Coming Soon)"
           >
@@ -178,23 +178,6 @@ import { useLanguage } from '../context/LanguageContext';
               <div className="text-base font-bold leading-tight tracking-tight">{t.hero.appStore}</div>
             </div>
           </motion.button>
-
-          <a
-            href="#features"
-            onClick={(e) => {
-              e.preventDefault();
-              const el = document.querySelector('#features');
-              if (el) {
-                el.scrollIntoView({ behavior: 'smooth' });
-                if (window.location.hash !== '#features') {
-                  window.history.pushState(null, '', `${window.location.pathname}#features`);
-                }
-              }
-            }}
-            className="w-full sm:w-auto px-6 py-3.5 rounded-2xl glass-ultra border border-white/10 hover:border-white/20 text-gray-300 hover:text-white text-sm font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer"
-          >
-            <span>{t.hero.exploreBtn}</span>
-          </a>
         </motion.div>
 
         {/* Small Disclaimers & Info */}
