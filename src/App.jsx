@@ -12,11 +12,20 @@ function ScrollToTop() {
 
   useEffect(() => {
     if (hash) {
-      const element = document.querySelector(hash);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        return;
+      const scrollToElement = () => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          return true;
+        }
+        return false;
+      };
+
+      if (!scrollToElement()) {
+        const timer = setTimeout(scrollToElement, 150);
+        return () => clearTimeout(timer);
       }
+      return;
     }
     window.scrollTo(0, 0);
   }, [pathname, hash]);

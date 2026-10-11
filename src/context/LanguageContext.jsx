@@ -168,6 +168,23 @@ export const translations = {
       contact: 'Contact',
       editorial: 'Responsible for editorial content pursuant to § 18(2) MStV: Veselin Kolev, Petersfeldstraße 16, 46395 Bocholt, Germany.',
     },
+    comingSoon: {
+      badge: 'Release in Preparation',
+      title: 'Coming Soon to the App Store!',
+      desc:
+        'Beanie is currently in final testing for iOS 17+ and watchOS 10+. We are brewing the last details to bring you the cleanest coffee & caffeine companion experience.',
+      feature1Title: 'iOS 17+ & watchOS 10+',
+      feature1Desc: 'Native companion app, lockscreen widgets, and watch complications.',
+      feature2Title: '100% Privacy by Design',
+      feature2Desc: 'No account, no tracking, all coffee data stays on your device.',
+      feature3Title: 'Free & Transparent',
+      feature3Desc: 'No subscriptions, no hidden in-app purchases.',
+      notifyPrompt: 'Want to be notified when Beanie launches?',
+      emailPlaceholder: 'Enter your email address...',
+      notifyBtn: 'Notify Me',
+      notifySuccess: 'Thank you! We will let you know as soon as Beanie goes live on the App Store.',
+      closeBtn: 'Got it, can’t wait!',
+    },
   },
   de: {
     nav: {
@@ -334,6 +351,23 @@ export const translations = {
       contact: 'Kontakt',
       editorial: 'Verantwortlich für redaktionelle Inhalte gemäß § 18 Abs. 2 MStV: Veselin Kolev, Petersfeldstraße 16, 46395 Bocholt.',
     },
+    comingSoon: {
+      badge: 'Veröffentlichung in Vorbereitung',
+      title: 'Bald im Apple App Store!',
+      desc:
+        'Beanie befindet sich aktuell im finalen Feinschliff für iOS 17+ und watchOS 10+. Wir polieren die letzten Details, um dir den besten smarten Kaffee- und Koffein-Begleiter zu bieten.',
+      feature1Title: 'iOS 17+ & watchOS 10+',
+      feature1Desc: 'Native Begleit-App, Lockscreen-Widgets und Watch Face Komplikationen.',
+      feature2Title: '100% Datenschutz & Offline',
+      feature2Desc: 'Kein Nutzerkonto, kein Tracking, alle Daten bleiben lokal auf deinem Gerät.',
+      feature3Title: 'Kostenlos & Transparent',
+      feature3Desc: 'Keine Abonnements, keine versteckten In-App-Käufe.',
+      notifyPrompt: 'Möchtest du zum Launch benachrichtigt werden?',
+      emailPlaceholder: 'Deine E-Mail-Adresse eingeben...',
+      notifyBtn: 'Benachrichtigen',
+      notifySuccess: 'Vielen Dank! Wir geben dir Bescheid, sobald Beanie im App Store verfügbar ist.',
+      closeBtn: 'Verstanden, ich freue mich!',
+    },
   },
 };
 
@@ -347,6 +381,10 @@ export const LanguageProvider = ({ children }) => {
       return 'en';
     }
   });
+
+  const [isComingSoonOpen, setIsComingSoonOpen] = useState(false);
+  const openComingSoon = () => setIsComingSoonOpen(true);
+  const closeComingSoon = () => setIsComingSoonOpen(false);
 
   useEffect(() => {
     try {
@@ -366,7 +404,16 @@ export const LanguageProvider = ({ children }) => {
   const t = translations[lang] || translations.en;
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang, t }}>
+    <LanguageContext.Provider
+      value={{
+        lang,
+        setLang,
+        t,
+        isComingSoonOpen,
+        openComingSoon,
+        closeComingSoon,
+      }}
+    >
       {children}
     </LanguageContext.Provider>
   );

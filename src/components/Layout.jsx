@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import SkipToContent from './SkipToContent';
+import ComingSoonModal from './ComingSoonModal';
 
 const Layout = () => {
   return (
@@ -12,6 +13,7 @@ const Layout = () => {
         <Outlet />
       </main>
       <Footer />
+      <ComingSoonModal />
     </div>
   );
 };
