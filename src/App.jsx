@@ -15,14 +15,19 @@ function ScrollToTop() {
       const scrollToElement = () => {
         const element = document.querySelector(hash);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          const navOffset = 80;
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({
+            top: Math.max(0, elementPosition - navOffset),
+            behavior: 'smooth',
+          });
           return true;
         }
         return false;
       };
 
       if (!scrollToElement()) {
-        const timer = setTimeout(scrollToElement, 150);
+        const timer = setTimeout(scrollToElement, 200);
         return () => clearTimeout(timer);
       }
       return;

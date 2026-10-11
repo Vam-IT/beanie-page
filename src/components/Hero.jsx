@@ -85,12 +85,6 @@ import { useLanguage } from '../context/LanguageContext';
           {/* Phone Frame */}
           <div className="relative z-10 w-[240px] sm:w-[280px]">
             <div className="relative glass-card rounded-[2.8rem] p-3 shadow-2xl border border-white/15 bg-gradient-to-b from-white/10 via-black/40 to-black/80">
-              {/* Dynamic Island / Notch */}
-              <div className="absolute top-5 left-1/2 -translate-x-1/2 w-20 h-4 bg-black rounded-full z-20 flex items-center justify-center">
-                <div className="w-2.5 h-2.5 bg-[#141210] rounded-full mr-3" />
-                <div className="w-2 h-2 bg-blue-950/80 rounded-full" />
-              </div>
-
               {/* Screen Content */}
               <div className="relative rounded-[2.2rem] overflow-hidden bg-[#FBF9F1] aspect-[9/19.5] shadow-inner">
                 {!imgLoaded && (
@@ -113,14 +107,14 @@ import { useLanguage } from '../context/LanguageContext';
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute top-16 -left-12 sm:-left-20 glass-ultra rounded-2xl p-3 shadow-2xl border border-amber-500/20 text-left hidden xs:flex items-center gap-3 backdrop-blur-xl z-20"
+              className="absolute top-12 -left-4 sm:-left-16 glass-ultra rounded-2xl p-2 sm:p-3 shadow-2xl border border-amber-500/20 text-left flex items-center gap-2 sm:gap-3 backdrop-blur-xl z-20 scale-90 sm:scale-100"
             >
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-md shadow-orange-500/30">
-                <Flame className="w-5 h-5 text-white" />
+              <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-md shadow-orange-500/30">
+                <Flame className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-white" />
               </div>
               <div>
-                <div className="text-[11px] font-medium text-amber-300">{t.hero.streakTitle}</div>
-                <div className="text-xs font-bold text-white">{t.hero.streakSub}</div>
+                <div className="text-[10px] sm:text-[11px] font-medium text-amber-300">{t.hero.streakTitle}</div>
+                <div className="text-[11px] sm:text-xs font-bold text-white">{t.hero.streakSub}</div>
               </div>
             </motion.div>
 
@@ -128,14 +122,14 @@ import { useLanguage } from '../context/LanguageContext';
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-              className="absolute top-1/2 -right-10 sm:-right-20 glass-ultra rounded-2xl p-3 shadow-2xl border border-white/15 text-left hidden xs:flex items-center gap-3 backdrop-blur-xl z-20"
+              className="absolute top-1/2 -right-4 sm:-right-16 glass-ultra rounded-2xl p-2 sm:p-3 shadow-2xl border border-white/15 text-left flex items-center gap-2 sm:gap-3 backdrop-blur-xl z-20 scale-90 sm:scale-100"
             >
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#32170D] to-[#24120A] border border-amber-500/30 flex items-center justify-center">
-                <Coffee className="w-5 h-5 text-amber-400" />
+              <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-[#32170D] to-[#24120A] border border-amber-500/30 flex items-center justify-center">
+                <Coffee className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-amber-400" />
               </div>
               <div>
-                <div className="text-[11px] font-medium text-gray-400">{t.hero.limitTitle}</div>
-                <div className="text-xs font-bold text-white">{t.hero.limitSub}</div>
+                <div className="text-[10px] sm:text-[11px] font-medium text-gray-400">{t.hero.limitTitle}</div>
+                <div className="text-[11px] sm:text-xs font-bold text-amber-400">{t.hero.limitSub}</div>
               </div>
             </motion.div>
 
@@ -143,10 +137,10 @@ import { useLanguage } from '../context/LanguageContext';
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-              className="absolute -bottom-5 left-1/2 -translate-x-1/2 glass-ultra rounded-full px-4 py-2 shadow-2xl border border-blue-400/20 flex items-center gap-2 backdrop-blur-xl z-20 whitespace-nowrap"
+              className="absolute -bottom-4 left-1/2 -translate-x-1/2 glass-ultra rounded-full px-3.5 py-1.5 sm:px-4 sm:py-2 shadow-2xl border border-blue-400/20 flex items-center gap-1.5 sm:gap-2 backdrop-blur-xl z-20 whitespace-nowrap scale-90 sm:scale-100"
             >
-              <Watch className="w-4 h-4 text-sky-400" />
-              <span className="text-xs font-semibold text-gray-200">{t.hero.watchBadge}</span>
+              <Watch className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-sky-400" />
+              <span className="text-[11px] sm:text-xs font-semibold text-gray-200">{t.hero.watchBadge}</span>
             </motion.div>
           </div>
 

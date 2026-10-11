@@ -44,7 +44,7 @@ const StatsShowcase = () => {
   ];
 
   return (
-    <section id="stats" ref={ref} className="relative py-24 md:py-36 px-6 overflow-hidden">
+    <section id="stats" ref={ref} className="relative py-24 md:py-36 px-6 overflow-hidden scroll-mt-24">
       {/* Background Gradients */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#13100E] via-[#181411]/50 to-[#13100E] pointer-events-none" />
       <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-96 h-96 bg-amber-600/10 rounded-full blur-[120px] pointer-events-none" />

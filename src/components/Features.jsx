@@ -58,7 +58,7 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="relative py-24 md:py-36 px-6 overflow-hidden">
+    <section id="features" className="relative py-24 md:py-36 px-6 overflow-hidden scroll-mt-24">
       {/* Background Ambience */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#13100E] via-[#171310]/60 to-[#13100E] pointer-events-none" />
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Globe } from 'lucide-react';
 import { assetUrl } from '../utils/assetUrl';
 import { useLanguage } from '../context/LanguageContext';
@@ -9,6 +9,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const { lang, setLang, t, openComingSoon } = useLanguage();
 
   useEffect(() => {
@@ -19,7 +20,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isHome = location.pathname === '/';
+  const isHome = location.pathname === '/' || location.pathname === '';
 
   const navLinks = [
     { label: t.nav.features, to: '/#features', hash: '#features' },
@@ -30,14 +31,31 @@ const Navbar = () => {
 
   const handleNavClick = (e, link) => {
     setIsMobileMenuOpen(false);
-    if (link.hash && isHome) {
+
+    if (link.hash) {
       e.preventDefault();
-      const el = document.querySelector(link.hash);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-        if (window.location.hash !== link.hash) {
-          window.history.pushState(null, '', `${window.location.pathname}${link.hash}`);
+
+      const scrollToTarget = () => {
+        const el = document.querySelector(link.hash);
+        if (el) {
+          const navOffset = 80;
+          const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({
+            top: Math.max(0, elementPosition - navOffset),
+            behavior: 'smooth',
+          });
+          const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+          window.history.pushState(null, '', `${base}/${link.hash}`);
         }
+      };
+
+      if (isHome) {
+        scrollToTarget();
+      } else {
+        navigate('/');
+        setTimeout(scrollToTarget, 100);
+        setTimeout(scrollToTarget, 300);
+        setTimeout(scrollToTarget, 600);
       }
     }
   };
@@ -65,13 +83,16 @@ const Navbar = () => {
           {/* Brand Logo */}
           <Link
             to="/"
-            onClick={() => {
+            onClick={(e) => {
               setIsMobileMenuOpen(false);
               if (isHome) {
+                e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
+                const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+                window.history.pushState(null, '', `${base}/`);
               }
             }}
-            className="flex items-center gap-3 group focus:outline-none"
+            className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none"
             aria-label="Beanie - Homepage"
           >
             <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-amber-600 p-[1px] shadow-lg shadow-orange-500/20 group-hover:scale-105 transition-transform duration-300">
