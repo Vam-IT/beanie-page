@@ -1,367 +1,311 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { AlertTriangle, ShieldCheck, CheckCircle2, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Terms = () => {
+  const [lang, setLang] = useState('de'); // 'de' | 'en'
+
   return (
-    <div className="container mx-auto px-6 py-24 max-w-4xl">
-      {/* English Version */}
+    <div className="container mx-auto px-6 py-28 max-w-4xl text-gray-200">
+      {/* Back Link & Header */}
+      <div className="mb-8 flex items-center justify-between flex-wrap gap-4">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-amber-400 transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          <span>Zurück zur Startseite</span>
+        </Link>
+
+        {/* Language Switcher */}
+        <div className="glass-ultra p-1 rounded-full border border-white/10 flex items-center gap-1">
+          <button
+            onClick={() => setLang('de')}
+            className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+              lang === 'de'
+                ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-md'
+                : 'text-gray-400 hover:text-white'
+            }`}
+          >
+            Deutsch (DE)
+          </button>
+          <button
+            onClick={() => setLang('en')}
+            className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+              lang === 'en'
+                ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-md'
+                : 'text-gray-400 hover:text-white'
+            }`}
+          >
+            English (EN)
+          </button>
+        </div>
+      </div>
+
+      {/* Main Card */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="glass-effect p-8 rounded-2xl mb-8"
+        className="glass-card rounded-3xl p-8 sm:p-12 border border-white/10 shadow-2xl relative overflow-hidden"
       >
-        <h1 className="text-4xl font-bold text-gradient mb-4">Terms of Use - UNREP - Unlock Apps with Reps</h1>
-        <p className="text-sm text-gray-400 mb-8">Last Updated: July 2026</p>
+        {/* Ambient Glow */}
+        <div className="absolute top-0 right-1/4 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="space-y-6 text-gray-300">
-          <p className="leading-relaxed">
-            Please read these Terms of Use carefully before downloading or using the App.
+        {/* Health Disclaimer Callout Box */}
+        <div className="mb-10 p-6 rounded-2xl bg-amber-500/10 border border-amber-500/30">
+          <div className="flex items-center gap-3 mb-2">
+            <AlertTriangle className="w-6 h-6 text-amber-400 flex-shrink-0" />
+            <h3 className="text-base font-bold text-white">
+              {lang === 'de'
+                ? 'Wichtiger Gesundheitshinweis (Kein Medizinprodukt):'
+                : 'Critical Health Notice (Not a Medical Device):'}
+            </h3>
+          </div>
+          <p className="text-xs text-amber-200/90 leading-relaxed font-light">
+            {lang === 'de'
+              ? 'Beanie ist kein Medizinprodukt und bietet keine medizinische oder therapeutische Diagnostik. Alle Koffeinmengen und Grenzwerte sind reine Orientierungs- und Schätzwerte. Bei gesundheitlichen Beschwerden oder Fragen zu Ihrem Koffeinkonsum konsultieren Sie stets qualifiziertes medizinisches Fachpersonal.'
+              : 'Beanie is not a medical device and provides no medical or diagnostic advice. All caffeine numbers and limits are estimations and general guidance. Always consult a qualified medical professional regarding individual caffeine sensitivity or health conditions.'}
           </p>
+        </div>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">1. Acceptance of Terms</h2>
-            <p className="leading-relaxed">
-              By downloading, installing, or using the App UNREP - Unlock Apps with Reps (hereinafter &quot;the App&quot;),
-              you agree to be bound by these Terms of Use and our Privacy Policy. If you do not agree
-              to these terms, do not download or use the App.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">2. Provider</h2>
-            <p className="leading-relaxed">
-              VAMIT UG (haftungsbeschränkt)<br />
-              Petersfeldstraße 16<br />
-              46395 Bocholt<br />
-              Germany
-            </p>
-            <p className="leading-relaxed mt-3">
-              Managing Director: Veselin Kolev<br />
-              Commercial Register: Amtsgericht Coesfeld, HRB 23796<br />
-              Email: info@vam-it.com
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">3. Health &amp; Safety Disclaimer</h2>
-            <p className="leading-relaxed mb-3">
-              <span className="text-vami-primary font-semibold">Please read this section carefully before using the App.</span>
-            </p>
-            <ul className="space-y-3 ml-4">
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Not Medical Advice:</span> The App is intended for general fitness support only and does not constitute medical advice, diagnosis, or treatment. Always consult a qualified physician or healthcare professional before starting any new exercise programme, particularly if you have pre-existing health conditions.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Assumption of Risk:</span> Physical exercise involves inherent risks of injury. You use this App and perform exercises entirely at your own risk.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Stop Signal:</span> If you experience pain, dizziness, shortness of breath, or any other discomfort during exercise, stop immediately and seek medical attention if necessary.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Limitation of Liability:</span> To the fullest extent permitted by applicable law, VAMIT UG shall not be liable for any injuries, health issues, or damages of any kind resulting from the use of the App or the performance of exercises suggested or counted by the App.
-              </li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">4. Functionality and Accuracy</h2>
-            <p className="leading-relaxed">
-              The App uses AI-based camera analysis (Apple Vision Framework) to detect and count push-up
-              movements. Since accuracy depends on factors such as lighting conditions, camera angle, and
-              device placement, we do not guarantee 100% accuracy in movement detection or rep counting.
-              The App is a fitness aid and should not be used as a sole performance measurement tool.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">5. Licence</h2>
-            <p className="leading-relaxed">
-              Subject to these Terms, VAMIT UG grants you a limited, non-exclusive, non-transferable,
-              revocable licence to use the App for personal, non-commercial purposes on Apple devices
-              you own or control, in accordance with Apple&apos;s App Store Terms of Service.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">6. Intellectual Property</h2>
-            <p className="leading-relaxed">
-              All content, design, trademarks, and source code of the App are the intellectual property
-              of VAMIT UG or its licensors. Unauthorised reproduction, modification, distribution, or
-              use of any part of the App is strictly prohibited.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">7. Auto-Renewable Subscriptions</h2>
-            <div className="space-y-3">
-              <p className="leading-relaxed">
-                The App offers auto-renewable subscriptions ("Subscriptions") that unlock premium features.
+        {lang === 'de' ? (
+          /* ================= DEUTSCH ================= */
+          <div className="space-y-8 text-gray-300 text-sm leading-relaxed">
+            <div>
+              <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight mb-2">
+                Nutzungsbedingungen (Terms of Use)
+              </h1>
+              <p className="text-xs text-amber-400 font-medium">
+                App: Beanie (iOS &amp; watchOS) · Stand: Oktober 2026
               </p>
-
-              <p className="leading-relaxed"><span className="text-vami-primary font-semibold">Subscription Options:</span> The title, duration, and price of each available Subscription (e.g. weekly, monthly, annual) are displayed within the App prior to purchase and on the App Store product page.</p>
-
-              <p className="leading-relaxed"><span className="text-vami-primary font-semibold">Payment:</span> Payment will be charged to your Apple ID account at confirmation of purchase.</p>
-
-              <p className="leading-relaxed"><span className="text-vami-primary font-semibold">Auto-Renewal:</span> Subscriptions automatically renew for the same duration and at the same price (unless changed by us with prior notice as required by applicable law) unless auto-renewal is turned off at least 24 hours before the end of the current subscription period.</p>
-
-              <p className="leading-relaxed"><span className="text-vami-primary font-semibold">Renewal Charges:</span> Your account will be charged for renewal within 24 hours prior to the end of the current period, and the cost of the renewal will be identified.</p>
-
-              <p className="leading-relaxed"><span className="text-vami-primary font-semibold">Managing and Cancelling:</span> You can manage your Subscription and turn off auto-renewal at any time by going to your Apple ID Account Settings after purchase. Cancelling a Subscription does not entitle you to a refund for the current billing period; access to premium features continues until the end of the period already paid for.</p>
-
-              <p className="leading-relaxed"><span className="text-vami-primary font-semibold">No Refunds by Us:</span> Any refund requests are subject exclusively to Apple&apos;s refund policy and must be submitted directly to Apple, as VAMIT UG does not process payments and has no access to your payment information.</p>
-
-              <p className="leading-relaxed"><span className="text-vami-primary font-semibold">Price Changes:</span> We reserve the right to change Subscription prices at any time. Any price change will be communicated to you in advance, in accordance with Apple&apos;s guidelines, and will apply only to renewals occurring after you have been given the opportunity to review and accept the change.</p>
             </div>
-          </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">8. Changes to the App and Terms</h2>
-            <p className="leading-relaxed">
-              We reserve the right to modify, update, suspend, or discontinue features of the App at any
-              time without prior notice. We may also update these Terms of Use. The current version is
-              always available at <span className="text-vami-primary font-semibold">vamiapp.com/terms</span>.
-              Continued use of the App after changes constitutes acceptance of the updated Terms.
-            </p>
-          </section>
+            <section className="space-y-3 p-5 rounded-2xl bg-white/5 border border-white/5">
+              <h2 className="text-xl font-bold text-white">1. Geltungsbereich &amp; Anbieter</h2>
+              <p>
+                Diese Nutzungsbedingungen gelten für die Nutzung der iOS- und watchOS-Applikation <strong>„Beanie“</strong> (einschließlich Widgets und Begleit-Apps) der:
+              </p>
+              <div className="text-white space-y-1">
+                <p className="font-semibold">VAMIT UG (haftungsbeschränkt)</p>
+                <p>Petersfeldstraße 16</p>
+                <p>46395 Bocholt, Deutschland</p>
+                <p className="pt-2"><strong className="text-gray-300">Vertreten durch die Geschäftsführung:</strong> Veselin Kolev</p>
+                <p><strong className="text-gray-300">Handelsregister:</strong> Amtsgericht Coesfeld, HRB 23796</p>
+                <p><strong className="text-gray-300">Support-E-Mail:</strong> <a href="mailto:info@vam-it.com" className="text-amber-400 hover:underline">info@vam-it.com</a></p>
+              </div>
+              <p className="pt-2">
+                Die Nutzung der App unterliegt den Bestimmungen des Standard-Endbenutzer-Lizenzvertrags für lizenzierte Anwendungen von Apple (<em>Apple Standard EULA / Licensed Application End User License Agreement</em>). Die vorliegenden Nutzungsbedingungen dienen als produktspezifische <strong>Ergänzung zur Apple Standard EULA</strong>.
+              </p>
+            </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">9. Termination</h2>
-            <p className="leading-relaxed">
-              We reserve the right to terminate or suspend your access to the App at any time, without
-              notice, if you breach these Terms.
-            </p>
-          </section>
+            <section className="space-y-4">
+              <h2 className="text-xl font-bold text-white">2. Wesentlicher Gesundheitshinweis (Keine medizinische Beratung)</h2>
+              <div className="space-y-3">
+                <p>
+                  <strong>1. Schätzwerte &amp; Orientierung:</strong> Alle in der App angezeigten Koffeingehalte, Tagessummen und Standard-Tageslimits (z. B. der Richtwert von 400 mg Koffein pro Tag für gesunde Erwachsene) beruhen auf allgemeinen publizierten Durchschnittswerten. Die App summiert lediglich die von Ihnen erfassten Getränkemengen auf. Es gibt <strong>keine biologische Abbaukurve, keine Halbwertszeitberechnung und keine medizinische Diagnostik</strong>. Der tatsächliche Koffeingehalt eines Heißgetränks variiert in der Realität erheblich je nach Bohnenart (Arabica vs. Robusta), Röstgrad, Mahlgrad, Brühdauer, Extraktion und Portionsgröße.
+                </p>
+                <p>
+                  <strong>2. Individuelle Unterschiede:</strong> Die individuelle Koffeintoleranz und gesundheitliche Verträglichkeit hängen von zahlreichen biologischen Faktoren ab (u. a. Körpergewicht, Genetik, Alter, Leberstoffwechsel, Einnahme von Medikamenten).
+                </p>
+                <p>
+                  <strong>3. Ärztlicher Rat:</strong> Bei Schwangerschaft, in der Stillzeit, bei Herz-Kreislauf-Erkrankungen, Bluthochdruck, Herzrhythmusstörungen, Schlafstörungen, Angstzuständen oder sonstigen gesundheitlichen Einschränkungen sollten Sie Ihren Koffeinkonsum stets mit einer qualifizierten Ärztin oder einem qualifizierten Arzt abstimmen.
+                </p>
+                <p>
+                  <strong>4. Keine Haftung für Überkonsum:</strong> Die App schützt Sie nicht vor den physischen oder psychischen Folgen eines übermäßigen Koffeinkonsums. Hören Sie stets auf Ihren eigenen Körper und gesundheitliche Warnsignale.
+                </p>
+              </div>
+            </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">10. Governing Law and Jurisdiction</h2>
-            <p className="leading-relaxed">
-              These Terms of Use are governed by the laws of the Federal Republic of Germany, excluding
-              its conflict of law provisions. The United Nations Convention on Contracts for the
-              International Sale of Goods (CISG) does not apply.
-            </p>
-            <p className="leading-relaxed mt-3">
-              If you are a consumer resident within the European Union, you also benefit from any
-              mandatory protective provisions of the law of the country in which you reside.
-            </p>
-          </section>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">3. Leistungsbeschreibung &amp; Nutzung der App</h2>
+              <p>
+                Beanie ist ein persönliches Kaffee- und Koffein-Tagebuch mit Gamification-Elementen (Begleiter „Bean“, Streaks, Level und Errungenschaften).
+              </p>
+              <p>
+                Die Datenverarbeitung erfolgt rein lokal auf Ihren persönlichen Endgeräten. Der Anbieter bemüht sich um eine kontinuierliche Verfügbarkeit und Fehlerfreiheit der App, übernimmt jedoch keine Garantie für die ununterbrochene Funktionsfähigkeit auf allen Betriebssystemversionen oder Hardware-Kombinationen.
+              </p>
+            </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">11. Dispute Resolution</h2>
-            <p className="leading-relaxed">
-              The European Commission provides an online dispute resolution (ODR) platform for consumers:{' '}
-              <a
-                href="https://ec.europa.eu/consumers/odr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-vami-primary hover:text-orange-400 transition-colors"
-              >
-                ec.europa.eu/consumers/odr
-              </a>
-              .
-            </p>
-            <p className="leading-relaxed mt-3">
-              We are not obliged to participate in dispute resolution proceedings before a consumer
-              arbitration board and do not voluntarily do so. You can reach us directly at
-              info@vam-it.com to resolve any issues.
-            </p>
-          </section>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">4. Gamification-Elemente (XP, Streaks, Abzeichen)</h2>
+              <p>
+                Alle in der App enthaltenen Erfahrungspunkte (XP), Tages-Streaks, Level-Titel und Abzeichen (Badges) sind rein virtuelle spielerische Motivationselemente.
+              </p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>Sie besitzen <strong>keinen monetären oder wirtschaftlichen Gegenwert</strong> und begründen keine realen Vermögenswerte.</li>
+                <li>Sie können weder ausgezahlt, umgetauscht noch auf Dritte übertragen werden.</li>
+                <li>Es besteht <strong>kein Rechtsanspruch</strong> auf das dauerhafte Bestehen, die Wiederherstellung oder den Erhalt von virtuellen Punkteständen oder Streaks (z. B. im Fall von Datenverlust, App-Zurücksetzung oder Gerätewechsel).</li>
+              </ul>
+            </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">12. Severability</h2>
-            <p className="leading-relaxed">
-              If any provision of these Terms is found to be invalid or unenforceable, the remaining
-              provisions shall continue in full force and effect.
-            </p>
-            <p className="leading-relaxed mt-3 italic">
-              VAMIT UG (haftungsbeschränkt) · Petersfeldstraße 16 · 46395 Bocholt · Germany
-            </p>
-          </section>
-        </div>
-      </motion.div>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">5. In-App-Käufe &amp; Abonnements</h2>
+              <p>
+                Die aktuelle Version von Beanie enthält <strong>keine In-App-Käufe, keine Abonnements und keine Bezahlschranken</strong>. Die App ist aktuell kostenlos im Apple App Store erhältlich.
+              </p>
+              <p>
+                Sollten zukünftig optionale kostenpflichtige Erweiterungen eingeführt werden, erfolgt deren Abwicklung transparent über den Apple App Store gemäß den Richtlinien von Apple.
+              </p>
+            </section>
 
-      {/* German Version */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="glass-effect p-8 rounded-2xl"
-      >
-        <h1 className="text-4xl font-bold text-gradient mb-4">Nutzungsbedingungen - UNREP - Unlock Apps with Reps</h1>
-        <p className="text-sm text-gray-400 mb-8">Stand: Juli 2026</p>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">6. Geistiges Eigentum</h2>
+              <p>
+                Sämtliche Marken, Logos, Grafiken, Designs (einschließlich des Charakters und Maskottchens „Bean“), Soundeffekte und Softwarecodes der App sind urheberrechtlich geschützt und stehen im ausschließlichen Eigentum der VAMIT UG (haftungsbeschränkt) bzw. ihrer Lizenzgeber.
+              </p>
+              <p>
+                Nutzer erhalten ein einfaches, nicht-exklusives, nicht übertragbares und widerrufliches Recht zur bestimmungsgemäßen privaten Nutzung der App auf ihren persönlichen Geräten.
+              </p>
+            </section>
 
-        <div className="space-y-6 text-gray-300">
-          <p className="leading-relaxed">
-            Bitte lies diese Nutzungsbedingungen sorgfältig durch, bevor du die App herunterlädst oder
-            nutzt.
-          </p>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">7. Haftungsbeschränkung</h2>
+              <div className="space-y-2">
+                <p>
+                  <strong>1. Unbeschränkte Haftung:</strong> Die VAMIT UG haftet unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit, die auf einer vorsätzlichen oder fahrlässigen Pflichtverletzung beruhen, sowie für Schäden, die auf Vorsatz oder grober Fahrlässigkeit beruhen, sowie nach den Vorschriften des Produkthaftungsgesetzes.
+                </p>
+                <p>
+                  <strong>2. Leichte Fahrlässigkeit:</strong> Bei einfacher oder leichter Fahrlässigkeit haftet der Anbieter nur bei der Verletzung wesentlicher Vertragspflichten (Kardinalpflichten, deren Erfüllung die ordnungsgemäße Durchführung des Vertrags überhaupt erst ermöglicht und auf deren Einhaltung der Nutzer regelmäßig vertrauen darf). In diesem Fall ist die Haftung auf den vertragstypischen, vorhersehbaren Schaden begrenzt.
+                </p>
+                <p>
+                  <strong>3. Ausschluss im Übrigen:</strong> Im Übrigen ist die Haftung des Anbieters ausgeschlossen. Dies gilt insbesondere für Schäden, die dadurch entstehen, dass der Nutzer die in der App errechneten Werte als verbindlich erachtet hat oder Warnsignale des eigenen Körpers missachtet wurden.
+                </p>
+              </div>
+            </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">1. Annahme der Bedingungen</h2>
-            <p className="leading-relaxed">
-              Durch das Herunterladen, Installieren oder die Nutzung der App UNREP - Unlock Apps with Reps (nachfolgend
-              &quot;die App&quot;) erklärst du dich mit diesen Nutzungsbedingungen sowie unserer
-              Datenschutzerklärung einverstanden. Wenn du mit diesen Bedingungen nicht einverstanden bist,
-              darfst du die App nicht herunterladen oder nutzen.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">2. Anbieter</h2>
-            <p className="leading-relaxed">
-              VAMIT UG (haftungsbeschränkt)<br />
-              Petersfeldstraße 16<br />
-              46395 Bocholt<br />
-              Deutschland
-            </p>
-            <p className="leading-relaxed mt-3">
-              Geschäftsführer: Veselin Kolev<br />
-              Handelsregister: Amtsgericht Coesfeld, HRB 23796<br />
-              E-Mail: info@vam-it.com
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">3. Wichtiger Gesundheitshinweis (Haftungsausschluss)</h2>
-            <p className="leading-relaxed mb-3">
-              <span className="text-vami-primary font-semibold">Bitte lies diesen Abschnitt sorgfältig, bevor du die App nutzt.</span>
-            </p>
-            <ul className="space-y-3 ml-4">
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Keine medizinische Beratung:</span> Die App dient ausschließlich der allgemeinen Fitness-Unterstützung und stellt keine medizinische Beratung, Diagnose oder Behandlung dar. Konsultiere vor Beginn eines neuen Trainingsprogramms - insbesondere bei Vorerkrankungen - stets einen Arzt oder eine medizinische Fachkraft.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Eigenverantwortung:</span> Körperliches Training ist mit einem inhärenten Verletzungsrisiko verbunden. Du nutzt diese App und führst Übungen vollständig auf eigene Gefahr durch.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Stopp-Signal:</span> Wenn du während des Trainings Schmerzen, Schwindel, Kurzatmigkeit oder sonstige Beschwerden verspürst, beende das Training sofort und suche bei Bedarf ärztliche Hilfe auf.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Haftungsbeschränkung:</span> Soweit gesetzlich zulässig, haftet VAMIT UG nicht für Verletzungen, gesundheitliche Schäden oder sonstige Schäden jeglicher Art, die aus der Nutzung der App oder der Durchführung von durch die App gezählten oder vorgeschlagenen Übungen entstehen. Die Haftung für Vorsatz und grobe Fahrlässigkeit sowie für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit bleibt unberührt.
-              </li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">4. Funktionsweise und Genauigkeit</h2>
-            <p className="leading-relaxed">
-              Die App nutzt KI-gestützte Kamera-Analyse (Apple Vision Framework), um Liegestütz-Bewegungen
-              zu erkennen und zu zählen. Da die Genauigkeit von Faktoren wie Lichtverhältnissen,
-              Kamerawinkel und Gerätepositionierung abhängt, übernehmen wir keine Gewähr für die
-              vollständige Genauigkeit der Bewegungserkennung oder Wiederholungszählung. Die App ist ein
-              Fitness-Hilfsmittel und sollte nicht als alleiniges Leistungsmessinstrument verwendet
-              werden.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">5. Lizenz</h2>
-            <p className="leading-relaxed">
-              Vorbehaltlich dieser Nutzungsbedingungen gewährt VAMIT UG dir eine beschränkte,
-              nicht-exklusive, nicht übertragbare, widerrufliche Lizenz zur Nutzung der App für
-              persönliche, nicht-kommerzielle Zwecke auf Apple-Geräten, die du besitzt oder kontrollierst,
-              in Übereinstimmung mit den App Store-Nutzungsbedingungen von Apple.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">6. Geistiges Eigentum</h2>
-            <p className="leading-relaxed">
-              Alle Inhalte, das Design, Marken und der Quellcode der App sind geistiges Eigentum von
-              VAMIT UG oder deren Lizenzgebern. Unbefugte Vervielfältigung, Änderung, Verbreitung oder
-              Nutzung von Teilen der App ist ausdrücklich untersagt.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">7. Automatisch verlängerbare Abonnements</h2>
-            <div className="space-y-3">
-              <p className="leading-relaxed">Die App bietet automatisch verlängerbare Abonnements ("Abonnements") an, die Premium-Funktionen freischalten.</p>
-
-              <p className="leading-relaxed"><span className="text-vami-primary font-semibold">Abo-Optionen:</span> Titel, Laufzeit und Preis der jeweils verfügbaren Abonnements (z. B. wöchentlich, monatlich, jährlich) werden vor dem Kauf innerhalb der App sowie auf der Produktseite im App Store angezeigt.</p>
-
-              <p className="leading-relaxed"><span className="text-vami-primary font-semibold">Zahlung:</span> Die Zahlung wird bei Bestätigung des Kaufs deinem Apple-ID-Konto belastet.</p>
-
-              <p className="leading-relaxed"><span className="text-vami-primary font-semibold">Automatische Verlängerung:</span> Abonnements verlängern sich automatisch um denselben Zeitraum und zum selben Preis (sofern nicht mit vorheriger, gesetzlich erforderlicher Ankündigung von uns geändert), sofern die automatische Verlängerung nicht mindestens 24 Stunden vor Ablauf des aktuellen Abo-Zeitraums deaktiviert wird.</p>
-
-              <p className="leading-relaxed"><span className="text-vami-primary font-semibold">Abbuchung bei Verlängerung:</span> Dein Konto wird innerhalb von 24 Stunden vor Ablauf des aktuellen Zeitraums für die Verlängerung belastet; die Kosten der Verlängerung werden dabei ausgewiesen.</p>
-
-              <p className="leading-relaxed"><span className="text-vami-primary font-semibold">Verwaltung und Kündigung:</span> Du kannst dein Abonnement jederzeit über die Einstellungen deiner Apple-ID nach dem Kauf verwalten und die automatische Verlängerung deaktivieren. Eine Kündigung berechtigt nicht zu einer Rückerstattung für den laufenden Abrechnungszeitraum; der Zugriff auf Premium-Funktionen besteht bis zum Ende des bereits bezahlten Zeitraums fort.</p>
-
-              <p className="leading-relaxed"><span className="text-vami-primary font-semibold">Keine Rückerstattung durch uns:</span> Rückerstattungsanfragen unterliegen ausschließlich den Erstattungsrichtlinien von Apple und sind direkt bei Apple einzureichen, da VAMIT UG keine Zahlungen verarbeitet und keinen Zugriff auf Zahlungsinformationen hat.</p>
-
-              <p className="leading-relaxed"><span className="text-vami-primary font-semibold">Preisänderungen:</span> Wir behalten uns vor, die Preise für Abonnements jederzeit zu ändern. Preisänderungen werden dir gemäß den Richtlinien von Apple vorab mitgeteilt und gelten erst für Verlängerungen, die erfolgen, nachdem dir Gelegenheit gegeben wurde, die Änderung zu prüfen und zu akzeptieren.</p>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">8. Schlussbestimmungen</h2>
+              <p>
+                <strong>Anwendbares Recht:</strong> Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts (CISG). Zwingende Verbraucherschutzvorschriften des Staates, in dem der Nutzer seinen gewöhnlichen Aufenthalt hat, bleiben unberührt.
+              </p>
+              <p>
+                <strong>Gerichtsstand:</strong> Sofern der Nutzer Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist, ist Gerichtsstand der Sitz des Anbieters (Bocholt / zuständiges Amtsgericht).
+              </p>
+              <p>
+                <strong>Änderungen:</strong> Der Anbieter behält sich vor, diese Bedingungen anzupassen, wenn dies durch Funktionsänderungen der App, Gesetzesänderungen oder gerichtliche Entscheidungen erforderlich wird.
+              </p>
+            </section>
+          </div>
+        ) : (
+          /* ================= ENGLISH ================= */
+          <div className="space-y-8 text-gray-300 text-sm leading-relaxed">
+            <div>
+              <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight mb-2">
+                Terms of Use
+              </h1>
+              <p className="text-xs text-amber-400 font-medium">
+                App: Beanie (iOS &amp; watchOS) · As of: October 2026
+              </p>
             </div>
-          </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">8. Änderungen der App und der Nutzungsbedingungen</h2>
-            <p className="leading-relaxed">
-              Wir behalten uns das Recht vor, Funktionen der App jederzeit ohne vorherige Ankündigung zu
-              ändern, zu aktualisieren, auszusetzen oder den Betrieb einzustellen. Wir können auch diese
-              Nutzungsbedingungen aktualisieren. Die jeweils aktuelle Fassung ist stets unter{' '}
-              <span className="text-vami-primary font-semibold">vamiapp.com/terms</span> abrufbar. Die
-              weitere Nutzung der App nach Änderungen gilt als Zustimmung zu den aktualisierten
-              Bedingungen.
-            </p>
-          </section>
+            <section className="space-y-3 p-5 rounded-2xl bg-white/5 border border-white/5">
+              <h2 className="text-xl font-bold text-white">1. Scope &amp; Provider</h2>
+              <p>
+                These Terms of Use govern the use of the iOS and watchOS application <strong>„Beanie“</strong> (including its widgets and complications), provided by:
+              </p>
+              <div className="text-white space-y-1">
+                <p className="font-semibold">VAMIT UG (haftungsbeschränkt)</p>
+                <p>Petersfeldstraße 16</p>
+                <p>46395 Bocholt, Germany</p>
+                <p className="pt-2"><strong className="text-gray-300">Managing Director:</strong> Veselin Kolev</p>
+                <p><strong className="text-gray-300">Commercial Register:</strong> Local Court (Amtsgericht) Coesfeld, HRB 23796</p>
+                <p><strong className="text-gray-300">Support Email:</strong> <a href="mailto:info@vam-it.com" className="text-amber-400 hover:underline">info@vam-it.com</a></p>
+              </div>
+              <p className="pt-2">
+                Use of the application is governed by the <em>Apple Standard Licensed Application End User License Agreement (Standard EULA)</em>. These Terms of Use serve as product-specific supplementary terms to the Apple Standard EULA.
+              </p>
+            </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">9. Kündigung</h2>
-            <p className="leading-relaxed">
-              Wir behalten uns das Recht vor, deinen Zugang zur App jederzeit ohne Vorankündigung zu
-              beenden oder zu sperren, wenn du gegen diese Nutzungsbedingungen verstößt.
-            </p>
-          </section>
+            <section className="space-y-4">
+              <h2 className="text-xl font-bold text-white">2. Critical Health Notice (No Medical Advice)</h2>
+              <div className="space-y-3">
+                <p>
+                  <strong>1. Approximations &amp; Guidance Only:</strong> All caffeine estimates, daily totals, and default daily limits (such as the standard 400 mg daily reference) are based on general published scientific averages. The app simply sums up your logged beverage intake. There is <strong>no biological decay curve, no half-life calculation, and no clinical diagnostics</strong>. The actual caffeine concentration in any prepared beverage varies significantly depending on bean origin, roast level, grind size, brewing time, and extraction method.
+                </p>
+                <p>
+                  <strong>2. Individual Variability:</strong> Biological responses to caffeine depend on weight, age, genetic metabolic rates, liver enzyme activity, medications, and individual sensitivity.
+                </p>
+                <p>
+                  <strong>3. Seek Medical Counsel:</strong> If you are pregnant, nursing, have cardiovascular conditions, high blood pressure, arrhythmias, anxiety disorders, or other medical concerns, always consult a qualified healthcare professional regarding your daily caffeine intake.
+                </p>
+                <p>
+                  <strong>4. No Liability for Overconsumption:</strong> The application cannot prevent adverse physical reactions resulting from excessive caffeine consumption. Always pay attention to your own physical symptoms and limits.
+                </p>
+              </div>
+            </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">10. Anwendbares Recht und Gerichtsstand</h2>
-            <p className="leading-relaxed">
-              Diese Nutzungsbedingungen unterliegen dem Recht der Bundesrepublik Deutschland unter
-              Ausschluss des UN-Kaufrechts (CISG).
-            </p>
-            <p className="leading-relaxed mt-3">
-              Wenn du Verbraucher mit Wohnsitz in der Europäischen Union bist, gelten zusätzlich die
-              zwingenden Schutzvorschriften des Rechts deines Wohnsitzlandes.
-            </p>
-            <p className="leading-relaxed mt-3">
-              Gerichtsstand für Streitigkeiten mit Unternehmern ist Bocholt.
-            </p>
-          </section>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">3. Description of Services</h2>
+              <p>
+                Beanie serves as a personal coffee logging and caffeine tracking tool with interactive mascot companion features.
+              </p>
+              <p>
+                All core calculations and storage operate entirely locally on your Apple device. While we strive for high stability and reliability, we do not warrant that the application will be uninterrupted or error-free at all times.
+              </p>
+            </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">11. Streitbeilegung</h2>
-            <p className="leading-relaxed">
-              Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{' '}
-              <a
-                href="https://ec.europa.eu/consumers/odr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-vami-primary hover:text-orange-400 transition-colors"
-              >
-                ec.europa.eu/consumers/odr
-              </a>
-              .
-            </p>
-            <p className="leading-relaxed mt-3">
-              Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer
-              Verbraucherschlichtungsstelle teilzunehmen. Für eine direkte Klärung stehen wir jederzeit
-              unter info@vam-it.com zur Verfügung.
-            </p>
-          </section>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">4. Gamification (XP, Streaks, Badges)</h2>
+              <p>
+                All experience points (XP), daily streaks, levels, and achievement badges are purely virtual motivational mechanics.
+              </p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>They possess <strong>no real-world monetary value</strong>, represent no financial assets, and cannot be redeemed, sold, or transferred.</li>
+                <li>You have no legal claim to the permanent preservation or restoration of streaks or virtual badges (e.g. following data resets or device replacements).</li>
+              </ul>
+            </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">12. Salvatorische Klausel</h2>
-            <p className="leading-relaxed">
-              Sollte eine Bestimmung dieser Nutzungsbedingungen unwirksam oder nicht durchsetzbar sein,
-              bleiben die übrigen Bestimmungen davon unberührt und weiterhin gültig.
-            </p>
-            <p className="leading-relaxed mt-3 italic">
-              VAMIT UG (haftungsbeschränkt) · Petersfeldstraße 16 · 46395 Bocholt · Deutschland
-            </p>
-          </section>
-        </div>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">5. In-App Purchases &amp; Subscriptions</h2>
+              <p>
+                The current version of Beanie contains <strong>no in-app purchases, paid subscriptions, or paywalls</strong>.
+              </p>
+              <p>
+                If premium extensions are introduced in future releases, they will be processed directly through Apple's In-App Purchase system under Apple's App Store terms.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">6. Intellectual Property</h2>
+              <p>
+                All trademarks, copyrights, visual designs, illustrations (including the mascot "Bean"), sound effects, and software code are the exclusive property of VAMIT UG (haftungsbeschränkt) or its licensors.
+              </p>
+              <p>
+                Users are granted a limited, revocable, non-exclusive, non-transferable license to use the app for personal, non-commercial purposes.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">7. Limitation of Liability</h2>
+              <div className="space-y-2">
+                <p>
+                  <strong>1. Uncapped Liability:</strong> The provider is liable without limitation for intent, gross negligence, bodily injury, death, and claims under mandatory product liability legislation.
+                </p>
+                <p>
+                  <strong>2. Slight Negligence:</strong> In cases of slight negligence, the provider is liable only for breach of material contractual obligations (<em>Kardinalpflichten</em>). In such instances, liability is strictly limited to typically foreseeable damages.
+                </p>
+                <p>
+                  <strong>3. Exclusion:</strong> Any further liability is excluded, in particular for damages arising from reliance on estimated caffeine calculations or disregard of personal physical tolerance limits.
+                </p>
+              </div>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">8. Governing Law &amp; Jurisdiction</h2>
+              <p>
+                These Terms are governed by the laws of the Federal Republic of Germany, excluding the UN Convention on Contracts for the International Sale of Goods (CISG).
+              </p>
+              <p>
+                Mandatory statutory consumer protection rights under the laws of your country of residence remain unaffected.
+              </p>
+              <p>
+                The provider reserves the right to amend these terms to reflect feature updates, legal changes, or technical requirements.
+              </p>
+            </section>
+          </div>
+        )}
       </motion.div>
     </div>
   );

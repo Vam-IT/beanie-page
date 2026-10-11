@@ -1,40 +1,60 @@
 import { motion } from 'framer-motion';
-import { Brain, Hash, BarChart2, Lock } from 'lucide-react';
+import { 
+  Coffee, 
+  Sparkles, 
+  Watch, 
+  ShieldCheck, 
+  Flame, 
+  Sliders, 
+  Bell, 
+  Lock,
+  Layers,
+  MapPin,
+  CheckCircle2,
+  XCircle
+} from 'lucide-react';
 
 const Features = () => {
-  const features = [
+  const mainFeatures = [
     {
-      icon: <Brain className="w-7 h-7" />,
-      title: 'AI Form Correction',
-      description: 'Real-time feedback on your form. Perfect every rep.',
-      gradient: 'from-blue-500 via-blue-600 to-cyan-500',
-      glowColor: 'rgba(59, 130, 246, 0.3)',
+      icon: <Coffee className="w-8 h-8" />,
+      badge: 'Tagebuch & Intake',
+      title: 'Kaffee- & Koffeintagebuch',
+      description:
+        'Erfasse Espresso, Cappuccino, Flat White oder Filterkaffee mit wenigen Fingertipps. Wähle Portionen in ml oder oz, sieh geschätzte Koffeinwerte in mg und füge manuelle Orts-Labels (Home, Office, Cafe) sowie Notizen hinzu.',
+      gradient: 'from-amber-500 via-orange-500 to-amber-600',
+      glowColor: 'rgba(245, 158, 11, 0.25)',
+      highlights: ['Espresso, Cappuccino, Flat White u.v.m.', 'Portionen in ml & oz mit mg-Koffeinwerten', 'Manuelle Orts-Tags: Home, Office, Cafe', 'Tageslimit-Abgleich (z. B. 400 mg)'],
     },
     {
-      icon: <Hash className="w-7 h-7" />,
-      title: 'Auto Counting',
-      description: 'Focus on execution. VAMI counts automatically.',
-      gradient: 'from-orange-500 via-orange-600 to-red-500',
-      glowColor: 'rgba(249, 115, 22, 0.3)',
+      icon: <Sparkles className="w-8 h-8" />,
+      badge: 'Gamification',
+      title: 'Interaktiver Begleiter „Bean“',
+      description:
+        'Dein persönliches Bohnen-Maskottchen Bean reagiert auf deine Konsumgewohnheiten mit dynamischen Launen und Animationen. Verdiene Erfahrungspunkte (XP), halte Tages-Streaks aufrecht und schalte Level & Badges frei.',
+      gradient: 'from-orange-500 via-rose-500 to-amber-500',
+      glowColor: 'rgba(255, 87, 34, 0.25)',
+      highlights: ['Animiertes Maskottchen mit Launen', 'Erfahrungspunkte (XP) für jeden Brew', 'Tages-Streaks (z. B. 7-Tage-Streak)', 'Freischaltbare Abzeichen & Level'],
     },
     {
-      icon: <BarChart2 className="w-7 h-7" />,
-      title: 'Track Progress',
-      description: 'See your improvements with detailed analytics.',
-      gradient: 'from-green-500 via-green-600 to-emerald-500',
-      glowColor: 'rgba(34, 197, 94, 0.3)',
+      icon: <Watch className="w-8 h-8" />,
+      badge: 'iOS & watchOS',
+      title: 'Apple Watch & WidgetKit',
+      description:
+        'Bleibe stets im Bilde – direkt auf deinem Sperrbildschirm, Home-Screen oder am Handgelenk. Volle Unterstützung für iOS Lockscreen- und Homescreen-Widgets sowie native Apple Watch Komplikationen mit zuverlässigem Sync.',
+      gradient: 'from-sky-500 via-blue-600 to-indigo-500',
+      glowColor: 'rgba(56, 189, 248, 0.25)',
+      highlights: ['Eigenständige Apple Watch Begleit-App', 'Watch Face Komplikationen', 'iOS Home- & Lockscreen-Widgets', 'Nahtloser WatchConnectivity-Sync'],
     },
   ];
 
   return (
-    <section id="features" className="relative py-20 md:py-32 pb-32 md:pb-40 px-6 overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950" />
+    <section id="features" className="relative py-24 md:py-36 px-6 overflow-hidden">
+      {/* Background Ambience */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#13100E] via-[#171310]/60 to-[#13100E] pointer-events-none" />
 
-      {/* Bottom Gradient Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent pointer-events-none" />
-
-      <div className="container mx-auto relative z-10">
+      <div className="container mx-auto relative z-10 max-w-6xl">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,139 +62,211 @@ const Features = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="inline-block glass-ultra px-6 py-2 rounded-full mb-6 border border-orange-500/20"
-          >
-            <span className="text-sm font-medium text-orange-400">Powered by AI</span>
-          </motion.div>
+          <div className="inline-flex items-center gap-2 glass-ultra px-5 py-2 rounded-full mb-6 border border-amber-500/20 text-xs font-semibold text-amber-300">
+            <Sparkles className="w-4 h-4 text-amber-400" />
+            <span>Fokus auf das Wesentliche</span>
+          </div>
 
-          <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
-            Everything You{' '}
-            <span className="text-gradient-premium">Need</span>
+          <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tight text-white">
+            Alles, was du für deinen{' '}
+            <span className="text-gradient-coffee">Kaffeefluss</span> brauchst
           </h2>
-          <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto font-light">
-            AI-powered training in one simple app.
+          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+            Keine überladenen Diät-Apps, kein Abo-Zwang. Beanie kombiniert intuitives Tracking mit Freude und Ästhetik.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {features.map((feature, index) => (
+        {/* 3 Main Feature Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          {mainFeatures.map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{
-                duration: 0.8,
+                duration: 0.7,
                 delay: index * 0.15,
                 ease: [0.25, 0.4, 0.25, 1],
               }}
+              className="flex"
             >
-              <motion.div
-                whileHover={{
-                  y: -8,
-                  scale: 1.02,
-                }}
-                transition={{
-                  duration: 0.4,
-                  ease: [0.25, 0.4, 0.25, 1],
-                }}
-                className="group relative glass-card rounded-3xl p-8 h-full cursor-pointer overflow-hidden"
-              >
-                {/* Gradient Glow on Hover */}
+              <div className="group relative glass-card rounded-3xl p-8 flex flex-col justify-between w-full overflow-hidden border border-white/10 hover:border-amber-500/30 transition-all duration-500">
+                {/* Radial Hover Glow */}
                 <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
                   style={{
                     background: `radial-gradient(circle at top, ${feature.glowColor}, transparent 70%)`,
                   }}
                 />
 
-                {/* Content */}
                 <div className="relative z-10">
-                  {/* Icon */}
-                  <motion.div
-                    whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
-                    transition={{ duration: 0.5 }}
-                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-6 shadow-lg group-hover:shadow-2xl transition-all`}
-                    style={{
-                      boxShadow: `0 8px 32px ${feature.glowColor}`,
-                    }}
-                  >
-                    {feature.icon}
-                  </motion.div>
+                  {/* Top Badge & Icon */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div
+                      className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center text-white shadow-xl`}
+                    >
+                      {feature.icon}
+                    </div>
+                    <span className="text-[11px] font-semibold text-amber-300/80 uppercase tracking-wider glass-ultra px-3 py-1 rounded-full border border-white/5">
+                      {feature.badge}
+                    </span>
+                  </div>
 
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-white transition-colors">
+                  <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-amber-200 transition-colors">
                     {feature.title}
                   </h3>
 
-                  <p className="text-gray-400 leading-relaxed text-base md:text-lg group-hover:text-gray-300 transition-colors">
+                  <p className="text-gray-400 leading-relaxed text-sm mb-6 font-light">
                     {feature.description}
                   </p>
-                </div>
 
-                {/* Shine Effect */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 transform translate-x-full group-hover:-translate-x-full transition-transform duration-1000" />
+                  {/* Highlights Bullet List */}
+                  <ul className="space-y-2 border-t border-white/5 pt-4 text-xs text-gray-300">
+                    {feature.highlights.map((item, i) => (
+                      <li key={i} className="flex items-center gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </motion.div>
+              </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Soft Divider */}
-        <div className="relative my-16 md:my-24">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-white/5"></div>
-          </div>
-        </div>
-
-        {/* Privacy Highlight */}
+        {/* Feature Spotlight: App Screenshot & Drink Selection */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.8 }}
+          className="glass-ultra rounded-3xl p-8 md:p-12 border border-white/10 mb-20 relative overflow-hidden"
         >
-          <motion.div
-            whileHover={{ scale: 1.01 }}
-            className="relative glass-ultra rounded-3xl p-12 md:p-16 text-center overflow-hidden group"
-          >
-            {/* Animated Background */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-              <div className="absolute top-0 left-1/4 w-96 h-96 bg-green-500/10 rounded-full blur-3xl animate-pulse" />
-              <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-            </div>
-
-            <div className="relative z-10 max-w-4xl mx-auto">
-              <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.8, type: 'spring', stiffness: 200 }}
-                className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 mb-8 shadow-2xl"
-                style={{
-                  boxShadow: '0 8px 32px rgba(34, 197, 94, 0.3)',
-                }}
-              >
-                <Lock className="w-10 h-10" />
-              </motion.div>
-
-              <h3 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">
-                100% Private.{' '}
-                <span className="text-gradient-premium">100% Yours.</span>
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs text-amber-300 font-medium mb-4">
+                <Coffee className="w-3.5 h-3.5" />
+                <span>Vielfalt im Handumdrehen</span>
+              </div>
+              <h3 className="text-3xl md:text-4xl font-black mb-4 tracking-tight text-white">
+                Für jeden Kaffeeliebhaber die passende Auswahl
               </h3>
-
-              <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light">
-                All AI runs on your iPhone. No cloud. No data collection.
-                <br />
-                <span className="text-white font-semibold text-xl mt-2 block">Your data never leaves your device.</span>
+              <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-6 font-light">
+                Ob morgendlicher doppelter Espresso, samtiger Cappuccino oder Cold Brew im Sommer: 
+                Beanie berechnet die geschätzte Koffeinmenge transparent auf Basis erprobter Durchschnittswerte und gleicht sie mit deinem persönlichen Tagesziel ab.
               </p>
+
+              <div className="grid grid-cols-2 gap-3 text-xs text-gray-300">
+                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                  <span className="font-bold text-white block mb-0.5">☕ Beliebte Sorten</span>
+                  Espresso, Lungo, Cappuccino, Latte, Flat White, Cold Brew, Pour Over
+                </div>
+                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                  <span className="font-bold text-white block mb-0.5">🏷️ Manuelle Orte</span>
+                  Einfache Tags für Home, Office oder Cafe – ohne Akku-fressendes GPS
+                </div>
+                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                  <span className="font-bold text-white block mb-0.5">🔔 Lokale Reminder</span>
+                  Morgendliche Erinnerung (z. B. 09:00 Uhr) – rein lokal ausgelöst
+                </div>
+                <div className="p-3.5 rounded-xl bg-white/5 border border-white/5">
+                  <span className="font-bold text-white block mb-0.5">⚡ WatchConnectivity</span>
+                  Spiegelung in Echtzeit zwischen iPhone und Apple Watch
+                </div>
+              </div>
             </div>
-          </motion.div>
+
+            <div className="flex justify-center">
+              <div className="relative max-w-[260px] glass-card rounded-[2.2rem] p-2.5 shadow-2xl border border-white/10">
+                <div className="rounded-[1.8rem] overflow-hidden bg-[#181411]">
+                  <img
+                    src="/assets/beanie-add-brew.png"
+                    alt="Beanie Kaffee Auswahlansicht"
+                    className="w-full h-auto object-cover"
+                    onError={(e) => {
+                      e.currentTarget.src = '/assets/beanie-dashboard.png';
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* What the App DOES NOT do / 100% Privacy by Design Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="relative glass-ultra rounded-3xl p-8 md:p-14 border border-emerald-500/20 overflow-hidden">
+            {/* Ambient emerald glow */}
+            <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="relative z-10">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white shadow-xl shadow-emerald-500/20">
+                  <ShieldCheck className="w-7 h-7" />
+                </div>
+                <div>
+                  <span className="text-xs uppercase font-bold tracking-wider text-emerald-400">
+                    Transparenz &amp; Datenschutz
+                  </span>
+                  <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight">
+                    Was Beanie ganz bewusst <span className="text-emerald-400">NICHT</span> tut
+                  </h3>
+                </div>
+              </div>
+
+              <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-8 max-w-3xl font-light">
+                Deine Konsumgewohnheiten gehen niemanden etwas an. Beanie wurde nach dem Prinzip
+                <strong className="text-white"> Privacy by Design</strong> entwickelt.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {[
+                  {
+                    title: 'Keine Server & Kein Backend',
+                    desc: 'Wir betreiben keine Serverinfrastruktur. Alle Daten verbleiben auf deinen Endgeräten.',
+                  },
+                  {
+                    title: 'Keine Benutzerkonten',
+                    desc: 'Kein Login, keine Registrierung, kein Cloud-Profil. Öffnen und direkt nutzen.',
+                  },
+                  {
+                    title: 'Kein GPS-Tracking',
+                    desc: 'Die Orts-Labels (Home, Office, Cafe) sind rein manuelle Kategorien ohne Geodaten.',
+                  },
+                  {
+                    title: 'Keine Tracker & Werbe-SDKs',
+                    desc: 'Kein Google Firebase, kein Meta SDK, kein Mixpanel und keine Werbenetzwerke.',
+                  },
+                  {
+                    title: 'Keine Bezahlschranken / Abos',
+                    desc: 'Die App ist aktuell komplett kostenlos ohne versteckte In-App-Käufe oder Abos.',
+                  },
+                  {
+                    title: 'Keine medizinische Diagnostik',
+                    desc: 'Rein informative Aufsummierung von Schätzwerten ohne medizinische Abbaukurven.',
+                  },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="p-4 rounded-2xl bg-black/30 border border-white/5 flex flex-col justify-start"
+                  >
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                      <h4 className="text-sm font-bold text-white">{item.title}</h4>
+                    </div>
+                    <p className="text-xs text-gray-400 leading-relaxed font-light">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

@@ -1,170 +1,243 @@
-# Privacy Policy – UNREP - Unlock Apps with Reps
+# Datenschutzerklärung / Privacy Policy
 
-**Last Updated: October 2026**
-
-Your privacy is our top priority. This Privacy Policy explains how the App UNREP - Unlock Apps with Reps (hereinafter "the App") processes data and what your rights are.
+*Stand: Oktober 2026 / As of October 2026*
 
 ---
 
-## 1. Data Controller
+## Teil 1: Datenschutzerklärung (Deutsch)
 
-Responsible for data processing in this App is:
+### 1. Präambel & Grundsatz
+Der Schutz Ihrer persönlichen Daten ist uns ein zentrales Anliegen. Die App **„Beanie“** (einschließlich der Widgets und der Begleit-App für die Apple Watch) folgt den Prinzipien von **„Privacy by Design“** und **„Datensparsamkeit“**.
 
-**VAMIT UG (haftungsbeschränkt)**
-Petersfeldstraße 16
-46395 Bocholt
-Germany
-
-Managing Director: Veselin Kolev
-Commercial Register: Amtsgericht Coesfeld, HRB 23796
-Email: info@vam-it.com
+**Das Wichtigste auf einen Blick:**
+- Sämtliche Daten (erfasste Kaffees, geschätzte Koffeinmengen, Tageslimits, Streaks und Erfahrungspunkte) werden **ausschließlich lokal auf Ihren Geräten** gespeichert.
+- Wir betreiben **keine eigenen Server**, erheben **keine Benutzerkonten** und setzen **keinerlei Analyse-, Tracking- oder Werbe-SDKs** ein.
+- Wir haben zu keinem Zeitpunkt Zugriff auf Ihre protokollierten Daten.
 
 ---
 
-## 2. Hosting of this Privacy Policy Page
+### 2. Verantwortlicher (Art. 4 Nr. 7 DSGVO)
+Verantwortliche Stelle für die Datenverarbeitung im Sinne der Datenschutz-Grundverordnung (DSGVO):
 
-This Privacy Policy is published on our App landing page (vamiapp.com), which is hosted via **GitHub Pages** (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA). When you visit this page, your browser automatically transmits technical access data (IP address, browser type, date/time, requested URL) to GitHub's servers. GitHub is certified under the **EU-U.S. Data Privacy Framework (DPF)**, ensuring an adequate level of data protection pursuant to Art. 45 GDPR. Further information: https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement
+**VAMIT UG (haftungsbeschränkt)**  
+Petersfeldstraße 16  
+46395 Bocholt  
+Deutschland  
 
----
+**Vertreten durch die Geschäftsführung:**  
+Veselin Kolev  
 
-## 3. Camera Usage & On-Device Processing (Privacy by Design)
-
-The core feature of the App is counting your push-ups using your device's camera.
-
-- **Type of Processing:** We use Apple's Vision Framework for real-time body pose estimation.
-- **On-Device Only:** All camera data is processed locally on your device. No video or images are ever recorded, stored, or transmitted to any server.
-- **No Storage or Transmission:** The visual data is discarded immediately after movement analysis is performed in the device's volatile memory (RAM).
-- **Legal Basis:** Performance of a contract (Art. 6 (1) (b) GDPR) and your explicit consent when granting camera permissions (Art. 6 (1) (a) GDPR).
-
----
-
-## 4. Analytics & App Improvement (PostHog)
-
-We use PostHog to monitor app stability and improve features. You have full control over this via the *"Share anonymous usage data"* toggle in the App's Settings and the initial in-app consent screen.
-
-- **Service Provider:** PostHog Inc., EU Cloud (server location: Frankfurt, Germany). Data remains within the European Economic Area (EEA) at all times. No analytics data is transferred to the United States.
-- **IP Masking:** IP addresses and GeoIP location tracking are completely disabled/scrubbed on-device (`$ip: "0.0.0.0"`).
-- **Toggle enabled (opted in):** If you consent to sharing usage data, we collect pseudonymous usage statistics (e.g. features used, session duration) linked to a persistent anonymous ID. This data cannot be used to identify you personally.
-- **Toggle disabled (opted out):** If you disable *"Share anonymous usage data"* in Settings or decline the consent prompt, PostHog is fully deactivated. No analytics data leaves your device.
-- **Retention:** Anonymous analytics data is retained for a maximum of 12 months, after which it is automatically deleted.
-- **Legal Basis:** Consent (Art. 6 (1) (a) GDPR).
-
-You can withdraw your consent at any time via the *"Share anonymous usage data"* toggle in the App's Settings.
+**Kontakt:**  
+E-Mail: info@vam-it.com  
+Website: https://vam-it.com  
+Handelsregister: Amtsgericht Coesfeld, HRB 23796  
 
 ---
 
-## 5. In-App Purchases (RevenueCat)
+### 3. Datenverarbeitung innerhalb der App
 
-We use RevenueCat to manage subscriptions and in-app purchases.
+#### a) Kaffee- und Konsumprotokoll
+- **Erfasste Daten:** Datum und Uhrzeit des Eintrags, gewählte Kaffeesorte (z. B. Espresso, Cappuccino, Flat White, Filterkaffee), Portionsgröße in Millilitern (ml) oder Unzen (oz), errechnete geschätzte Koffeinmenge in Milligramm (mg), manuell gewähltes Orts-Label („Home“, „Office“, „Cafe“) sowie optionale Notizen/Geschmacks-Tags.
+- **Zweck:** Berechnung der täglichen Koffeinsumme, Anzeige Ihres Verlaufs und Abgleich mit Ihrem gewählten Tageslimit.
+- **Rechtsgrundlage:** Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw. Bereitstellung der von Ihnen gewünschten App-Funktionen).
 
-- **Data Processed:** Purchase history, subscription status, and a randomly generated anonymous App User ID. This ID is not linked to your name, email address, or Apple ID.
-- **Payment Processing:** All actual payment details (credit card, Apple ID billing information) are processed exclusively by Apple and are never accessible to us or to RevenueCat.
-- **Purpose:** Verifying purchases, managing subscription status, and unlocking premium features.
-- **Data Sharing:** RevenueCat acts as our data processor for this purpose and does not use this data for advertising or share it with third parties for marketing purposes.
-- **Legal Basis:** Performance of a contract (Art. 6 (1) (b) GDPR).
+#### b) Zieleinstellungen & App-Präferenzen
+- **Erfasste Daten:** Persönliches tägliches Koffein-Limit (z. B. 400 mg Richtwert), Volumeneinheit („ml“ oder „oz“), Interface-Einstellungen (z. B. Dark Mode) und Onboarding-Status.
+- **Zweck:** Personalisierung der Berechnungen und optische Darstellung der App.
+- **Rechtsgrundlage:** Art. 6 Abs. 1 lit. b DSGVO.
 
-Further information: [RevenueCat Privacy Policy](https://www.revenuecat.com/privacy)
+#### c) Gamification & Errungenschaften
+- **Erfasste Daten:** Zählerstände für Errungenschaften (z. B. Anzahl aufeinanderfolgender Tage / Streaks, erreichte Abzeichen, Level und gesammelte Erfahrungspunkte/XP mit Begleiter Bean).
+- **Zweck:** Bereitstellung spielerischer Motivationsmechaniken innerhalb der App.
+- **Rechtsgrundlage:** Art. 6 Abs. 1 lit. b DSGVO.
 
----
+#### d) Keine Standortdaten / Kein GPS-Tracking
+- Sie können einzelnen Kaffee-Einträgen Labels wie **„Home“**, **„Office“** oder **„Cafe“** zuordnen.
+- **Wichtig:** Diese Labels sind **keine Geodaten**. Die App greift **zu keinem Zeitpunkt** auf Ortungsdienste (GPS, WLAN-Ortung oder Mobilfunknetze) Ihres Geräts zu und erhebt keine Geokoordinaten. Es handelt sich um ein rein manuell vergebenes Kategorie-Etikett.
 
-## 6. Health Data (Apple HealthKit)
-
-The App integrates with Apple HealthKit to store your workout activity and to power the app-unlock reward feature.
-
-Purpose: We write your push-up workouts (repetitions, duration, calories) to HealthKit so they appear in the Apple Health app. We also read relevant HealthKit data to automatically unlock apps you have blocked as a training incentive.
-
-On-Device Only: All HealthKit data is read and written exclusively on your device via Apple's HealthKit framework. It is never transmitted to our servers, to PostHog, or to any other third party.
-
-No Advertising Use: In accordance with Apple's Developer Program guidelines, HealthKit data is never used for advertising, marketing, or shared with data brokers.
-
-Deletion: You can revoke HealthKit access at any time in iOS Settings → Privacy & Security → Health. Uninstalling the App does not delete data already written to Apple Health; this must be managed separately within the Health app.
-
-Legal Basis: Performance of a contract (Art. 6 (1) (b) GDPR) and your explicit consent when granting HealthKit permissions (Art. 6 (1) (a) GDPR).
-
-## 7. Family Controls / Screen Time (App Blocking Feature)
-
-The App uses Apple's Family Controls framework (a restricted Apple API) to let you block distracting apps and "earn back" access to them by completing push-up workouts.
-
-Purpose: Gamification — motivating consistent training by linking workout completion to temporary app access.
-
-On-Device Only: All information about which apps you choose to block, for how long, and when they are unlocked is stored exclusively on your device (in a local App Group). This information never leaves your device and is never transmitted to our servers or any third party.
-
-No Usage Monitoring: We do not receive any data about your general app usage, screen time, or which third-party apps are installed on your device.
-
-Legal Basis: Your explicit consent when enabling the Screen Time feature (Art. 6 (1) (a) GDPR).
-
-## 8. Local Data Storage (UserDefaults)
-
-Your profile information (e.g. age, gender, weight) and workout statistics (e.g. push-up counts, personal records, goals) are stored locally on your device using iOS UserDefaults.
-
-- This data never leaves your device and is never transmitted to our servers.
-- The data is automatically and permanently deleted when you uninstall the App.
+#### e) Lokale Benachrichtigungen
+- **Erfasste Daten:** Berechtigungsstatus für Mitteilungen und gewählte morgendliche Erinnerungszeit (Standard: 09:00 Uhr).
+- **Zweck:** Lokaler morgendlicher Reminder, um das Eintragen des ersten Kaffees zu erleichtern und Streaks aufrechtzuerhalten.
+- **Wichtig:** Benachrichtigungen werden **vollständig lokal auf Ihrem Gerät** durch das Betriebssystem (iOS) ausgelöst. Es werden keine Push-Token oder Gerätekennungen an externe Server übermittelt.
+- **Rechtsgrundlage:** Art. 6 Abs. 1 lit. a DSGVO (Einwilligung über den nativen Systemdialog von iOS). Berechtigungen können jederzeit in den iOS-Einstellungen widerrufen werden.
 
 ---
 
-## 9. Data We Do Not Collect
-
-- Names, email addresses, or any other directly identifying personal information
-- Payment information (all purchases are handled exclusively by Apple)
-- Location data
-- Contact lists
-- Video or images from the camera (processed on-device only, see Section 3)
-- Health & fitness data or Screen Time/app-blocking data (processed on-device only, see Sections 6 and 7) — we never receive this data on our servers, even though the App requests permission to access it locally on your device
+### 4. Kontaktaufnahme per E-Mail
+Wenn Sie uns per E-Mail für Support oder Feedback kontaktieren, werden Ihre E-Mail-Adresse sowie die in der Nachricht übermittelten Angaben (z. B. Name, Problembeschreibung) bei uns gespeichert.
+- **Zweck:** Bearbeitung und Beantwortung Ihrer Support-Anfrage.
+- **Rechtsgrundlage:** Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche oder vertragliche Maßnahmen) bzw. Art. 6 Abs. 1 lit. f DSGVO (unser berechtigtes Interesse an einer verlässlichen Nutzerbetreuung).
+- **Speicherdauer:** Ihre Anfragedaten werden gelöscht, sobald der Sachverhalt abschließend geklärt ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
 
 ---
 
-## 10. Your Rights
+### 5. Speicherorte, Apple-Plattform & Dritte
 
-You have the following rights regarding your personal data:
+#### a) Lokale Speicherung & Widgets
+Alle Daten werden im abgeschirmten Sandbox-Speicher auf Ihrem Gerät abgelegt. Zur Bereitstellung von iOS-Widgets und Apple Watch Komplikationen werden aktuelle Tagessummen in einem lokalen App-Group-Container (`group.com.vamit.beanie`) auf Ihrem persönlichen Endgerät gespeichert.
 
-- **Right of Access (Art. 15 GDPR):** You can request information about the data we hold. Given our Privacy by Design approach, this typically only includes an anonymous PostHog analytics ID.
-- **Right to Erasure (Art. 17 GDPR):** You can delete all local data at any time using the "Delete All Data" button in the App's Settings, which permanently erases all local app data, resets your analytics ID, and signs you out of RevenueCat — restoring the App to its initial installation state. Alternatively, uninstalling the App achieves the same result.
-- **Right to Withdraw Consent (Art. 7 (3) GDPR):** You can withdraw your consent to analytics at any time with effect for the future via the "Share anonymous usage data" toggle in the App's Settings.
-- **Right to Object (Art. 21 GDPR):** You may object to processing based on legitimate interests at any time.
-- **Right to Lodge a Complaint (Art. 77 GDPR):** You have the right to lodge a complaint with a supervisory authority. The competent authority for VAMIT UG is: Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW), Kavalleriestraße 2–4, 40213 Düsseldorf, https://www.ldi.nrw.de
+#### b) Apple als Plattform-Provider (App Store & Diagnosedaten)
+Der Vertrieb, die Installation und Updates der Applikation erfolgen über den Apple App Store.
+- Sofern Sie in den Systemeinstellungen Ihres Geräts die Übermittlung von Diagnose- und Nutzungsdaten aktiviert haben („Mit App-Entwicklern teilen“), stellt Apple uns anonymisierte Absturzberichte und statistische Auswertungen zur Verfügung.
+- Diese Daten lassen zu keinem Zeitpunkt Rückschlüsse auf Ihre Person zu und dienen ausschließlich der Behebung von Softwarefehlern.
+- Weitere Hinweise zur Datenverarbeitung durch Apple finden Sie in Apples Datenschutzrichtlinie unter [https://www.apple.com/legal/privacy/](https://www.apple.com/legal/privacy/).
 
-To exercise your rights, please contact us at: info@vam-it.com
+#### c) Apple Watch Synchronisation
+Bei der Nutzung der Apple Watch Begleit-App erfolgt der Datenabgleich direkt über den Apple-Systemdienst `WatchConnectivity` zwischen Ihren gekoppelten Geräten. Wir als Entwickler erhalten hierbei keinerlei Daten.
 
----
-
-## 11. Data Security
-
-We follow a **Privacy by Design** approach:
-
-- The most sensitive data (camera feed) is processed exclusively on-device and never transmitted to our servers.
-- All network communication (e.g., PostHog analytics) is encrypted via TLS/SSL.
-- This landing page is served exclusively over HTTPS.
+#### d) Keine Drittanbieter-Analyse, Werbung oder Tracker
+Wir geben keinerlei Daten an Dritte weiter. Beanie enthält keine Werbenetzwerke, keine externen Analysedienste (wie Google Firebase, Meta SDK, Mixpanel) und keine Social-Media-Tracker.
 
 ---
 
-## 12. Children's Privacy
-
-This App is not directed at children under the age of 13. We do not knowingly collect personal data from children. If you believe a child has provided us with personal data, please contact us at info@vam-it.com and we will delete it promptly.
-
----
-
-## 13. Feedback (Featurebase)
-
-Within the App, we provide a link to an external feedback platform ("Featurebase"), where you can submit feature requests and feedback anonymously, without registration or login. When you tap this link, you leave the App and are redirected to Featurebase's website in your device's browser. Any data you choose to enter there (e.g. feedback text) is processed directly by Featurebase, Inc., not by us. We do not receive, store, or have access to any data submitted on that platform. Please refer to Featurebase's own privacy policy for information on how they process data.
+### 6. Speicherdauer & Datenlöschung
+- Ihre Daten bleiben lokal auf Ihrem Gerät gespeichert, bis Sie diese löschen oder die App deinstallieren.
+- **Einzelne Einträge löschen:** Sie können einzelne Kaffeeeinträge direkt in der Historie-Ansicht löschen.
+- **Vollständiges Zurücksetzen:** In den Einstellungen können Sie über *„Reset All App Data“* sämtliche Einträge, Statistiken und Badges sofort und dauerhaft löschen.
+- **App-Deinstallation:** Beim Löschen der App werden sämtliche Sandbox-Dateien und lokalen Container rückstandslos von Ihrem Gerät entfernt.
 
 ---
 
-## 14. Advertising & Install Attribution (Meta / Apple SKAdNetwork)
+### 7. Ihre Rechte nach der DSGVO
+Nach europäischem Datenschutzrecht stehen Ihnen folgende Rechte zu:
+- **Auskunft (Art. 15 DSGVO):** Sie können alle gespeicherten Daten direkt in der App einsehen.
+- **Berichtigung (Art. 16 DSGVO):** Anpassung von Limits und Einstellungen direkt in der App.
+- **Löschung (Art. 17 DSGVO):** Vollständiges Löschen über „Reset All App Data“ oder App-Entfernung.
+- **Einschränkung der Verarbeitung (Art. 18 DSGVO)** sowie **Datenübertragbarkeit (Art. 20 DSGVO)**.
+- **Widerspruchsrecht (Art. 21 DSGVO):** Sie können der Verarbeitung jederzeit widersprechen.
+- **Widerruf von Einwilligungen (Art. 7 Abs. 3 DSGVO):** Benachrichtigungsrechte können jederzeit in den iOS-Einstellungen widerrufen werden.
 
-We advertise the App on Facebook and Instagram (Meta Platforms Ireland Ltd.). To measure whether an installation resulted from one of our ads, we use Apple's SKAdNetwork framework. The App does not contain any Meta/Facebook SDK and does not access your advertising identifier (IDFA).
+#### Zuständige Aufsichtsbehörde (Art. 77 DSGVO)
+Bei Beschwerden können Sie sich an die für unseren Sitz in Nordrhein-Westfalen zuständige Aufsichtsbehörde wenden:
 
-How it works: Attribution is determined by Apple on your device. Apple then sends a cryptographically signed, anonymous and aggregated notification to Meta, containing only the campaign and the fact that an installation occurred. No device identifiers, usage data, health data or other personal data from the App are transmitted to Meta or to us.
-
-Display of ads: The display and targeting of ads on Facebook and Instagram is the sole responsibility of Meta. Please refer to Meta's privacy policy: https://www.facebook.com/privacy/policy
-
-Legal Basis: To the extent personal data is processed at all, our legitimate interest in measuring the effectiveness of our advertising (Art. 6 (1) (f) GDPR).
+**Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)**  
+Kavalleriestraße 2–4, 40213 Düsseldorf  
+Telefon: 0211 / 38424-0  
+E-Mail: poststelle@ldi.nrw.de  
+Website: [https://www.ldi.nrw.de](https://www.ldi.nrw.de)
 
 ---
 
-## 15. Changes to This Privacy Policy
+### 8. Änderungen dieser Datenschutzerklärung
+Wir behalten uns vor, diese Erklärung bei Funktionserweiterungen der App oder geänderten rechtlichen Vorgaben anzupassen. Die jeweils aktuelle Fassung ist stets in der App und im App Store abrufbar.
 
-We may update this Privacy Policy from time to time to reflect changes in the App or applicable law. The current version is always available at vamiapp.com/privacy. Material changes will be communicated via an in-app notice where required by law.
+---
+---
+
+## Part 2: Privacy Policy (English)
+
+### 1. Overview & Privacy Principles
+Protecting your personal data is a top priority for us. The **"Beanie"** application (including its widgets and Apple Watch companion app) is built strictly following the principles of **Privacy by Design** and **Data Minimization**.
+
+**Key Highlights:**
+- All data (logged coffees, estimated caffeine amounts, daily limits, streaks, and XP) is stored **exclusively locally on your devices**.
+- We run **no remote servers**, create **no user accounts**, and integrate **no third-party analytics, tracking, or advertising SDKs**.
+- We as the developer never have access to your personal logging data.
 
 ---
 
-*VAMIT UG (haftungsbeschränkt) · Petersfeldstraße 16 · 46395 Bocholt · Germany*
+### 2. Data Controller (Art. 4(7) GDPR)
+The data controller responsible under the General Data Protection Regulation (GDPR) is:
+
+**VAMIT UG (haftungsbeschränkt)**  
+Petersfeldstraße 16  
+46395 Bocholt  
+Germany  
+
+**Represented by Managing Director:**  
+Veselin Kolev  
+
+**Contact:**  
+Email: info@vam-it.com  
+Website: https://vam-it.com  
+Commercial Register: Local Court (Amtsgericht) Coesfeld, HRB 23796  
+
+---
+
+### 3. Data Processing within the App
+
+#### a) Coffee & Caffeine Consumption History
+- **Data processed:** Timestamp of entry, selected coffee type (e.g. Espresso, Flat White, Cappuccino), volume in milliliters (ml) or ounces (oz), calculated estimated caffeine amount in milligrams (mg), manually selected location category ("Home", "Office", "Cafe"), and optional notes/tags.
+- **Purpose:** Calculating your daily caffeine total, charting your daily/weekly progress, and monitoring your personal daily limit.
+- **Legal Basis:** Art. 6(1)(b) GDPR (Performance of contract / providing requested app functionality).
+
+#### b) Target Settings & App Preferences
+- **Data processed:** Personal daily caffeine limit (e.g. 400 mg reference limit), volume measurement unit ("ml" or "oz"), interface preferences (dark mode), and onboarding completion status.
+- **Purpose:** Personalizing caffeine calculations and customizing the visual interface.
+- **Legal Basis:** Art. 6(1)(b) GDPR.
+
+#### c) Gamification & Achievements
+- **Data processed:** Counters for achievement badges (e.g. daily streaks, unlocked milestones, levels, and earned XP with companion Bean).
+- **Purpose:** Providing interactive motivational mechanics within the app.
+- **Legal Basis:** Art. 6(1)(b) GDPR.
+
+#### d) No GPS / Geographic Location Tracking
+- You can categorize individual brews using labels such as **"Home"**, **"Office"**, or **"Cafe"**.
+- **Important:** These labels are **not location data**. The app never accesses device location services (GPS, Wi-Fi, or cellular networks) and collects no geographic coordinates. It is solely a manually selected categorical tag.
+
+#### e) Local Notifications
+- **Data processed:** Notification permission status and preferred morning reminder time (default: 09:00 AM).
+- **Purpose:** Local morning reminder to log your first brew and maintain your streak.
+- **Important:** Notifications are triggered **entirely locally on your device** by the operating system. No device tokens or push data are sent to external servers.
+- **Legal Basis:** Art. 6(1)(a) GDPR (Consent granted via native system dialog). Permissions may be withdrawn at any time in iOS Settings.
+
+---
+
+### 4. Contacting Support via Email
+When you contact us via email for support or feedback, your email address and any information you provide (e.g., name, inquiry details) are stored by us.
+- **Purpose:** Handling and responding to your support inquiry.
+- **Legal Basis:** Art. 6(1)(b) GDPR (pre-contractual or contractual fulfillment) or Art. 6(1)(f) GDPR (our legitimate interest in providing reliable user support).
+- **Retention:** Your inquiry data is deleted once the matter has been conclusively resolved, unless statutory retention obligations apply.
+
+---
+
+### 5. Storage Locations, Apple Platform & Third Parties
+
+#### a) Local Storage & Widgets
+All data is stored in the sandboxed, private storage on your device. To provide iOS Widgets and Apple Watch complication updates, current totals are stored in a local, app-group container (`group.com.vamit.beanie`) on your personal device.
+
+#### b) Apple as Platform Provider (App Store & Diagnostics)
+The distribution, installation, and updating of the application are handled through Apple's App Store.
+- If you have enabled the sharing of diagnostic and usage information in your iOS Settings ("Share with App Developers"), Apple may provide us with anonymized crash logs and usage statistics.
+- This information does not identify you personally and is used solely for stability and performance improvements.
+- For more information on data processing by Apple, please refer to Apple's Privacy Policy at [https://www.apple.com/legal/privacy/](https://www.apple.com/legal/privacy/).
+
+#### c) Apple Watch Synchronization
+When using the Beanie Apple Watch companion app, synchronization is performed via Apple's native `WatchConnectivity` system service between your paired devices. We as the provider receive no data in this process.
+
+#### d) No Third-Party Analytics, Advertising, or Tracking
+We do not share any data with third parties. Beanie does not integrate any advertising networks, third-party analytics services, or social media tracking libraries.
+
+---
+
+### 6. Data Retention & Deletion
+- Your data remains stored locally on your device until you choose to delete it or uninstall the app.
+- **Deleting Single Entries:** You can remove individual coffee logs directly from your history view.
+- **Full Reset:** In Settings, tapping *"Reset All App Data"* permanently and immediately deletes all logged entries, statistics, and badges.
+- **Uninstalling:** Deleting the app removes all sandboxed files and local data from your device.
+
+---
+
+### 7. Your Rights under the GDPR
+Under European data protection law, you have the following rights:
+- **Access (Art. 15 GDPR):** View all stored data directly within the app.
+- **Rectification (Art. 16 GDPR):** Correct or update your presets and limits in Settings.
+- **Erasure (Art. 17 GDPR):** Delete all data via *"Reset All App Data"* or app removal.
+- **Restriction of Processing (Art. 18 GDPR):** Cease using the app at any time.
+- **Data Portability (Art. 20 GDPR):** Receive your data in a portable format where applicable.
+- **Right to Object (Art. 21 GDPR):** Object to processing at any time.
+- **Withdrawal of Consent (Art. 7(3) GDPR):** Revoke notification permissions anytime in iOS Settings.
+
+#### Supervisory Authority
+You have the right to lodge a complaint with a competent supervisory authority. The authority responsible for our registered office in North Rhine-Westphalia (Germany) is:
+
+**Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)**  
+Kavalleriestraße 2–4, 40213 Düsseldorf, Germany  
+Phone: +49 (0)211 38424-0  
+Email: poststelle@ldi.nrw.de  
+Website: [https://www.ldi.nrw.de](https://www.ldi.nrw.de)
+
+---
+
+### 8. Changes to this Policy
+We may update this Privacy Policy from time to time. The latest version will always remain accessible within the app and on the App Store product page.

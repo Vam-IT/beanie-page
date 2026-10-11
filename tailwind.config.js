@@ -8,10 +8,23 @@ export default {
     extend: {
       colors: {
         vami: {
-          dark: "#0F172A", // Dunkler Hintergrund
-          primary: "#F97316", // Orange Akzent
-          secondary: "#334155", // Sekundärfarbe
-          glass: "rgba(255, 255, 255, 0.1)", // Glassmorphism
+          dark: "#141210", // Warm Dark Roast Hintergrund
+          primary: "#FF5722", // Beanie Flame Orange Akzent
+          secondary: "#25211D", // Warm Mocha Sekundärfarbe
+          glass: "rgba(255, 255, 255, 0.08)", // Glassmorphism
+        },
+        beanie: {
+          dark: "#141210",
+          espresso: "#24120A",
+          mocha: "#32170D",
+          amber: "#D97706",
+          caramel: "#FBDBB0",
+          cream: "#FBF9F1",
+          gold: "#FFC800",
+          orange: "#FF5722",
+          green: "#58CC02",
+          surface: "#1B1815",
+          border: "#3E332B"
         }
       },
       fontFamily: {

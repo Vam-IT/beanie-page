@@ -1,650 +1,447 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { ShieldCheck, CheckCircle2, Lock, Smartphone, Globe, Mail, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Privacy = () => {
+  const [lang, setLang] = useState('de'); // 'de' | 'en'
+
   return (
-    <div className="container mx-auto px-6 py-24 max-w-4xl">
-      {/* English Version */}
+    <div className="container mx-auto px-6 py-28 max-w-4xl text-gray-200">
+      {/* Back Link & Header */}
+      <div className="mb-8 flex items-center justify-between flex-wrap gap-4">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-amber-400 transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          <span>Zurück zur Startseite</span>
+        </Link>
+
+        {/* Language Switcher */}
+        <div className="glass-ultra p-1 rounded-full border border-white/10 flex items-center gap-1">
+          <button
+            onClick={() => setLang('de')}
+            className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+              lang === 'de'
+                ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-md'
+                : 'text-gray-400 hover:text-white'
+            }`}
+          >
+            Deutsch (DE)
+          </button>
+          <button
+            onClick={() => setLang('en')}
+            className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+              lang === 'en'
+                ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-md'
+                : 'text-gray-400 hover:text-white'
+            }`}
+          >
+            English (EN)
+          </button>
+        </div>
+      </div>
+
+      {/* Main Privacy Card */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="glass-effect p-8 rounded-2xl mb-8"
+        className="glass-card rounded-3xl p-8 sm:p-12 border border-white/10 shadow-2xl relative overflow-hidden"
       >
-        <h1 className="text-4xl font-bold text-gradient mb-4">Privacy Policy - UNREP - Unlock Apps with Reps</h1>
-        <p className="text-sm text-gray-400 mb-8">Last Updated: October 2026</p>
+        {/* Ambient Top Glow */}
+        <div className="absolute top-0 right-1/4 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="space-y-6 text-gray-300">
-          <p className="leading-relaxed">
-            Your privacy is our top priority. This Privacy Policy explains how the App UNREP - Unlock Apps with Reps
-            (hereinafter &quot;the App&quot;) processes data and what your rights are.
-          </p>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">1. Data Controller</h2>
-            <p className="leading-relaxed mb-3">Responsible for data processing in this App is:</p>
-            <p className="leading-relaxed">
-              VAMIT UG (haftungsbeschränkt)<br />
-              Petersfeldstraße 16<br />
-              46395 Bocholt<br />
-              Germany
-            </p>
-            <p className="leading-relaxed mt-3">
-              Managing Director: Veselin Kolev<br />
-              Commercial Register: Amtsgericht Coesfeld, HRB 23796<br />
-              Email: info@vam-it.com
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">2. Hosting of this Privacy Policy Page</h2>
-            <p className="leading-relaxed">
-              This Privacy Policy is published on our App landing page (vamiapp.com), which is hosted
-              via <span className="text-vami-primary font-semibold">GitHub Pages</span> (GitHub, Inc.,
-              88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA). When you visit this page,
-              your browser automatically transmits technical access data (IP address, browser type,
-              date/time, requested URL) to GitHub&apos;s servers. GitHub is certified under the
-              <span className="text-vami-primary font-semibold"> EU-U.S. Data Privacy Framework (DPF)</span>,
-              ensuring an adequate level of data protection pursuant to Art. 45 GDPR. Further
-              information:{' '}
-              <a
-                href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-vami-primary hover:text-orange-400 transition-colors"
-              >
-                GitHub Privacy Statement
-              </a>
-              .
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">3. Camera Usage & On-Device Processing (Privacy by Design)</h2>
-            <p className="leading-relaxed mb-3">
-              The core feature of the App is counting your push-ups using your device&apos;s camera.
-            </p>
-            <ul className="space-y-2 ml-4">
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Type of Processing:</span> We use Apple&apos;s Vision Framework for real-time body pose estimation.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">On-Device Only:</span> All camera data is processed locally on your device. No video or images are ever recorded, stored, or transmitted to any server.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">No Storage or Transmission:</span> The visual data is discarded immediately after movement analysis is performed in the device&apos;s volatile memory (RAM).
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Legal Basis:</span> Performance of a contract (Art. 6 (1) (b) GDPR) and your explicit consent when granting camera permissions (Art. 6 (1) (a) GDPR).
-              </li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">4. Analytics & App Improvement (PostHog)</h2>
-            <p className="leading-relaxed mb-3">
-              We use PostHog to monitor app stability and improve features. You have full control over this via the <span className="text-vami-primary font-semibold">&quot;Share anonymous usage data&quot;</span> toggle in the App&apos;s Settings and the initial in-app consent screen.
-            </p>
-            <ul className="space-y-2 ml-4">
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Service Provider:</span> PostHog Inc., EU Cloud (server location: Frankfurt, Germany). Data remains within the European Economic Area (EEA) at all times. No analytics data is transferred to the United States.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">IP Masking:</span> IP addresses and GeoIP location tracking are completely disabled/scrubbed on-device (<span className="font-mono">$ip: &quot;0.0.0.0&quot;</span>).
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Toggle enabled (opted in):</span> If you consent to sharing usage data, we collect pseudonymous usage statistics (e.g. features used, session duration) linked to a persistent anonymous ID. This data cannot be used to identify you personally.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Toggle disabled (opted out):</span> If you disable &quot;Share anonymous usage data&quot; in Settings or decline the consent prompt, PostHog is fully deactivated. No analytics data leaves your device.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Retention:</span> Anonymous analytics data is retained for a maximum of 12 months, after which it is automatically deleted.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Legal Basis:</span> Consent (Art. 6 (1) (a) GDPR).
-              </li>
-            </ul>
-            <p className="leading-relaxed mt-3">
-              You can withdraw your consent at any time via the <span className="text-vami-primary font-semibold">&quot;Share anonymous usage data&quot;</span> toggle in the App&apos;s Settings.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">5. In-App Purchases (RevenueCat)</h2>
-            <p className="leading-relaxed mb-3">
-              We use RevenueCat to manage subscriptions and in-app purchases.
-            </p>
-            <ul className="space-y-2 ml-4">
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Data Processed:</span> Purchase history, subscription status, and a randomly generated anonymous App User ID. This ID is not linked to your name, email address, or Apple ID.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Payment Processing:</span> All actual payment details (credit card, Apple ID billing information) are processed exclusively by Apple and are never accessible to us or to RevenueCat.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Purpose:</span> Verifying purchases, managing subscription status, and unlocking premium features.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Data Sharing:</span> RevenueCat acts as our data processor for this purpose and does not use this data for advertising or share it with third parties for marketing purposes.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Legal Basis:</span> Performance of a contract (Art. 6 (1) (b) GDPR).
-              </li>
-            </ul>
-            <p className="leading-relaxed mt-3">
-              Further information:{' '}
-              <a
-                href="https://www.revenuecat.com/privacy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-vami-primary hover:text-orange-400 transition-colors"
-              >
-                RevenueCat Privacy Policy
-              </a>
-              .
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">6. Health Data (Apple HealthKit)</h2>
-            <p className="leading-relaxed mb-3">
-              The App integrates with Apple HealthKit to store your workout activity and to power the app-unlock reward feature.
-            </p>
-            <ul className="space-y-2 ml-4">
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Purpose:</span> We write your push-up workouts (repetitions, duration, calories) to HealthKit so they appear in the Apple Health app. We also read relevant HealthKit data to automatically unlock apps you have blocked as a training incentive.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">On-Device Only:</span> All HealthKit data is read and written exclusively on your device via Apple&apos;s HealthKit framework. It is never transmitted to our servers, to PostHog, or to any other third party.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">No Advertising Use:</span> In accordance with Apple&apos;s Developer Program guidelines, HealthKit data is never used for advertising, marketing, or shared with data brokers.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Deletion:</span> You can revoke HealthKit access at any time in iOS Settings → Privacy & Security → Health. Uninstalling the App does not delete data already written to Apple Health; this must be managed separately within the Health app.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Legal Basis:</span> Performance of a contract (Art. 6 (1) (b) GDPR) and your explicit consent when granting HealthKit permissions (Art. 6 (1) (a) GDPR).
-              </li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">7. Family Controls / Screen Time (App Blocking Feature)</h2>
-            <p className="leading-relaxed mb-3">
-              The App uses Apple&apos;s Family Controls framework (a restricted Apple API) to let you block distracting apps and &quot;earn back&quot; access to them by completing push-up workouts.
-            </p>
-            <ul className="space-y-2 ml-4">
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Purpose:</span> Gamification — motivating consistent training by linking workout completion to temporary app access.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">On-Device Only:</span> All information about which apps you choose to block, for how long, and when they are unlocked is stored exclusively on your device (in a local App Group). This information never leaves your device and is never transmitted to our servers or any third party.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">No Usage Monitoring:</span> We do not receive any data about your general app usage, screen time, or which third-party apps are installed on your device.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Legal Basis:</span> Your explicit consent when enabling the Screen Time feature (Art. 6 (1) (a) GDPR).
-              </li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">8. Local Data Storage (UserDefaults)</h2>
-            <p className="leading-relaxed mb-3">
-              Your profile information (e.g. age, gender, weight) and workout statistics (e.g. push-up counts, personal records, goals) are stored locally on your device using iOS UserDefaults.
-            </p>
-            <ul className="space-y-2 ml-4">
-              <li className="leading-relaxed">This data never leaves your device and is never transmitted to our servers.</li>
-              <li className="leading-relaxed">The data is automatically and permanently deleted when you uninstall the App.</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">9. Data We Do Not Collect</h2>
-            <ul className="space-y-2 ml-4">
-              <li className="leading-relaxed">Names, email addresses, or any other directly identifying personal information</li>
-              <li className="leading-relaxed">Payment information (all purchases are handled exclusively by Apple)</li>
-              <li className="leading-relaxed">Location data</li>
-              <li className="leading-relaxed">Contact lists</li>
-              <li className="leading-relaxed">Video or images from the camera (processed on-device only, see Section 3)</li>
-              <li className="leading-relaxed">Health & fitness data or Screen Time/app-blocking data (processed on-device only, see Sections 6 and 7) — we never receive this data on our servers, even though the App requests permission to access it locally on your device</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">10. Your Rights</h2>
-            <p className="leading-relaxed mb-3">You have the following rights regarding your personal data:</p>
-            <ul className="space-y-2 ml-4">
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Right of Access (Art. 15 GDPR):</span> You can request information about the data we hold. Given our Privacy by Design approach, this typically only includes an anonymous PostHog analytics ID.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Right to Erasure (Art. 17 GDPR):</span> You can delete all local data at any time using the "Delete All Data" button in the App's Settings, which permanently erases all local app data, resets your analytics ID, and signs you out of RevenueCat — restoring the App to its initial installation state. Alternatively, uninstalling the App achieves the same result.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Right to Withdraw Consent (Art. 7 (3) GDPR):</span> You can withdraw your consent to analytics at any time with effect for the future via the <span className="text-vami-primary font-semibold">&quot;Share anonymous usage data&quot;</span> toggle in the App&apos;s Settings.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Right to Object (Art. 21 GDPR):</span> You may object to processing based on legitimate interests at any time.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Right to Lodge a Complaint (Art. 77 GDPR):</span> You have the right to lodge a complaint with a supervisory authority. The competent authority for VAMIT UG is Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW), Kavalleriestraße 2-4, 40213 Düsseldorf:{' '}
-                <a
-                  href="https://www.ldi.nrw.de"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-vami-primary hover:text-orange-400 transition-colors"
-                >
-                  www.ldi.nrw.de
-                </a>
-                .
-              </li>
-            </ul>
-            <p className="leading-relaxed mt-3">To exercise your rights, please contact us at: info@vam-it.com</p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">11. Data Security</h2>
-            <p className="leading-relaxed mb-3">We follow a <span className="text-vami-primary font-semibold">Privacy by Design</span> approach:</p>
-            <ul className="space-y-2 ml-4">
-              <li className="leading-relaxed">The most sensitive data (camera feed) is processed exclusively on-device and never transmitted to our servers.</li>
-              <li className="leading-relaxed">All network communication (e.g., PostHog analytics) is encrypted via TLS/SSL.</li>
-              <li className="leading-relaxed">This landing page is served exclusively over HTTPS.</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">12. Children&apos;s Privacy</h2>
-            <p className="leading-relaxed">
-              This App is not directed at children under the age of 13. We do not knowingly collect
-              personal data from children. If you believe a child has provided us with personal data,
-              please contact us at info@vam-it.com and we will delete it promptly.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">13. Feedback (Featurebase)</h2>
-            <p className="leading-relaxed mb-3">
-              Within the App, we provide a link to an external feedback platform (&quot;Featurebase&quot;), where you can submit feature requests and feedback anonymously, without registration or login. When you tap this link, you leave the App and are redirected to Featurebase's website in your device's browser. Any data you choose to enter there (e.g. feedback text) is processed directly by Featurebase, Inc., not by us. We do not receive, store, or have access to any data submitted on that platform. Please refer to Featurebase's own privacy policy for information on how they process data.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">14. Advertising &amp; Install Attribution (Meta / Apple SKAdNetwork)</h2>
-            <p className="leading-relaxed mb-3">
-              We advertise the App on Facebook and Instagram (Meta Platforms Ireland Ltd.). To measure
-              whether an installation resulted from one of our ads, we use Apple&apos;s SKAdNetwork
-              framework. The App does not contain any Meta/Facebook SDK and does not access your
-              advertising identifier (IDFA).
-            </p>
-            <p className="leading-relaxed mb-3">
-              <span className="text-vami-primary font-semibold">How it works:</span> Attribution is
-              determined by Apple on your device. Apple then sends a cryptographically signed, anonymous
-              and aggregated notification to Meta, containing only the campaign and the fact that an
-              installation occurred. No device identifiers, usage data, health data or other personal
-              data from the App are transmitted to Meta or to us.
-            </p>
-            <p className="leading-relaxed mb-3">
-              <span className="text-vami-primary font-semibold">Display of ads:</span> The display
-              and targeting of ads on Facebook and Instagram is the sole responsibility of Meta. Please
-              refer to Meta&apos;s privacy policy:{' '}
-              <a
-                href="https://www.facebook.com/privacy/policy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-vami-primary hover:text-orange-400 transition-colors"
-              >
-                https://www.facebook.com/privacy/policy
-              </a>
-            </p>
-            <p className="leading-relaxed">
-              <span className="text-vami-primary font-semibold">Legal Basis:</span> To the extent
-              personal data is processed at all, our legitimate interest in measuring the effectiveness
-              of our advertising (Art. 6 (1) (f) GDPR).
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">15. Changes to This Privacy Policy</h2>
-            <p className="leading-relaxed">
-              We may update this Privacy Policy from time to time to reflect changes in the App or
-              applicable law. The current version is always available at <span className="text-vami-primary font-semibold">vamiapp.com/privacy</span>. Material
-              changes will be communicated via an in-app notice where required by law.
-            </p>
-            <p className="leading-relaxed mt-3 italic">
-              VAMIT UG (haftungsbeschränkt) · Petersfeldstraße 16 · 46395 Bocholt · Germany
-            </p>
-          </section>
+        {/* Top Summary Box */}
+        <div className="mb-10 p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/20">
+          <div className="flex items-center gap-3 mb-3">
+            <ShieldCheck className="w-6 h-6 text-emerald-400" />
+            <h3 className="text-base font-bold text-white">
+              {lang === 'de' ? 'Das Wichtigste auf einen Blick:' : 'Key Highlights:'}
+            </h3>
+          </div>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-gray-300">
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+              <span>
+                {lang === 'de'
+                  ? 'Alle Daten verbleiben zu 100% lokal auf deinen Geräten.'
+                  : 'All data is stored exclusively locally on your devices.'}
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+              <span>
+                {lang === 'de'
+                  ? 'Keine Server, keine Benutzerkonten, kein Cloud-Profil.'
+                  : 'No external servers, no user accounts, no cloud profile.'}
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+              <span>
+                {lang === 'de'
+                  ? 'Kein GPS-Tracking (Orts-Tags sind rein manuell).'
+                  : 'No GPS tracking (location labels are strictly manual).'}
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+              <span>
+                {lang === 'de'
+                  ? 'Keine Analyse-SDKs, kein Meta-, Firebase- oder Werbetracking.'
+                  : 'No analytics SDKs, no Meta, Firebase, or advertising tracking.'}
+              </span>
+            </li>
+          </ul>
         </div>
-      </motion.div>
 
-      {/* German Version */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="glass-effect p-8 rounded-2xl"
-      >
-        <h1 className="text-4xl font-bold text-gradient mb-4">Datenschutzerklärung - UNREP - Unlock Apps with Reps</h1>
-        <p className="text-sm text-gray-400 mb-8">Stand: Oktober 2026</p>
+        {lang === 'de' ? (
+          /* ================= DEUTSCH ================= */
+          <div className="space-y-8 text-gray-300 text-sm leading-relaxed">
+            <div>
+              <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight mb-2">
+                Datenschutzerklärung
+              </h1>
+              <p className="text-xs text-amber-400 font-medium">
+                App: Beanie (iOS &amp; watchOS) · Stand: Oktober 2026
+              </p>
+            </div>
 
-        <div className="space-y-6 text-gray-300">
-          <p className="leading-relaxed">
-            Der Schutz deiner Privatsphäre ist uns äußerst wichtig. Diese Datenschutzerklärung erklärt,
-            wie die App UNREP - Unlock Apps with Reps (nachfolgend &quot;die App&quot;) Daten verarbeitet und welche Rechte
-            du hast.
-          </p>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">1. Präambel &amp; Grundsatz</h2>
+              <p>
+                Der Schutz Ihrer persönlichen Daten ist uns ein zentrales Anliegen. Die App <strong>„Beanie“</strong> (einschließlich der Widgets und der Begleit-App für die Apple Watch) folgt den Prinzipien von <strong>„Privacy by Design“</strong> und <strong>„Datensparsamkeit“</strong>.
+              </p>
+              <p>
+                Sämtliche Daten (erfasste Kaffees, geschätzte Koffeinmengen, Tageslimits, Streaks und Erfahrungspunkte) werden <strong>ausschließlich lokal auf Ihren Endgeräten</strong> gespeichert. Wir betreiben keine eigenen Server, erheben keine Benutzerkonten und setzen keinerlei Analyse-, Tracking- oder Werbe-SDKs ein. Wir haben zu keinem Zeitpunkt Zugriff auf Ihre protokollierten Daten.
+              </p>
+            </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">1. Verantwortlicher</h2>
-            <p className="leading-relaxed mb-3">Verantwortlich für die Datenverarbeitung in dieser App ist:</p>
-            <p className="leading-relaxed">
-              VAMIT UG (haftungsbeschränkt)<br />
-              Petersfeldstraße 16<br />
-              46395 Bocholt<br />
-              Deutschland
-            </p>
-            <p className="leading-relaxed mt-3">
-              Geschäftsführer: Veselin Kolev<br />
-              Handelsregister: Amtsgericht Coesfeld, HRB 23796<br />
-              E-Mail: info@vam-it.com
-            </p>
-          </section>
+            <section className="space-y-3 p-5 rounded-2xl bg-white/5 border border-white/5">
+              <h2 className="text-xl font-bold text-white">2. Verantwortlicher (Art. 4 Nr. 7 DSGVO)</h2>
+              <p>Verantwortliche Stelle für die Datenverarbeitung im Sinne der Datenschutz-Grundverordnung (DSGVO):</p>
+              <div className="text-white space-y-1">
+                <p className="font-semibold">VAMIT UG (haftungsbeschränkt)</p>
+                <p>Petersfeldstraße 16</p>
+                <p>46395 Bocholt, Deutschland</p>
+                <p className="pt-2"><strong className="text-gray-300">Vertreten durch die Geschäftsführung:</strong> Veselin Kolev</p>
+                <p><strong className="text-gray-300">Handelsregister:</strong> Amtsgericht Coesfeld, HRB 23796</p>
+                <p><strong className="text-gray-300">E-Mail für Datenschutz &amp; Support:</strong> <a href="mailto:info@vam-it.com" className="text-amber-400 hover:underline">info@vam-it.com</a></p>
+                <p><strong className="text-gray-300">Website:</strong> <a href="https://vam-it.com" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">https://vam-it.com</a></p>
+              </div>
+            </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">2. Hosting dieser Datenschutzseite</h2>
-            <p className="leading-relaxed">
-              Diese Datenschutzerklärung ist auf unserer App-Landingpage (vamiapp.com) veröffentlicht,
-              die über <span className="text-vami-primary font-semibold">GitHub Pages</span> (GitHub,
-              Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA) gehostet wird. Beim
-              Aufruf dieser Seite übermittelt dein Browser automatisch technische Zugriffsdaten
-              (IP-Adresse, Browsertyp, Datum/Uhrzeit, aufgerufene URL) an die Server von GitHub.
-              GitHub ist unter dem
-              <span className="text-vami-primary font-semibold"> EU-U.S. Data Privacy Framework (DPF)</span>
-              zertifiziert, wodurch ein angemessenes Datenschutzniveau gemäß Art. 45 DSGVO gewährleistet
-              ist. Weitere Informationen:{' '}
-              <a
-                href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-vami-primary hover:text-orange-400 transition-colors"
-              >
-                GitHub Privacy Statement
-              </a>
-              .
-            </p>
-          </section>
+            <section className="space-y-4">
+              <h2 className="text-xl font-bold text-white">3. Datenverarbeitung innerhalb der App</h2>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">3. Kamera-Nutzung & lokale Analyse (On-Device, Privacy by Design)</h2>
-            <p className="leading-relaxed mb-3">
-              Die Kernfunktion der App besteht darin, deine Liegestütze mithilfe der Kamera zu zählen.
-            </p>
-            <ul className="space-y-2 ml-4">
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Art der Daten:</span> Live-Videostream der Kamera (nur im Arbeitsspeicher, keine Aufzeichnung).
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Zweck:</span> Analyse der Körperhaltung (Pose Estimation) zur Bewegungserkennung mittels Apple Vision Framework.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Ausschließlich On-Device:</span> Die gesamte Verarbeitung erfolgt lokal auf deinem Gerät. Es werden keine Bilder oder Videos gespeichert oder an Server übertragen.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Keine Speicherung:</span> Die Bilddaten werden nach der Analyse im RAM sofort verworfen.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Rechtsgrundlage:</span> Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO) sowie deine explizite Einwilligung beim erstmaligen Zugriff auf die Kamera (Art. 6 Abs. 1 lit. a DSGVO).
-              </li>
-            </ul>
-          </section>
+              <div className="space-y-2">
+                <h3 className="font-semibold text-amber-300">a) Kaffee- und Konsumprotokoll</h3>
+                <p>
+                  <strong>Erfasste Daten:</strong> Datum und Uhrzeit des Eintrags, gewählte Kaffeesorte (z. B. Espresso, Cappuccino, Flat White, Filterkaffee), Portionsgröße in Millilitern (ml) oder Unzen (oz), errechnete geschätzte Koffeinmenge in Milligramm (mg), manuell gewähltes Orts-Label („Home“, „Office“, „Cafe“) sowie optionale Notizen und Geschmacks-Tags.
+                </p>
+                <p>
+                  <strong>Zweck:</strong> Berechnung der täglichen Koffeinsumme, Anzeige Ihres Verlaufs und Abgleich mit Ihrem gewählten Tageslimit.
+                </p>
+                <p>
+                  <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw. Bereitstellung der von Ihnen gewünschten App-Funktionen).
+                </p>
+              </div>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">4. Analyse & App-Verbesserung (PostHog)</h2>
-            <p className="leading-relaxed mb-3">
-              Wir nutzen den Analysedienst PostHog, um Fehler zu beheben, die Stabilität der App zu überwachen und Funktionen zu verbessern. Du hast die volle Kontrolle hierüber über den Schalter <span className="text-vami-primary font-semibold">&quot;Anonyme Nutzungsdaten teilen&quot;</span> in den Einstellungen der App sowie den vorgeschalteten Einwilligungsdialog.
-            </p>
-            <ul className="space-y-2 ml-4">
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Anbieter:</span> PostHog Inc., EU-Cloud (Serverstandort: Frankfurt, Deutschland). Deine Daten verbleiben jederzeit innerhalb des Europäischen Wirtschaftsraums (EWR). Eine Übermittlung in die USA findet nicht statt.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">IP-Maskierung:</span> IP-Adressen und GeoIP-Standortdaten werden clientseitig vollständig verworfen und nicht erfasst (<span className="font-mono">$ip: &quot;0.0.0.0&quot;</span>).
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Bei erteilter Einwilligung (Opt-In):</span> Wenn du der Erfassung zustimmst, erfassen wir pseudonyme Nutzungsstatistiken (z. B. genutzte Funktionen, Sitzungsdauer) verknüpft mit einer zufällig generierten, persistenten anonymen ID (UUID). Diese Daten lassen zu keinem Zeitpunkt Rückschlüsse auf deine reale Identität zu.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Bei Ablehnung / deaktiviertem Schalter (Opt-Out):</span> Wenn du die Option deaktivierst oder ablehnst, ist PostHog vollständig deaktiviert. Es verlassen keinerlei Analysedaten dein Gerät.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Speicherdauer:</span> Anonyme Analysedaten werden maximal 12 Monate gespeichert und danach automatisch gelöscht.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Rechtsgrundlage:</span> Deine ausdrückliche Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).
-              </li>
-            </ul>
-            <p className="leading-relaxed mt-3">
-              Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft über den Schalter <span className="text-vami-primary font-semibold">&quot;Anonyme Nutzungsdaten teilen&quot;</span> in den Einstellungen der App widerrufen.
-            </p>
-          </section>
+              <div className="space-y-2">
+                <h3 className="font-semibold text-amber-300">b) Zieleinstellungen &amp; App-Präferenzen</h3>
+                <p>
+                  <strong>Erfasste Daten:</strong> Persönliches tägliches Koffein-Limit (z. B. 400 mg Richtwert), Volumeneinheit („ml“ oder „oz“), Interface-Einstellungen (z. B. Dark Mode) und Onboarding-Status.
+                </p>
+                <p>
+                  <strong>Zweck:</strong> Personalisierung der Berechnungen und optische Darstellung der App.
+                </p>
+                <p>
+                  <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO.
+                </p>
+              </div>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">5. In-App-Käufe (RevenueCat)</h2>
-            <p className="leading-relaxed mb-3">
-              Wir nutzen RevenueCat zur Verwaltung von Abonnements und In-App-Käufen.
-            </p>
-            <ul className="space-y-2 ml-4">
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Verarbeitete Daten:</span> Kaufhistorie, Abonnementstatus sowie eine zufällig generierte, anonyme App-User-ID. Diese ID ist nicht mit deinem Namen, deiner E-Mail-Adresse oder deiner Apple-ID verknüpft.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Zahlungsabwicklung:</span> Sämtliche eigentlichen Zahlungsdaten (Kreditkarte, Apple-ID-Abrechnungsinformationen) werden ausschließlich von Apple verarbeitet und sind weder für uns noch für RevenueCat einsehbar.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Zweck:</span> Verifizierung von Käufen, Verwaltung des Abonnementstatus und Freischaltung von Premium-Funktionen.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Datenweitergabe:</span> RevenueCat fungiert für diesen Zweck als unser Auftragsverarbeiter und nutzt diese Daten nicht für Werbezwecke oder gibt sie zu Marketingzwecken an Dritte weiter.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Rechtsgrundlage:</span> Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO).
-              </li>
-            </ul>
-            <p className="leading-relaxed mt-3">
-              Weitere Informationen:{' '}
-              <a
-                href="https://www.revenuecat.com/privacy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-vami-primary hover:text-orange-400 transition-colors"
-              >
-                RevenueCat Datenschutzerklärung
-              </a>
-              .
-            </p>
-          </section>
+              <div className="space-y-2">
+                <h3 className="font-semibold text-amber-300">c) Gamification &amp; Errungenschaften</h3>
+                <p>
+                  <strong>Erfasste Daten:</strong> Zählerstände für Errungenschaften (z. B. Anzahl aufeinanderfolgender Tage / Streaks, erreichte Abzeichen, Level und gesammelte Erfahrungspunkte/XP mit Begleiter Bean).
+                </p>
+                <p>
+                  <strong>Zweck:</strong> Bereitstellung der spielerischen Motivations- und Begleiterfunktionen.
+                </p>
+                <p>
+                  <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO.
+                </p>
+              </div>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">6. Gesundheitsdaten (Apple HealthKit)</h2>
-            <p className="leading-relaxed mb-3">
-              Die App ist mit Apple HealthKit verbunden, um deine Trainingsaktivität zu speichern und die App-Freischaltungs-Funktion als Belohnung zu ermöglichen.
-            </p>
-            <ul className="space-y-2 ml-4">
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Zweck:</span> Wir schreiben deine Liegestütz-Workouts (Wiederholungen, Dauer, Kalorien) in HealthKit, damit sie in der Apple Health App erscheinen. Zudem lesen wir relevante HealthKit-Daten, um von dir blockierte Apps als Trainingsanreiz automatisch freizuschalten.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Ausschließlich On-Device:</span> Sämtliche HealthKit-Daten werden ausschließlich lokal auf deinem Gerät über Apples HealthKit-Framework gelesen und geschrieben. Sie werden niemals an unsere Server, an PostHog oder an sonstige Dritte übertragen.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Keine Werbenutzung:</span> Gemäß den Richtlinien des Apple Developer Programs werden HealthKit-Daten niemals für Werbung, Marketing oder die Weitergabe an Datenhändler genutzt.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Löschung:</span> Du kannst den HealthKit-Zugriff jederzeit in den iOS-Einstellungen unter Datenschutz &amp; Sicherheit → Health widerrufen. Die Deinstallation der App löscht keine bereits in Apple Health gespeicherten Daten; dies muss separat in der Health-App verwaltet werden.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Rechtsgrundlage:</span> Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO) sowie deine explizite Einwilligung bei Erteilung der HealthKit-Berechtigung (Art. 6 Abs. 1 lit. a DSGVO).
-              </li>
-            </ul>
-          </section>
+              <div className="space-y-2 p-4 rounded-xl bg-amber-500/10 border border-amber-500/20">
+                <h3 className="font-semibold text-amber-200">d) Keine Standortdaten / Kein GPS-Tracking</h3>
+                <p>
+                  Sie können einzelnen Getränkeeinträgen Labels wie <strong>„Home“</strong>, <strong>„Office“</strong> oder <strong>„Cafe“</strong> zuordnen. Diese Labels sind <strong>keine Geodaten</strong>. Die App greift zu keinem Zeitpunkt auf Ortungsdienste (GPS, WLAN-Ortung oder Mobilfunkdaten) Ihres Geräts zu. Es handelt sich um eine rein manuelle Kategorieauswahl.
+                </p>
+              </div>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">7. Family Controls / Screen Time (App-Blockierungs-Funktion)</h2>
-            <p className="leading-relaxed mb-3">
-              Die App nutzt Apples Family-Controls-Framework (eine geschützte Apple-API), damit du ablenkende Apps blockieren und dir den Zugriff darauf durch absolvierte Liegestütz-Workouts &quot;zurückverdienen&quot; kannst.
-            </p>
-            <ul className="space-y-2 ml-4">
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Zweck:</span> Gamification — Motivation zu regelmäßigem Training durch Verknüpfung von Trainingserfolg mit temporärem App-Zugriff.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Ausschließlich On-Device:</span> Sämtliche Informationen darüber, welche Apps du blockierst, für wie lange und wann sie freigeschaltet werden, werden ausschließlich lokal auf deinem Gerät gespeichert (in einer lokalen App Group). Diese Informationen verlassen dein Gerät nicht und werden nicht an unsere Server oder Dritte übertragen.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Keine Nutzungsüberwachung:</span> Wir erhalten keinerlei Daten über deine allgemeine App-Nutzung, Bildschirmzeit oder darüber, welche Drittanbieter-Apps auf deinem Gerät installiert sind.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Rechtsgrundlage:</span> Deine explizite Einwilligung bei Aktivierung der Screen-Time-Funktion (Art. 6 Abs. 1 lit. a DSGVO).
-              </li>
-            </ul>
-          </section>
+              <div className="space-y-2">
+                <h3 className="font-semibold text-amber-300">e) Lokale Benachrichtigungen</h3>
+                <p>
+                  <strong>Erfasste Daten:</strong> Berechtigungsstatus für Mitteilungen und gewählte morgendliche Erinnerungszeit (Standard: 09:00 Uhr).
+                </p>
+                <p>
+                  <strong>Zweck:</strong> Lokaler Reminder am Morgen, um das Eintragen des ersten Kaffees zu erleichtern und Streaks aufrechtzuerhalten.
+                </p>
+                <p>
+                  <strong>Wichtig:</strong> Benachrichtigungen werden <strong>rein lokal durch das iOS-Betriebssystem</strong> auf Ihrem Gerät ausgelöst. Es werden keine Push-Token oder Gerätekennungen an externe Server übermittelt.
+                </p>
+                <p>
+                  <strong>Rechtsgrundlage:</strong> Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO. Die Berechtigung kann jederzeit in den iOS-Einstellungen widerrufen werden.
+                </p>
+              </div>
+            </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">8. Lokale Datenspeicherung (UserDefaults)</h2>
-            <p className="leading-relaxed mb-3">
-              Deine Profildaten (z. B. Alter, Geschlecht, Gewicht) sowie deine Trainingsdaten (z. B. Anzahl der Liegestütze, persönliche Rekorde, Ziele) werden lokal auf deinem Gerät in den iOS UserDefaults gespeichert.
-            </p>
-            <ul className="space-y-2 ml-4">
-              <li className="leading-relaxed">Diese Daten verlassen dein Gerät nicht und werden nicht an unsere Server übertragen.</li>
-              <li className="leading-relaxed">Die Daten werden vollständig und dauerhaft gelöscht, sobald du die App deinstallierst.</li>
-            </ul>
-          </section>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">4. Kontaktaufnahme per E-Mail / Support</h2>
+              <p>
+                Wenn Sie uns per E-Mail für Support oder Feedback kontaktieren, werden Ihre E-Mail-Adresse sowie die in der Nachricht übermittelten Angaben (z. B. Name, Problembeschreibung) bei uns gespeichert.
+              </p>
+              <p>
+                <strong>Zweck &amp; Rechtsgrundlage:</strong> Bearbeitung Ihrer Anfrage (Art. 6 Abs. 1 lit. b DSGVO bei vertraglichen Belangen bzw. Art. 6 Abs. 1 lit. f DSGVO aufgrund unseres berechtigten Interesses an einer effektiven Nutzerbetreuung).
+              </p>
+              <p>
+                <strong>Löschung:</strong> Die Daten werden gelöscht, sobald Ihre Anfrage abschließend geklärt ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+              </p>
+            </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">9. Daten, die wir nicht erheben</h2>
-            <ul className="space-y-2 ml-4">
-              <li className="leading-relaxed">Namen, E-Mail-Adressen oder sonstige direkt identifizierende Daten</li>
-              <li className="leading-relaxed">Zahlungsinformationen (alle Käufe werden ausschließlich über Apple abgewickelt)</li>
-              <li className="leading-relaxed">Standortdaten</li>
-              <li className="leading-relaxed">Kontaktlisten</li>
-              <li className="leading-relaxed">Video- oder Bilddaten der Kamera (ausschließlich lokal verarbeitet, siehe Abschnitt 3)</li>
-              <li className="leading-relaxed">Gesundheits- und Fitnessdaten sowie Screen-Time-/App-Blockierungsdaten (ausschließlich lokal verarbeitet, siehe Abschnitte 6 und 7) — diese Daten erreichen unsere Server zu keinem Zeitpunkt, auch wenn die App um lokale Zugriffsberechtigung dafür bittet</li>
-            </ul>
-          </section>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">5. Speicherorte, Apple-Plattform &amp; Dritte</h2>
+              <div className="space-y-2">
+                <p>
+                  <strong>a) Lokale Gerätespeicherung &amp; Widgets:</strong> Alle App-Daten werden in der geschützten Sandbox auf Ihrem Endgerät gespeichert. Um Widgets auf dem Home- und Sperrbildschirm sowie Watch-Komplikationen zu aktualisieren, werden Tagessummen in einem lokalen App-Group-Container (<code className="text-amber-300 font-mono">group.com.vamit.beanie</code>) abgelegt.
+                </p>
+                <p>
+                  <strong>b) Apple als Plattform-Provider:</strong> Download, Installation und Updates erfolgen über den Apple App Store. Sofern Sie in den iOS-Einstellungen die Freigabe aktiviert haben („Mit App-Entwicklern teilen“), stellt Apple uns anonymisierte Absturz- und Nutzungsstatistiken zur Verfügung. Diese lassen keinen Rückschluss auf Ihre Person zu. Weitere Hinweise finden Sie in <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">Apples Datenschutzrichtlinie</a>.
+                </p>
+                <p>
+                  <strong>c) Apple Watch Synchronisation:</strong> Die Synchronisation zwischen iPhone und Apple Watch erfolgt direkt über den Apple-Systemdienst <code className="text-amber-300 font-mono">WatchConnectivity</code> zwischen Ihren gekoppelten Geräten. Wir erhalten dabei keinerlei Daten.
+                </p>
+                <p>
+                  <strong>d) Keine Drittanbieter-Tracker oder Werbenetzwerke:</strong> Beanie bindet keine externen Werbenetzwerke oder Tracking-SDKs (wie Google Firebase, Meta SDK o.ä.) ein.
+                </p>
+              </div>
+            </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">10. Deine Rechte</h2>
-            <p className="leading-relaxed mb-3">Du hast gegenüber uns folgende Rechte hinsichtlich deiner personenbezogenen Daten:</p>
-            <ul className="space-y-2 ml-4">
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Recht auf Auskunft (Art. 15 DSGVO):</span> Du kannst Auskunft über die von uns gespeicherten Daten verlangen. Aufgrund unseres Privacy-by-Design-Ansatzes handelt es sich in der Regel nur um eine anonyme PostHog-ID.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Recht auf Löschung (Art. 17 DSGVO):</span> Du kannst alle lokalen Daten jederzeit über den Button "Alle Daten löschen" in den Einstellungen der App löschen. Dieser entfernt sämtliche lokalen App-Daten dauerhaft, setzt deine Analyse-ID zurück und meldet dich bei RevenueCat ab — die App wird dadurch in den Zustand einer Neuinstallation versetzt. Alternativ erreichst du dasselbe durch Deinstallation der App.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Recht auf Widerruf (Art. 7 Abs. 3 DSGVO):</span> Du kannst deine Einwilligung zur Analyse jederzeit mit Wirkung für die Zukunft über den Schalter <span className="text-vami-primary font-semibold">&quot;Anonyme Nutzungsdaten teilen&quot;</span> in den Einstellungen der App widerrufen.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Widerspruchsrecht (Art. 21 DSGVO):</span> Du kannst der auf berechtigten Interessen gestützten Verarbeitung jederzeit widersprechen.
-              </li>
-              <li className="leading-relaxed">
-                <span className="text-vami-primary font-semibold">Beschwerderecht (Art. 77 DSGVO):</span> Du hast das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Zuständig für VAMIT UG ist die Landesbeauftragte für Datenschutz und Informationsfreiheit NRW (LDI NRW), Kavalleriestraße 2-4, 40213 Düsseldorf:{' '}
-                <a
-                  href="https://www.ldi.nrw.de"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-vami-primary hover:text-orange-400 transition-colors"
-                >
-                  www.ldi.nrw.de
-                </a>
-                .
-              </li>
-            </ul>
-            <p className="leading-relaxed mt-3">Zur Ausübung deiner Rechte wende dich bitte an: info@vam-it.com</p>
-          </section>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">6. Speicherdauer &amp; Datenlöschung</h2>
+              <p>
+                Ihre Daten verbleiben auf Ihrem Gerät, bis Sie diese löschen oder die App deinstallieren.
+              </p>
+              <ul className="list-disc pl-5 space-y-1 text-gray-300">
+                <li><strong>Einzelne Einträge löschen:</strong> Sie können jeden erfassten Kaffee direkt in der Historie löschen.</li>
+                <li><strong>Vollständiges Zurücksetzen:</strong> In den Einstellungen können Sie über <em>„Reset All App Data“</em> sämtliche Einträge, Statistiken und Badges mit einem Tippen rückstandslos löschen.</li>
+                <li><strong>Deinstallation:</strong> Beim Löschen der App vom Gerät werden alle lokalen Daten und Sandbox-Dateien durch iOS unwiderruflich gelöscht.</li>
+              </ul>
+            </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">11. Datensicherheit</h2>
-            <p className="leading-relaxed mb-3">
-              Wir verfolgen einen <span className="text-vami-primary font-semibold">Privacy-by-Design</span>-Ansatz:
-            </p>
-            <ul className="space-y-2 ml-4">
-              <li className="leading-relaxed">Die sensibelsten Daten (Kamerabild) werden ausschließlich lokal verarbeitet und nie an unsere Server übertragen.</li>
-              <li className="leading-relaxed">Alle Netzwerkkommunikation (z. B. PostHog-Analyse) ist durch TLS/SSL verschlüsselt.</li>
-              <li className="leading-relaxed">Diese Landingpage wird ausschließlich über HTTPS ausgeliefert.</li>
-            </ul>
-          </section>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">7. Ihre Rechte nach der DSGVO</h2>
+              <p>Sie haben nach der DSGVO folgende Rechte bezüglich Ihrer personenbezogenen Daten:</p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li><strong>Recht auf Auskunft (Art. 15 DSGVO):</strong> Sie können alle gespeicherten Daten direkt in der App einsehen.</li>
+                <li><strong>Recht auf Berichtigung (Art. 16 DSGVO):</strong> Sie können Limits und Präferenzen jederzeit in den Einstellungen anpassen.</li>
+                <li><strong>Recht auf Löschung (Art. 17 DSGVO):</strong> Jederzeit möglich über „Reset All App Data“ oder App-Deinstallation.</li>
+                <li><strong>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</strong> sowie <strong>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</strong>.</li>
+                <li><strong>Widerruf von Einwilligungen (Art. 7 Abs. 3 DSGVO):</strong> Benachrichtigungsrechte können jederzeit in den iOS-Einstellungen widerrufen werden.</li>
+              </ul>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">12. Kinder</h2>
-            <p className="leading-relaxed">
-              Diese App richtet sich nicht an Kinder unter 13 Jahren. Wir erheben wissentlich keine
-              personenbezogenen Daten von Kindern. Solltest du glauben, dass uns ein Kind
-              personenbezogene Daten übermittelt hat, wende dich bitte an info@vam-it.com - wir werden
-              die Daten umgehend löschen.
-            </p>
-          </section>
+              <div className="pt-3">
+                <p className="font-semibold text-white">Zuständige Aufsichtsbehörde (Art. 77 DSGVO):</p>
+                <p className="text-gray-300">
+                  Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)<br />
+                  Kavalleriestraße 2–4, 40213 Düsseldorf<br />
+                  Telefon: 0211 / 38424-0 · Website: <a href="https://www.ldi.nrw.de" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">https://www.ldi.nrw.de</a>
+                </p>
+              </div>
+            </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">13. Feedback (Featurebase)</h2>
-            <p className="leading-relaxed mb-3">
-              Innerhalb der App verlinken wir auf eine externe Feedback-Plattform (&quot;Featurebase&quot;), auf der du Feature-Wünsche und Feedback anonym, ohne Registrierung oder Anmeldung, einreichen kannst. Beim Tippen auf diesen Link verlässt du die App und wirst im Browser deines Geräts zur Featurebase-Website weitergeleitet. Etwaige dort von dir eingegebene Daten (z. B. Feedback-Text) werden direkt von Featurebase, Inc. verarbeitet, nicht von uns. Wir erhalten, speichern oder haben keinen Zugriff auf die auf dieser Plattform übermittelten Daten. Informationen zur Datenverarbeitung durch Featurebase findest du in deren eigener Datenschutzerklärung.
-            </p>
-          </section>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">8. Änderungen dieser Datenschutzerklärung</h2>
+              <p>
+                Wir behalten uns vor, diese Erklärung bei Funktionserweiterungen der App oder geänderten rechtlichen Vorgaben anzupassen. Die jeweils aktuelle Fassung ist stets in der App und auf dieser Website abrufbar.
+              </p>
+            </section>
+          </div>
+        ) : (
+          /* ================= ENGLISH ================= */
+          <div className="space-y-8 text-gray-300 text-sm leading-relaxed">
+            <div>
+              <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight mb-2">
+                Privacy Policy
+              </h1>
+              <p className="text-xs text-amber-400 font-medium">
+                App: Beanie (iOS &amp; watchOS) · As of: October 2026
+              </p>
+            </div>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">14. Werbung &amp; Installations-Attribution (Meta / Apple SKAdNetwork)</h2>
-            <p className="leading-relaxed mb-3">
-              Wir bewerben die App auf Facebook und Instagram (Meta Platforms Ireland Ltd.). Um zu
-              messen, ob eine Installation auf eine unserer Anzeigen zurückgeht, nutzen wir Apples
-              SKAdNetwork-Framework. Die App enthält kein Meta/Facebook SDK und greift nicht auf deine
-              Werbe-ID (IDFA) zu.
-            </p>
-            <p className="leading-relaxed mb-3">
-              <span className="text-vami-primary font-semibold">Funktionsweise:</span> Die Zuordnung
-              erfolgt durch Apple auf deinem Gerät. Apple übermittelt anschließend eine kryptografisch
-              signierte, anonyme und aggregierte Meldung an Meta, die lediglich die Kampagne und die
-              erfolgte Installation enthält. Es werden keine Gerätekennungen, Nutzungsdaten,
-              Gesundheitsdaten oder sonstigen personenbezogenen Daten aus der App an Meta oder an uns
-              übertragen.
-            </p>
-            <p className="leading-relaxed mb-3">
-              <span className="text-vami-primary font-semibold">Ausspielung der Anzeigen:</span> Für
-              die Ausspielung und Zielgruppenauswahl von Anzeigen auf Facebook und Instagram ist allein
-              Meta verantwortlich. Details findest du in der Datenschutzerklärung von Meta:{' '}
-              <a
-                href="https://www.facebook.com/privacy/policy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-vami-primary hover:text-orange-400 transition-colors"
-              >
-                https://www.facebook.com/privacy/policy
-              </a>
-            </p>
-            <p className="leading-relaxed">
-              <span className="text-vami-primary font-semibold">Rechtsgrundlage:</span> Soweit
-              überhaupt personenbezogene Daten verarbeitet werden, unser berechtigtes Interesse an der
-              Erfolgsmessung unserer Werbung (Art. 6 Abs. 1 lit. f DSGVO).
-            </p>
-          </section>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">1. Overview &amp; Privacy Principles</h2>
+              <p>
+                Protecting your personal data is a top priority for us. The <strong>„Beanie“</strong> application (including its widgets and Apple Watch companion app) is built strictly following the principles of <strong>Privacy by Design</strong> and <strong>Data Minimization</strong>.
+              </p>
+              <p>
+                All data (logged coffees, estimated caffeine amounts, daily limits, streaks, and XP) is stored <strong>exclusively locally on your devices</strong>. We run no remote servers, create no user accounts, and integrate no third-party analytics, tracking, or advertising SDKs. We never have access to your personal logging data.
+              </p>
+            </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">15. Aktualität und Änderung dieser Datenschutzerklärung</h2>
-            <p className="leading-relaxed">
-              Wir können diese Datenschutzerklärung bei Änderungen der App oder der rechtlichen
-              Anforderungen aktualisieren. Die jeweils aktuelle Fassung ist stets unter <span className="text-vami-primary font-semibold">vamiapp.com/privacy</span> abrufbar. Wesentliche Änderungen werden, soweit gesetzlich erforderlich, durch einen In-App-Hinweis kommuniziert.
-            </p>
-            <p className="leading-relaxed mt-3 italic">
-              VAMIT UG (haftungsbeschränkt) · Petersfeldstraße 16 · 46395 Bocholt · Deutschland
-            </p>
-          </section>
-        </div>
+            <section className="space-y-3 p-5 rounded-2xl bg-white/5 border border-white/5">
+              <h2 className="text-xl font-bold text-white">2. Data Controller (Art. 4(7) GDPR)</h2>
+              <p>The data controller responsible under the General Data Protection Regulation (GDPR) is:</p>
+              <div className="text-white space-y-1">
+                <p className="font-semibold">VAMIT UG (haftungsbeschränkt)</p>
+                <p>Petersfeldstraße 16</p>
+                <p>46395 Bocholt, Germany</p>
+                <p className="pt-2"><strong className="text-gray-300">Managing Director:</strong> Veselin Kolev</p>
+                <p><strong className="text-gray-300">Commercial Register:</strong> Local Court (Amtsgericht) Coesfeld, HRB 23796</p>
+                <p><strong className="text-gray-300">Privacy &amp; Support Email:</strong> <a href="mailto:info@vam-it.com" className="text-amber-400 hover:underline">info@vam-it.com</a></p>
+                <p><strong className="text-gray-300">Website:</strong> <a href="https://vam-it.com" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">https://vam-it.com</a></p>
+              </div>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-xl font-bold text-white">3. Data Processing within the App</h2>
+
+              <div className="space-y-2">
+                <h3 className="font-semibold text-amber-300">a) Coffee &amp; Caffeine Consumption History</h3>
+                <p>
+                  <strong>Data processed:</strong> Timestamp of entry, selected coffee type (e.g. Espresso, Flat White, Cappuccino), volume in milliliters (ml) or ounces (oz), calculated estimated caffeine amount in milligrams (mg), manually selected location category ("Home", "Office", "Cafe"), and optional notes/tags.
+                </p>
+                <p>
+                  <strong>Purpose:</strong> Calculating your daily caffeine total, charting your daily/weekly progress, and monitoring your personal daily limit.
+                </p>
+                <p>
+                  <strong>Legal Basis:</strong> Art. 6(1)(b) GDPR (Performance of contract / providing requested app functionality).
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <h3 className="font-semibold text-amber-300">b) Target Settings &amp; App Preferences</h3>
+                <p>
+                  <strong>Data processed:</strong> Personal daily caffeine limit (e.g. 400 mg reference limit), volume measurement unit ("ml" or "oz"), interface preferences (dark mode), and onboarding completion status.
+                </p>
+                <p>
+                  <strong>Purpose:</strong> Personalizing caffeine calculations and customizing the visual interface.
+                </p>
+                <p>
+                  <strong>Legal Basis:</strong> Art. 6(1)(b) GDPR.
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <h3 className="font-semibold text-amber-300">c) Gamification &amp; Achievements</h3>
+                <p>
+                  <strong>Data processed:</strong> Counters for achievement badges (e.g. daily streaks, unlocked milestones, levels, and earned XP with mascot Bean).
+                </p>
+                <p>
+                  <strong>Purpose:</strong> Providing interactive motivational mechanics within the app.
+                </p>
+                <p>
+                  <strong>Legal Basis:</strong> Art. 6(1)(b) GDPR.
+                </p>
+              </div>
+
+              <div className="space-y-2 p-4 rounded-xl bg-amber-500/10 border border-amber-500/20">
+                <h3 className="font-semibold text-amber-200">d) No GPS / Geographic Location Tracking</h3>
+                <p>
+                  You can categorize individual brews using labels such as <strong>"Home"</strong>, <strong>"Office"</strong>, or <strong>"Cafe"</strong>. These labels are <strong>not location data</strong>. The app never accesses device location services (GPS, Wi-Fi, or cellular networks) and collects no geographic coordinates. It is solely a manually selected categorical tag.
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <h3 className="font-semibold text-amber-300">e) Local Notifications</h3>
+                <p>
+                  <strong>Data processed:</strong> Notification permission status and preferred morning reminder time (default: 09:00 AM).
+                </p>
+                <p>
+                  <strong>Purpose:</strong> Local morning reminder to log your first brew and maintain your streak.
+                </p>
+                <p>
+                  <strong>Important:</strong> Notifications are triggered <strong>entirely locally on your device</strong> by the operating system. No device tokens or push data are sent to external servers.
+                </p>
+                <p>
+                  <strong>Legal Basis:</strong> Art. 6(1)(a) GDPR (Consent granted via native system dialog). Permissions may be withdrawn at any time in iOS Settings.
+                </p>
+              </div>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">4. Contacting Support via Email</h2>
+              <p>
+                When you contact us via email for support or feedback, your email address and any information you provide are stored by us to handle your inquiry.
+              </p>
+              <p>
+                <strong>Purpose &amp; Legal Basis:</strong> Handling your inquiry (Art. 6(1)(b) GDPR or Art. 6(1)(f) GDPR for legitimate interest in providing reliable support).
+              </p>
+              <p>
+                <strong>Retention:</strong> Your inquiry data is deleted once the matter has been conclusively resolved.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">5. Storage Locations, Apple Platform &amp; Third Parties</h2>
+              <div className="space-y-2">
+                <p>
+                  <strong>a) Local Storage &amp; Widgets:</strong> All data is stored in the sandboxed, private storage on your device. To provide iOS Widgets and Apple Watch complication updates, current totals are stored in a local, app-group container (<code className="text-amber-300 font-mono">group.com.vamit.beanie</code>).
+                </p>
+                <p>
+                  <strong>b) Apple as Platform Provider:</strong> The distribution and updates are handled through Apple's App Store. If enabled in your iOS Settings ("Share with App Developers"), Apple may provide us with anonymized crash logs. Refer to <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">Apple's Privacy Policy</a> for more details.
+                </p>
+                <p>
+                  <strong>c) Apple Watch Synchronization:</strong> Synchronization is performed via Apple's native <code className="text-amber-300 font-mono">WatchConnectivity</code> system service between your paired devices. We receive no data.
+                </p>
+                <p>
+                  <strong>d) No Third-Party Analytics, Advertising, or Tracking:</strong> Beanie does not integrate any advertising networks, third-party analytics services, or social media tracking libraries.
+                </p>
+              </div>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">6. Data Retention &amp; Deletion</h2>
+              <p>Your data remains stored locally on your device until you choose to delete it or uninstall the app.</p>
+              <ul className="list-disc pl-5 space-y-1 text-gray-300">
+                <li><strong>Deleting Single Entries:</strong> Remove individual coffee logs directly from your history view.</li>
+                <li><strong>Full Reset:</strong> In Settings, tapping <em>"Reset All App Data"</em> permanently and immediately deletes all logged entries, statistics, and badges.</li>
+                <li><strong>Uninstalling:</strong> Deleting the app removes all sandboxed files and local data from your device.</li>
+              </ul>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">7. Your Rights under the GDPR</h2>
+              <p>Under European data protection law, you have the following rights:</p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li><strong>Access (Art. 15 GDPR):</strong> View all stored data directly within the app.</li>
+                <li><strong>Rectification (Art. 16 GDPR):</strong> Correct or update your presets and limits in Settings.</li>
+                <li><strong>Erasure (Art. 17 GDPR):</strong> Delete all data via "Reset All App Data" or app removal.</li>
+                <li><strong>Restriction of Processing (Art. 18 GDPR)</strong> and <strong>Data Portability (Art. 20 GDPR)</strong>.</li>
+                <li><strong>Withdrawal of Consent (Art. 7(3) GDPR):</strong> Revoke notification permissions anytime in iOS Settings.</li>
+              </ul>
+
+              <div className="pt-3">
+                <p className="font-semibold text-white">Supervisory Authority (Art. 77 GDPR):</p>
+                <p className="text-gray-300">
+                  Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)<br />
+                  Kavalleriestraße 2–4, 40213 Düsseldorf, Germany<br />
+                  Phone: +49 (0)211 38424-0 · Website: <a href="https://www.ldi.nrw.de" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">https://www.ldi.nrw.de</a>
+                </p>
+              </div>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white">8. Changes to this Policy</h2>
+              <p>
+                We may update this Privacy Policy from time to time. The latest version will always remain accessible within the app and on this website.
+              </p>
+            </section>
+          </div>
+        )}
       </motion.div>
     </div>
   );
