@@ -14,6 +14,7 @@ export default defineConfig(({ mode }) => ({
         main: 'index.html',
         privacy: 'privacy/index.html',
         terms: 'terms/index.html',
+        imprint: 'imprint/index.html',
       },
       output: {
         manualChunks: {

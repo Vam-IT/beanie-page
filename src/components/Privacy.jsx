@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { ShieldCheck, CheckCircle2, Lock, Smartphone, Globe, Mail, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
