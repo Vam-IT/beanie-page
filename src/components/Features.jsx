@@ -25,7 +25,7 @@ const Features = () => {
         t.features.card1.h2,
         t.features.card1.h3,
         t.features.card1.h4,
-      ],
+      ].filter(Boolean),
     },
     {
       icon: <Sparkles className="w-8 h-8" />,
@@ -39,7 +39,7 @@ const Features = () => {
         t.features.card2.h2,
         t.features.card2.h3,
         t.features.card2.h4,
-      ],
+      ].filter(Boolean),
     },
     {
       icon: <Watch className="w-8 h-8" />,
@@ -53,7 +53,7 @@ const Features = () => {
         t.features.card3.h2,
         t.features.card3.h3,
         t.features.card3.h4,
-      ],
+      ].filter(Boolean),
     },
   ];
 

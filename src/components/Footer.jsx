@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import { assetUrl } from '../utils/assetUrl';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,12 +10,24 @@ const Footer = () => {
     <footer className="relative border-t border-white/5 py-12 px-6 bg-[#0E0C0A]" role="contentinfo">
       <div className="container mx-auto max-w-6xl flex flex-col items-center gap-6 text-center">
         {/* Brand signature */}
-        <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white text-xs font-bold">
-            ☕
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-400 via-orange-500 to-amber-600 p-[1px] shadow-lg shadow-orange-500/20">
+            <div className="w-full h-full bg-[#181411] rounded-[11px] flex items-center justify-center overflow-hidden">
+              <img
+                src={assetUrl('assets/icon-1024.png')}
+                alt="Beanie Icon"
+                className="w-full h-full object-cover rounded-[10px]"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.parentElement.innerHTML = '<span class="text-sm">☕</span>';
+                }}
+              />
+            </div>
           </div>
-          <span className="text-sm font-bold text-white tracking-tight">Beanie</span>
-          <span className="text-xs text-gray-500">{t.footer.tagline}</span>
+          <div className="flex items-center gap-2">
+            <span className="text-base font-black text-white tracking-tight">Beanie</span>
+            <span className="text-xs text-gray-500">{t.footer.tagline}</span>
+          </div>
         </div>
 
         {/* Footer Navigation */}
