@@ -210,31 +210,31 @@ const Features = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="relative glass-ultra rounded-3xl p-8 md:p-14 border border-emerald-500/20 overflow-hidden">
+          <div className="relative glass-ultra rounded-3xl p-5 sm:p-8 md:p-14 border border-emerald-500/20 overflow-hidden">
             {/* Ambient emerald glow */}
             <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
             <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white shadow-xl shadow-emerald-500/20">
-                  <ShieldCheck className="w-7 h-7" />
+              <div className="flex items-center gap-2.5 sm:gap-3 mb-3.5 sm:mb-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white shadow-xl shadow-emerald-500/20 shrink-0">
+                  <ShieldCheck className="w-5 h-5 sm:w-7 sm:h-7" />
                 </div>
                 <div>
-                  <span className="text-xs uppercase font-bold tracking-wider text-emerald-400">
+                  <span className="text-[10px] sm:text-xs uppercase font-bold tracking-wider text-emerald-400">
                     {t.features.privacyBox.badge}
                   </span>
-                  <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-tight leading-tight">
                     {t.features.privacyBox.title}
                     <span className="text-emerald-400">{t.features.privacyBox.titleHighlight}</span>
                   </h3>
                 </div>
               </div>
 
-              <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-8 max-w-3xl font-light">
+              <p className="text-gray-300 text-xs sm:text-sm md:text-base leading-relaxed mb-4 sm:mb-8 max-w-3xl font-light">
                 {t.features.privacyBox.desc}
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-4">
                 {[
                   {
                     title: t.features.privacyBox.p1Title,
@@ -263,13 +263,13 @@ const Features = () => {
                 ].map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-2xl bg-black/30 border border-white/5 flex flex-col justify-start"
+                    className="p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-black/30 border border-white/5 flex flex-col justify-start"
                   >
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                      <h4 className="text-sm font-bold text-white">{item.title}</h4>
+                    <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
+                      <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 shrink-0" />
+                      <h4 className="text-xs sm:text-sm font-bold text-white tracking-tight leading-snug">{item.title}</h4>
                     </div>
-                    <p className="text-xs text-gray-400 leading-relaxed font-light">{item.desc}</p>
+                    <p className="text-[11px] sm:text-xs text-gray-400 leading-snug sm:leading-relaxed font-light">{item.desc}</p>
                   </div>
                 ))}
               </div>
