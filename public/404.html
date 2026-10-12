@@ -8,8 +8,8 @@
     // MIT License
     // https://github.com/rafgraph/spa-github-pages
     
-    // Set to 1 for GitHub Pages project sites (https://<username>.github.io/<repo>/)
-    var pathSegmentsToKeep = 1;
+    // Set to 0 for custom domains (beanie-app.com), 1 for GitHub project pages (username.github.io/repo)
+    var pathSegmentsToKeep = window.location.hostname.endsWith('github.io') ? 1 : 0;
 
     var l = window.location;
     l.replace(
