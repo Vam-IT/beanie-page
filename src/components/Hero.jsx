@@ -44,7 +44,7 @@ import { useLanguage } from '../context/LanguageContext';
 
         {/* Subtitle */}
         <motion.p
-          className="text-base sm:text-xl text-gray-300 mb-8 leading-relaxed font-light max-w-2xl px-2"
+          className="text-base sm:text-xl text-gray-300 mb-8 sm:mb-10 leading-relaxed font-light max-w-2xl px-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.7 }}
@@ -52,35 +52,12 @@ import { useLanguage } from '../context/LanguageContext';
           {t.hero.subtitle}
         </motion.p>
 
-        {/* Feature Badges Grid */}
-        <motion.div
-          className="flex flex-wrap gap-2.5 mb-10 justify-center max-w-2xl"
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.45, duration: 0.6 }}
-        >
-          {[
-            { icon: <Coffee className="w-3.5 h-3.5 text-amber-400" />, label: t.hero.badgeDiary },
-            { icon: <Sparkles className="w-3.5 h-3.5 text-orange-400" />, label: t.hero.badgeBean },
-            { icon: <Watch className="w-3.5 h-3.5 text-blue-400" />, label: t.hero.badgeWatch },
-            { icon: <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />, label: t.hero.badgePrivacy },
-          ].map((badge, i) => (
-            <div
-              key={i}
-              className="flex items-center gap-1.5 glass-ultra px-3.5 py-1.5 rounded-full border border-white/10 text-xs text-gray-200"
-            >
-              {badge.icon}
-              <span>{badge.label}</span>
-            </div>
-          ))}
-        </motion.div>
-
         {/* App Mockup with Visual Showcase using User's Dashboard Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.92, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="relative mb-12 flex justify-center w-full max-w-md"
+          className="relative mb-10 sm:mb-12 flex justify-center w-full max-w-md"
         >
           {/* Phone Frame */}
           <div className="relative z-10 w-[240px] sm:w-[280px]">
@@ -147,6 +124,69 @@ import { useLanguage } from '../context/LanguageContext';
           {/* Background Glow Behind Phone */}
           <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/20 via-amber-500/15 to-transparent blur-3xl -z-10 scale-125" />
         </motion.div>
+
+        {/* 4 Feature Badges Under Phone: Desktop Centered Row */}
+        <motion.div
+          className="hidden md:flex flex-wrap gap-3 mb-10 justify-center max-w-4xl"
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+        >
+          {[
+            { icon: <Coffee className="w-3.5 h-3.5 text-amber-400" />, label: t.hero.badgeDiary },
+            { icon: <Sparkles className="w-3.5 h-3.5 text-orange-400" />, label: t.hero.badgeBean },
+            { icon: <Watch className="w-3.5 h-3.5 text-blue-400" />, label: t.hero.badgeWatch },
+            { icon: <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />, label: t.hero.badgePrivacy },
+          ].map((badge, i) => (
+            <div
+              key={i}
+              className="flex items-center gap-1.5 glass-ultra px-4 py-2 rounded-full border border-white/10 text-xs text-gray-200 shadow-sm"
+            >
+              {badge.icon}
+              <span>{badge.label}</span>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* 4 Feature Badges Under Phone: Mobile Running Marquee Ticker */}
+        <div className="md:hidden w-full max-w-sm mx-auto overflow-hidden relative py-1 mb-8">
+          {/* Edge Blur / Fades */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[#141210] to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-[#141210] to-transparent z-10" />
+
+          <motion.div
+            className="flex gap-2.5 w-max"
+            animate={{ x: ['0%', '-33.333%'] }}
+            transition={{
+              ease: 'linear',
+              duration: 15,
+              repeat: Infinity,
+            }}
+          >
+            {[
+              { icon: <Coffee className="w-3.5 h-3.5 text-amber-400" />, label: t.hero.badgeDiary },
+              { icon: <Sparkles className="w-3.5 h-3.5 text-orange-400" />, label: t.hero.badgeBean },
+              { icon: <Watch className="w-3.5 h-3.5 text-blue-400" />, label: t.hero.badgeWatch },
+              { icon: <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />, label: t.hero.badgePrivacy },
+              { icon: <Coffee className="w-3.5 h-3.5 text-amber-400" />, label: t.hero.badgeDiary },
+              { icon: <Sparkles className="w-3.5 h-3.5 text-orange-400" />, label: t.hero.badgeBean },
+              { icon: <Watch className="w-3.5 h-3.5 text-blue-400" />, label: t.hero.badgeWatch },
+              { icon: <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />, label: t.hero.badgePrivacy },
+              { icon: <Coffee className="w-3.5 h-3.5 text-amber-400" />, label: t.hero.badgeDiary },
+              { icon: <Sparkles className="w-3.5 h-3.5 text-orange-400" />, label: t.hero.badgeBean },
+              { icon: <Watch className="w-3.5 h-3.5 text-blue-400" />, label: t.hero.badgeWatch },
+              { icon: <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />, label: t.hero.badgePrivacy },
+            ].map((badge, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-1.5 glass-ultra px-3.5 py-1.5 rounded-full border border-white/10 text-xs text-gray-200 whitespace-nowrap shadow-sm"
+              >
+                {badge.icon}
+                <span>{badge.label}</span>
+              </div>
+            ))}
+          </motion.div>
+        </div>
 
         {/* CTA Button */}
         <motion.div
