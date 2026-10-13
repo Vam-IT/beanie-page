@@ -71,7 +71,7 @@ import { useLanguage } from '../context/LanguageContext';
                 )}
                 <img
                   src={assetUrl('assets/beanie-dashboard.png')}
-                  alt="CupTrail App Dashboard - 175mg / 400mg with Mascot Bean"
+                  alt="CupTrail App Dashboard - 143mg / 400mg with Mascot Bean"
                   onLoad={() => setImgLoaded(true)}
                   className={`w-full h-full object-cover transition-opacity duration-700 ${
                     imgLoaded ? 'opacity-100' : 'opacity-0'
