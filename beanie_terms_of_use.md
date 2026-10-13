@@ -14,10 +14,11 @@ Petersfeldstraße 16
 46395 Bocholt  
 Deutschland  
 
-**Vertreten durch die Geschäftsführung:**  
+**Vertreten durch die Geschäftsführer:**  
 Veselin Kolev  
 
 **Kontakt:**  
+Telefon: +49 176 23204351  
 E-Mail: info@vam-it.com  
 Website: https://vam-it.com  
 Handelsregister: Amtsgericht Coesfeld, HRB 23796  
@@ -59,7 +60,7 @@ Die Nutzung der App unterliegt den Bestimmungen des Standard-Endbenutzer-Lizenzv
 ---
 
 ### 6. Geistiges Eigentum
-- Sämtliche Marken, Logos, Grafiken, Designs (einschließlich des Charakters „Bean“), Soundeffekte und Softwarecodes der App sind urheberrechtlich geschützt und stehen im ausschließlichen Eigentum der VAMIT UG (haftungsbeschränkt) bzw. ihrer Lizenzgeber.
+- Sämtliche Marken, Logos, Grafiken, Designs (einschließlich des Maskottchens „Bean“), Soundeffekte und der Software-Code der App sind urheber- bzw. markenrechtlich geschützt und stehen im ausschließlichen Eigentum der VAMIT UG (haftungsbeschränkt) bzw. ihrer Lizenzgeber.
 - Nutzer erhalten ein einfaches, nicht-exklusives, nicht übertragbares und widerrufliches Recht zur bestimmungsgemäßen privaten Nutzung der App auf ihren persönlichen Geräten.
 
 ---
@@ -73,8 +74,10 @@ Die Nutzung der App unterliegt den Bestimmungen des Standard-Endbenutzer-Lizenzv
 
 ### 8. Schlussbestimmungen
 - **Anwendbares Recht:** Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts (CISG). Zwingende Verbraucherschutzvorschriften des Staates, in dem der Nutzer seinen gewöhnlichen Aufenthalt hat, bleiben unberührt.
-- **Gerichtsstand:** Sofern der Nutzer Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist, ist Gerichtsstand der Sitz des Anbieters (Bocholt / zuständiges Amtsgericht).
-- **Änderungen:** Der Anbieter behält sich vor, diese Bedingungen anzupassen, wenn dies durch Funktionsänderungen der App, Gesetzesänderungen oder gerichtliche Entscheidungen erforderlich wird.
+- **Gerichtsstand:** Sofern der Nutzer Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist, ist Gerichtsstand Bocholt.
+- **Änderungen:** Der Anbieter behält sich vor, diese Bedingungen anzupassen, wenn dies durch Funktionsänderungen der App, Gesetzesänderungen oder gerichtliche Entscheidungen erforderlich wird. Die geänderten Bedingungen gelten für die künftige Nutzung ab ihrer Veröffentlichung.
+
+Im Fall von Abweichungen zwischen der deutschen und der englischen Fassung ist die deutsche Fassung maßgeblich.
 
 ---
 ---
@@ -89,10 +92,11 @@ Petersfeldstraße 16
 46395 Bocholt  
 Germany  
 
-**Represented by Managing Director:**  
+**Represented by the Managing Directors:**  
 Veselin Kolev  
 
 **Contact:**  
+Phone: +49 176 23204351  
 Email: info@vam-it.com  
 Website: https://vam-it.com  
 Commercial Register: Local Court (Amtsgericht) Coesfeld, HRB 23796  
@@ -134,7 +138,7 @@ Use of the application is governed by the *Apple Standard Licensed Application E
 ---
 
 ### 6. Intellectual Property
-- All trademarks, copyrights, visual designs, illustrations (including the mascot "Bean"), sound effects, and software code are the exclusive property of VAMIT UG (haftungsbeschränkt) or its licensors.
+- All trademarks, logos, graphics, designs (including the mascot "Bean"), sound effects and software code of the app are protected by copyright and trademark law and are the exclusive property of VAMIT UG (haftungsbeschränkt) or its licensors.
 - Users are granted a limited, revocable, non-exclusive, non-transferable license to use the app for personal, non-commercial purposes.
 
 ---
@@ -147,6 +151,8 @@ Use of the application is governed by the *Apple Standard Licensed Application E
 ---
 
 ### 8. Governing Law & Jurisdiction
-- These Terms are governed by the laws of the Federal Republic of Germany, excluding the UN Convention on Contracts for the International Sale of Goods (CISG).
-- Mandatory statutory consumer protection rights under the laws of your country of residence remain unaffected.
-- The provider reserves the right to amend these terms to reflect feature updates, legal changes, or technical requirements.
+- **Governing Law:** These Terms are governed by the laws of the Federal Republic of Germany, excluding the UN Convention on Contracts for the International Sale of Goods (CISG). Mandatory statutory consumer protection rights under the laws of your country of residence remain unaffected.
+- **Place of jurisdiction:** If the user is a merchant, a legal entity under public law or a special fund under public law, the place of jurisdiction is Bocholt, Germany.
+- **Amendments:** The provider reserves the right to amend these terms to reflect feature updates, legal changes, or technical requirements. Amended terms apply to future use from the date of their publication.
+
+In case of discrepancies between the German and English versions, the German version shall prevail.

@@ -50,13 +50,13 @@ const Imprint = () => {
         className="glass-card p-8 sm:p-12 rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden"
       >
         <h1 className="text-4xl font-black text-gradient-coffee mb-8 tracking-tight">
-          {lang === 'de' ? 'Impressum' : 'Legal Notice / Imprint'}
+          {lang === 'de' ? 'Impressum' : 'Legal Notice'}
         </h1>
 
         <div className="space-y-6 text-gray-300 text-sm leading-relaxed">
           <section>
             <h2 className="text-lg font-bold text-white mb-2">
-              {lang === 'de' ? 'Angaben gemäß § 5 TMG' : 'Information pursuant to § 5 TMG'}
+              {lang === 'de' ? 'Angaben gemäß § 5 DDG' : 'Information pursuant to § 5 DDG (German Digital Services Act)'}
             </h2>
             <p className="leading-relaxed">
               VAMIT UG (haftungsbeschränkt)<br />
@@ -68,22 +68,23 @@ const Imprint = () => {
 
           <section>
             <h2 className="text-lg font-bold text-white mb-2">
-              {lang === 'de' ? 'Handelsregister' : 'Commercial Register'}
+              {lang === 'de' ? 'Vertretung' : 'Representation'}
             </h2>
             <p className="leading-relaxed">
               {lang === 'de'
-                ? 'Handelsregister B des Amtsgerichts Coesfeld'
-                : 'Commercial Register B of the Local Court of Coesfeld'}<br />
-              HRB 23796
+                ? 'Vertreten durch die Geschäftsführer: Veselin Kolev'
+                : 'Represented by the Managing Directors: Veselin Kolev'}
             </p>
           </section>
 
           <section>
             <h2 className="text-lg font-bold text-white mb-2">
-              {lang === 'de' ? 'Vertreten durch' : 'Represented by'}
+              {lang === 'de' ? 'Handelsregister' : 'Commercial Register'}
             </h2>
             <p className="leading-relaxed">
-              {lang === 'de' ? 'Geschäftsführer' : 'Managing Director'}: Veselin Kolev
+              {lang === 'de'
+                ? 'Handelsregister: Amtsgericht Coesfeld, HRB 23796'
+                : 'Commercial Register: Local Court (Amtsgericht) Coesfeld, HRB 23796'}
             </p>
           </section>
 
@@ -92,7 +93,15 @@ const Imprint = () => {
               {lang === 'de' ? 'Kontakt' : 'Contact'}
             </h2>
             <p className="leading-relaxed">
-              E-Mail:{' '}
+              {lang === 'de' ? 'Telefon' : 'Phone'}:{' '}
+              <a
+                href="tel:+4917623204351"
+                className="text-amber-400 hover:underline transition-colors"
+              >
+                +49 176 23204351
+              </a>
+              <br />
+              {lang === 'de' ? 'E-Mail' : 'Email'}:{' '}
               <a
                 href="mailto:info@vam-it.com"
                 className="text-amber-400 hover:underline transition-colors"
@@ -115,8 +124,8 @@ const Imprint = () => {
           <section className="pt-4 border-t border-white/10 text-xs text-gray-400">
             <p>
               {lang === 'de'
-                ? 'Verantwortlich für redaktionelle Inhalte gemäß § 18 Abs. 2 MStV: Veselin Kolev, Petersfeldstraße 16, 46395 Bocholt.'
-                : 'Responsible for editorial content pursuant to § 18 (2) MStV: Veselin Kolev, Petersfeldstraße 16, 46395 Bocholt, Germany.'}
+                ? 'Verantwortlich für redaktionelle Inhalte gemäß § 18 Abs. 2 MStV: Veselin Kolev, Petersfeldstraße 16, 46395 Bocholt'
+                : 'Responsible for editorial content pursuant to § 18(2) MStV: Veselin Kolev, Petersfeldstraße 16, 46395 Bocholt, Germany'}
             </p>
           </section>
         </div>

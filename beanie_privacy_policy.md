@@ -10,7 +10,7 @@
 Der Schutz Ihrer persönlichen Daten ist uns ein zentrales Anliegen. Die App **„CupTrail“** (einschließlich der Widgets und der Begleit-App für die Apple Watch) folgt den Prinzipien von **„Privacy by Design“** und **„Datensparsamkeit“**.
 
 **Das Wichtigste auf einen Blick:**
-- Sämtliche Daten (erfasste Kaffees, geschätzte Koffeinmengen, Tageslimits, Streaks und Erfahrungspunkte) werden **ausschließlich lokal auf Ihren Geräten** gespeichert.
+- Alle Daten verbleiben zu 100 % lokal auf Ihren Geräten.
 - Wir betreiben **keine eigenen Server**, erheben **keine Benutzerkonten** und setzen **keinerlei Analyse-, Tracking- oder Werbe-SDKs** ein.
 - Wir haben zu keinem Zeitpunkt Zugriff auf Ihre protokollierten Daten.
 
@@ -24,10 +24,11 @@ Petersfeldstraße 16
 46395 Bocholt  
 Deutschland  
 
-**Vertreten durch die Geschäftsführung:**  
+**Vertreten durch die Geschäftsführer:**  
 Veselin Kolev  
 
 **Kontakt:**  
+Telefon: +49 176 23204351  
 E-Mail: info@vam-it.com  
 Website: https://vam-it.com  
 Handelsregister: Amtsgericht Coesfeld, HRB 23796  
@@ -37,7 +38,7 @@ Handelsregister: Amtsgericht Coesfeld, HRB 23796
 ### 3. Datenverarbeitung innerhalb der App
 
 #### a) Kaffee- und Konsumprotokoll
-- **Erfasste Daten:** Datum und Uhrzeit des Eintrags, gewählte Kaffeesorte (z. B. Espresso, Cappuccino, Flat White, Filterkaffee), Portionsgröße in Millilitern (ml) oder Unzen (oz), errechnete geschätzte Koffeinmenge in Milligramm (mg), manuell gewähltes Orts-Label („Home“, „Office“, „Cafe“) sowie optionale Notizen/Geschmacks-Tags.
+- **Erfasste Daten:** Datum und Uhrzeit des Eintrags, gewählte Kaffeesorte (z. B. Espresso, Cappuccino, Flat White, Cold Brew), Portionsgröße in Millilitern (ml) oder Unzen (oz), errechnete geschätzte Koffeinmenge in Milligramm (mg), manuell gewähltes Orts-Label („Home“, „Office“, „Café“) sowie optionale Notizen/Geschmacks-Tags.
 - **Zweck:** Berechnung der täglichen Koffeinsumme, Anzeige Ihres Verlaufs und Abgleich mit Ihrem gewählten Tageslimit.
 - **Rechtsgrundlage:** Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw. Bereitstellung der von Ihnen gewünschten App-Funktionen).
 
@@ -52,7 +53,7 @@ Handelsregister: Amtsgericht Coesfeld, HRB 23796
 - **Rechtsgrundlage:** Art. 6 Abs. 1 lit. b DSGVO.
 
 #### d) Keine Standortdaten / Kein GPS-Tracking
-- Sie können einzelnen Kaffee-Einträgen Labels wie **„Home“**, **„Office“** oder **„Cafe“** zuordnen.
+- Sie können einzelnen Kaffee-Einträgen Labels wie **„Home“**, **„Office“** oder **„Café“** zuordnen.
 - **Wichtig:** Diese Labels sind **keine Geodaten**. Die App greift **zu keinem Zeitpunkt** auf Ortungsdienste (GPS, WLAN-Ortung oder Mobilfunknetze) Ihres Geräts zu und erhebt keine Geokoordinaten. Es handelt sich um ein rein manuell vergebenes Kategorie-Etikett.
 
 #### e) Lokale Benachrichtigungen
@@ -74,11 +75,11 @@ Wenn Sie uns per E-Mail für Support oder Feedback kontaktieren, werden Ihre E-M
 ### 5. Speicherorte, Apple-Plattform & Dritte
 
 #### a) Lokale Speicherung & Widgets
-Alle Daten werden im abgeschirmten Sandbox-Speicher auf Ihrem Gerät abgelegt. Zur Bereitstellung von iOS-Widgets und Apple Watch Komplikationen werden aktuelle Tagessummen in einem lokalen App-Group-Container (`group.com.vamit.beanie`) auf Ihrem persönlichen Endgerät gespeichert.
+Alle Daten werden im abgeschirmten Sandbox-Speicher auf Ihrem Gerät abgelegt. Zur Bereitstellung von iOS-Widgets und Apple Watch Komplikationen werden Tagessummen in einem lokalen, gemeinsam genutzten App-Container auf Ihrem Gerät abgelegt.
 
 #### b) Apple als Plattform-Provider (App Store & Diagnosedaten)
 Der Vertrieb, die Installation und Updates der Applikation erfolgen über den Apple App Store.
-- Sofern Sie in den Systemeinstellungen Ihres Geräts die Übermittlung von Diagnose- und Nutzungsdaten aktiviert haben („Mit App-Entwicklern teilen“), stellt Apple uns anonymisierte Absturzberichte und statistische Auswertungen zur Verfügung.
+- Sofern Sie in den Systemeinstellungen Ihres Geräts die Übermittlung von Diagnose- und Nutzungsdaten aktiviert haben („Mit App-Entwicklern teilen“), stellt Apple uns Absturz- und Nutzungsstatistiken zur Verfügung, die nach Angaben von Apple anonymisiert sind.
 - Diese Daten lassen zu keinem Zeitpunkt Rückschlüsse auf Ihre Person zu und dienen ausschließlich der Behebung von Softwarefehlern.
 - Weitere Hinweise zur Datenverarbeitung durch Apple finden Sie in Apples Datenschutzrichtlinie unter [https://www.apple.com/legal/privacy/](https://www.apple.com/legal/privacy/).
 
@@ -103,7 +104,7 @@ Nach europäischem Datenschutzrecht stehen Ihnen folgende Rechte zu:
 - **Auskunft (Art. 15 DSGVO):** Sie können alle gespeicherten Daten direkt in der App einsehen.
 - **Berichtigung (Art. 16 DSGVO):** Anpassung von Limits und Einstellungen direkt in der App.
 - **Löschung (Art. 17 DSGVO):** Vollständiges Löschen über „Reset All App Data“ oder App-Entfernung.
-- **Einschränkung der Verarbeitung (Art. 18 DSGVO)** sowie **Datenübertragbarkeit (Art. 20 DSGVO)**.
+- **Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO) und Datenübertragbarkeit (Art. 20 DSGVO):** Da wir Ihre App-Daten nicht auf eigenen Servern speichern, üben Sie diese Rechte in erster Linie direkt in der App aus. Eine Exportfunktion bietet die App derzeit nicht. Bei Fragen können Sie uns jederzeit kontaktieren.
 - **Widerspruchsrecht (Art. 21 DSGVO):** Sie können der Verarbeitung jederzeit widersprechen.
 - **Widerruf von Einwilligungen (Art. 7 Abs. 3 DSGVO):** Benachrichtigungsrechte können jederzeit in den iOS-Einstellungen widerrufen werden.
 
@@ -119,7 +120,9 @@ Website: [https://www.ldi.nrw.de](https://www.ldi.nrw.de)
 ---
 
 ### 8. Änderungen dieser Datenschutzerklärung
-Wir behalten uns vor, diese Erklärung bei Funktionserweiterungen der App oder geänderten rechtlichen Vorgaben anzupassen. Die jeweils aktuelle Fassung ist stets in der App und im App Store abrufbar.
+Wir behalten uns vor, diese Erklärung bei Funktionserweiterungen der App oder geänderten rechtlichen Vorgaben anzupassen. Die jeweils aktuelle Fassung ist stets in der App und auf dieser Website abrufbar.
+
+Im Fall von Abweichungen zwischen der deutschen und der englischen Fassung ist die deutsche Fassung maßgeblich.
 
 ---
 ---
@@ -144,10 +147,11 @@ Petersfeldstraße 16
 46395 Bocholt  
 Germany  
 
-**Represented by Managing Director:**  
+**Represented by the Managing Directors:**  
 Veselin Kolev  
 
 **Contact:**  
+Phone: +49 176 23204351  
 Email: info@vam-it.com  
 Website: https://vam-it.com  
 Commercial Register: Local Court (Amtsgericht) Coesfeld, HRB 23796  
@@ -157,7 +161,7 @@ Commercial Register: Local Court (Amtsgericht) Coesfeld, HRB 23796
 ### 3. Data Processing within the App
 
 #### a) Coffee & Caffeine Consumption History
-- **Data processed:** Timestamp of entry, selected coffee type (e.g. Espresso, Flat White, Cappuccino), volume in milliliters (ml) or ounces (oz), calculated estimated caffeine amount in milligrams (mg), manually selected location category ("Home", "Office", "Cafe"), and optional notes/tags.
+- **Data processed:** Timestamp of entry, selected coffee type (e.g. Espresso, Cappuccino, Flat White, Cold Brew), volume in milliliters (ml) or ounces (oz), calculated estimated caffeine amount in milligrams (mg), manually selected location category ("Home", "Office", "Café"), and optional notes/tags.
 - **Purpose:** Calculating your daily caffeine total, charting your daily/weekly progress, and monitoring your personal daily limit.
 - **Legal Basis:** Art. 6(1)(b) GDPR (Performance of contract / providing requested app functionality).
 
@@ -172,7 +176,7 @@ Commercial Register: Local Court (Amtsgericht) Coesfeld, HRB 23796
 - **Legal Basis:** Art. 6(1)(b) GDPR.
 
 #### d) No GPS / Geographic Location Tracking
-- You can categorize individual brews using labels such as **"Home"**, **"Office"**, or **"Cafe"**.
+- You can categorize individual brews using labels such as **"Home"**, **"Office"**, or **"Café"**.
 - **Important:** These labels are **not location data**. The app never accesses device location services (GPS, Wi-Fi, or cellular networks) and collects no geographic coordinates. It is solely a manually selected categorical tag.
 
 #### e) Local Notifications
@@ -194,11 +198,11 @@ When you contact us via email for support or feedback, your email address and an
 ### 5. Storage Locations, Apple Platform & Third Parties
 
 #### a) Local Storage & Widgets
-All data is stored in the sandboxed, private storage on your device. To provide iOS Widgets and Apple Watch complication updates, current totals are stored in a local, app-group container (`group.com.vamit.beanie`) on your personal device.
+All data is stored in the sandboxed, private storage on your device. To provide iOS Widgets and Apple Watch complication updates, current totals are stored in a local, shared app container on your device.
 
 #### b) Apple as Platform Provider (App Store & Diagnostics)
 The distribution, installation, and updating of the application are handled through Apple's App Store.
-- If you have enabled the sharing of diagnostic and usage information in your iOS Settings ("Share with App Developers"), Apple may provide us with anonymized crash logs and usage statistics.
+- If you have enabled the sharing of diagnostic and usage information in your iOS Settings ("Share with App Developers"), Apple may provide us with crash logs and usage statistics, which according to Apple are anonymized.
 - This information does not identify you personally and is used solely for stability and performance improvements.
 - For more information on data processing by Apple, please refer to Apple's Privacy Policy at [https://www.apple.com/legal/privacy/](https://www.apple.com/legal/privacy/).
 
@@ -223,8 +227,7 @@ Under European data protection law, you have the following rights:
 - **Access (Art. 15 GDPR):** View all stored data directly within the app.
 - **Rectification (Art. 16 GDPR):** Correct or update your presets and limits in Settings.
 - **Erasure (Art. 17 GDPR):** Delete all data via *"Reset All App Data"* or app removal.
-- **Restriction of Processing (Art. 18 GDPR):** Cease using the app at any time.
-- **Data Portability (Art. 20 GDPR):** Receive your data in a portable format where applicable.
+- **Restriction of Processing (Art. 18 GDPR) and Data Portability (Art. 20 GDPR):** As we do not store your app data on our servers, these rights are primarily exercised directly within the app. The app currently does not offer a data export. You may contact us at any time with questions.
 - **Right to Object (Art. 21 GDPR):** Object to processing at any time.
 - **Withdrawal of Consent (Art. 7(3) GDPR):** Revoke notification permissions anytime in iOS Settings.
 
@@ -240,4 +243,6 @@ Website: [https://www.ldi.nrw.de](https://www.ldi.nrw.de)
 ---
 
 ### 8. Changes to this Policy
-We may update this Privacy Policy from time to time. The latest version will always remain accessible within the app and on the App Store product page.
+We may update this Privacy Policy from time to time. The latest version will always remain accessible within the app and on this website.
+
+In case of discrepancies between the German and English versions, the German version shall prevail.

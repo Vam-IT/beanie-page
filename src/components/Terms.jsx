@@ -91,7 +91,7 @@ const Terms = () => {
                 <p className="font-semibold">VAMIT UG (haftungsbeschränkt)</p>
                 <p>Petersfeldstraße 16</p>
                 <p>46395 Bocholt, Deutschland</p>
-                <p className="pt-2"><strong className="text-gray-300">Vertreten durch die Geschäftsführung:</strong> Veselin Kolev</p>
+                <p className="pt-2"><strong className="text-gray-300">Vertreten durch die Geschäftsführer:</strong> Veselin Kolev</p>
                 <p><strong className="text-gray-300">Handelsregister:</strong> Amtsgericht Coesfeld, HRB 23796</p>
                 <p><strong className="text-gray-300">Support-E-Mail:</strong> <a href="mailto:info@vam-it.com" className="text-amber-400 hover:underline">info@vam-it.com</a></p>
               </div>
@@ -153,7 +153,7 @@ const Terms = () => {
             <section className="space-y-3">
               <h2 className="text-xl font-bold text-white">6. Geistiges Eigentum</h2>
               <p>
-                Sämtliche Marken, Logos, Grafiken, Designs (einschließlich des Charakters und Maskottchens „Bean“), Soundeffekte und Softwarecodes der App sind urheberrechtlich geschützt und stehen im ausschließlichen Eigentum der VAMIT UG (haftungsbeschränkt) bzw. ihrer Lizenzgeber.
+                Sämtliche Marken, Logos, Grafiken, Designs (einschließlich des Maskottchens „Bean“), Soundeffekte und der Software-Code der App sind urheber- bzw. markenrechtlich geschützt und stehen im ausschließlichen Eigentum der VAMIT UG (haftungsbeschränkt) bzw. ihrer Lizenzgeber.
               </p>
               <p>
                 Nutzer erhalten ein einfaches, nicht-exklusives, nicht übertragbares und widerrufliches Recht zur bestimmungsgemäßen privaten Nutzung der App auf ihren persönlichen Geräten.
@@ -181,10 +181,13 @@ const Terms = () => {
                 <strong>Anwendbares Recht:</strong> Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts (CISG). Zwingende Verbraucherschutzvorschriften des Staates, in dem der Nutzer seinen gewöhnlichen Aufenthalt hat, bleiben unberührt.
               </p>
               <p>
-                <strong>Gerichtsstand:</strong> Sofern der Nutzer Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist, ist Gerichtsstand der Sitz des Anbieters (Bocholt / zuständiges Amtsgericht).
+                <strong>Gerichtsstand:</strong> Sofern der Nutzer Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist, ist Gerichtsstand Bocholt.
               </p>
               <p>
-                <strong>Änderungen:</strong> Der Anbieter behält sich vor, diese Bedingungen anzupassen, wenn dies durch Funktionsänderungen der App, Gesetzesänderungen oder gerichtliche Entscheidungen erforderlich wird.
+                <strong>Änderungen:</strong> Der Anbieter behält sich vor, diese Bedingungen anzupassen, wenn dies durch Funktionsänderungen der App, Gesetzesänderungen oder gerichtliche Entscheidungen erforderlich wird. Die geänderten Bedingungen gelten für die künftige Nutzung ab ihrer Veröffentlichung.
+              </p>
+              <p>
+                Im Fall von Abweichungen zwischen der deutschen und der englischen Fassung ist die deutsche Fassung maßgeblich.
               </p>
             </section>
           </div>
@@ -209,7 +212,7 @@ const Terms = () => {
                 <p className="font-semibold">VAMIT UG (haftungsbeschränkt)</p>
                 <p>Petersfeldstraße 16</p>
                 <p>46395 Bocholt, Germany</p>
-                <p className="pt-2"><strong className="text-gray-300">Managing Director:</strong> Veselin Kolev</p>
+                <p className="pt-2"><strong className="text-gray-300">Managing Directors:</strong> Veselin Kolev</p>
                 <p><strong className="text-gray-300">Commercial Register:</strong> Local Court (Amtsgericht) Coesfeld, HRB 23796</p>
                 <p><strong className="text-gray-300">Support Email:</strong> <a href="mailto:info@vam-it.com" className="text-amber-400 hover:underline">info@vam-it.com</a></p>
               </div>
@@ -270,7 +273,7 @@ const Terms = () => {
             <section className="space-y-3">
               <h2 className="text-xl font-bold text-white">6. Intellectual Property</h2>
               <p>
-                All trademarks, copyrights, visual designs, illustrations (including the mascot "Bean"), sound effects, and software code are the exclusive property of VAMIT UG (haftungsbeschränkt) or its licensors.
+                All trademarks, logos, graphics, designs (including the mascot "Bean"), sound effects and software code of the app are protected by copyright and trademark law and are the exclusive property of VAMIT UG (haftungsbeschränkt) or its licensors.
               </p>
               <p>
                 Users are granted a limited, revocable, non-exclusive, non-transferable license to use the app for personal, non-commercial purposes.
@@ -295,13 +298,16 @@ const Terms = () => {
             <section className="space-y-3">
               <h2 className="text-xl font-bold text-white">8. Governing Law &amp; Jurisdiction</h2>
               <p>
-                These Terms are governed by the laws of the Federal Republic of Germany, excluding the UN Convention on Contracts for the International Sale of Goods (CISG).
+                <strong>Governing Law:</strong> These Terms are governed by the laws of the Federal Republic of Germany, excluding the UN Convention on Contracts for the International Sale of Goods (CISG). Mandatory statutory consumer protection rights under the laws of your country of residence remain unaffected.
               </p>
               <p>
-                Mandatory statutory consumer protection rights under the laws of your country of residence remain unaffected.
+                <strong>Place of jurisdiction:</strong> If the user is a merchant, a legal entity under public law or a special fund under public law, the place of jurisdiction is Bocholt, Germany.
               </p>
               <p>
-                The provider reserves the right to amend these terms to reflect feature updates, legal changes, or technical requirements.
+                <strong>Amendments:</strong> The provider reserves the right to amend these terms to reflect feature updates, legal changes, or technical requirements. Amended terms apply to future use from the date of their publication.
+              </p>
+              <p>
+                In case of discrepancies between the German and English versions, the German version shall prevail.
               </p>
             </section>
           </div>

@@ -66,7 +66,7 @@ const Privacy = () => {
               <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
               <span>
                 {lang === 'de'
-                  ? 'Alle Daten verbleiben zu 100% lokal auf deinen Geräten.'
+                  ? 'Alle Daten verbleiben zu 100 % lokal auf Ihren Geräten.'
                   : 'All data is stored exclusively locally on your devices.'}
               </span>
             </li>
@@ -126,7 +126,7 @@ const Privacy = () => {
                 <p className="font-semibold">VAMIT UG (haftungsbeschränkt)</p>
                 <p>Petersfeldstraße 16</p>
                 <p>46395 Bocholt, Deutschland</p>
-                <p className="pt-2"><strong className="text-gray-300">Vertreten durch die Geschäftsführung:</strong> Veselin Kolev</p>
+                <p className="pt-2"><strong className="text-gray-300">Vertreten durch die Geschäftsführer:</strong> Veselin Kolev</p>
                 <p><strong className="text-gray-300">Handelsregister:</strong> Amtsgericht Coesfeld, HRB 23796</p>
                 <p><strong className="text-gray-300">E-Mail für Datenschutz &amp; Support:</strong> <a href="mailto:info@vam-it.com" className="text-amber-400 hover:underline">info@vam-it.com</a></p>
                 <p><strong className="text-gray-300">Website:</strong> <a href="https://vam-it.com" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">https://vam-it.com</a></p>
@@ -139,7 +139,7 @@ const Privacy = () => {
               <div className="space-y-2">
                 <h3 className="font-semibold text-amber-300">a) Kaffee- und Konsumprotokoll</h3>
                 <p>
-                  <strong>Erfasste Daten:</strong> Datum und Uhrzeit des Eintrags, gewählte Kaffeesorte (z. B. Espresso, Cappuccino, Flat White, Filterkaffee), Portionsgröße in Millilitern (ml) oder Unzen (oz), errechnete geschätzte Koffeinmenge in Milligramm (mg), manuell gewähltes Orts-Label („Home“, „Office“, „Cafe“) sowie optionale Notizen und Geschmacks-Tags.
+                  <strong>Erfasste Daten:</strong> Datum und Uhrzeit des Eintrags, gewählte Kaffeesorte (z. B. Espresso, Cappuccino, Flat White, Cold Brew), Portionsgröße in Millilitern (ml) oder Unzen (oz), errechnete geschätzte Koffeinmenge in Milligramm (mg), manuell gewähltes Orts-Label („Home“, „Office“, „Café“) sowie optionale Notizen und Geschmacks-Tags.
                 </p>
                 <p>
                   <strong>Zweck:</strong> Berechnung der täglichen Koffeinsumme, Anzeige Ihres Verlaufs und Abgleich mit Ihrem gewählten Tageslimit.
@@ -178,7 +178,7 @@ const Privacy = () => {
               <div className="space-y-2 p-4 rounded-xl bg-amber-500/10 border border-amber-500/20">
                 <h3 className="font-semibold text-amber-200">d) Keine Standortdaten / Kein GPS-Tracking</h3>
                 <p>
-                  Sie können einzelnen Getränkeeinträgen Labels wie <strong>„Home“</strong>, <strong>„Office“</strong> oder <strong>„Cafe“</strong> zuordnen. Diese Labels sind <strong>keine Geodaten</strong>. Die App greift zu keinem Zeitpunkt auf Ortungsdienste (GPS, WLAN-Ortung oder Mobilfunkdaten) Ihres Geräts zu. Es handelt sich um eine rein manuelle Kategorieauswahl.
+                  Sie können einzelnen Getränkeeinträgen Labels wie <strong>„Home“</strong>, <strong>„Office“</strong> oder <strong>„Café“</strong> zuordnen. Diese Labels sind <strong>keine Geodaten</strong>. Die App greift zu keinem Zeitpunkt auf Ortungsdienste (GPS, WLAN-Ortung oder Mobilfunkdaten) Ihres Geräts zu. Es handelt sich um eine rein manuelle Kategorieauswahl.
                 </p>
               </div>
 
@@ -216,10 +216,10 @@ const Privacy = () => {
               <h2 className="text-xl font-bold text-white">5. Speicherorte, Apple-Plattform &amp; Dritte</h2>
               <div className="space-y-2">
                 <p>
-                  <strong>a) Lokale Gerätespeicherung &amp; Widgets:</strong> Alle App-Daten werden in der geschützten Sandbox auf Ihrem Endgerät gespeichert. Um Widgets auf dem Home- und Sperrbildschirm sowie Watch-Komplikationen zu aktualisieren, werden Tagessummen in einem lokalen App-Group-Container (<code className="text-amber-300 font-mono">group.com.vamit.beanie</code>) abgelegt.
+                  <strong>a) Lokale Gerätespeicherung &amp; Widgets:</strong> Alle App-Daten werden in der geschützten Sandbox auf Ihrem Endgerät gespeichert. Um Widgets auf dem Home- und Sperrbildschirm sowie Watch-Komplikationen zu aktualisieren, werden Tagessummen in einem lokalen, gemeinsam genutzten App-Container auf Ihrem Gerät abgelegt.
                 </p>
                 <p>
-                  <strong>b) Apple als Plattform-Provider:</strong> Download, Installation und Updates erfolgen über den Apple App Store. Sofern Sie in den iOS-Einstellungen die Freigabe aktiviert haben („Mit App-Entwicklern teilen“), stellt Apple uns anonymisierte Absturz- und Nutzungsstatistiken zur Verfügung. Diese lassen keinen Rückschluss auf Ihre Person zu. Weitere Hinweise finden Sie in <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">Apples Datenschutzrichtlinie</a>.
+                  <strong>b) Apple als Plattform-Provider:</strong> Download, Installation und Updates erfolgen über den Apple App Store. Sofern Sie in den iOS-Einstellungen die Freigabe aktiviert haben („Mit App-Entwicklern teilen“), stellt Apple uns Absturz- und Nutzungsstatistiken zur Verfügung, die nach Angaben von Apple anonymisiert sind. Diese lassen keinen Rückschluss auf Ihre Person zu. Weitere Hinweise finden Sie in <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">Apples Datenschutzrichtlinie</a>.
                 </p>
                 <p>
                   <strong>c) Apple Watch Synchronisation:</strong> Die Synchronisation zwischen iPhone und Apple Watch erfolgt direkt über den Apple-Systemdienst <code className="text-amber-300 font-mono">WatchConnectivity</code> zwischen Ihren gekoppelten Geräten. Wir erhalten dabei keinerlei Daten.
@@ -249,7 +249,7 @@ const Privacy = () => {
                 <li><strong>Recht auf Auskunft (Art. 15 DSGVO):</strong> Sie können alle gespeicherten Daten direkt in der App einsehen.</li>
                 <li><strong>Recht auf Berichtigung (Art. 16 DSGVO):</strong> Sie können Limits und Präferenzen jederzeit in den Einstellungen anpassen.</li>
                 <li><strong>Recht auf Löschung (Art. 17 DSGVO):</strong> Jederzeit möglich über „Reset All App Data“ oder App-Deinstallation.</li>
-                <li><strong>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</strong> sowie <strong>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</strong>.</li>
+                <li><strong>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO) und Datenübertragbarkeit (Art. 20 DSGVO):</strong> Da wir Ihre App-Daten nicht auf eigenen Servern speichern, üben Sie diese Rechte in erster Linie direkt in der App aus. Eine Exportfunktion bietet die App derzeit nicht. Bei Fragen können Sie uns jederzeit kontaktieren.</li>
                 <li><strong>Widerruf von Einwilligungen (Art. 7 Abs. 3 DSGVO):</strong> Benachrichtigungsrechte können jederzeit in den iOS-Einstellungen widerrufen werden.</li>
               </ul>
 
@@ -267,6 +267,9 @@ const Privacy = () => {
               <h2 className="text-xl font-bold text-white">8. Änderungen dieser Datenschutzerklärung</h2>
               <p>
                 Wir behalten uns vor, diese Erklärung bei Funktionserweiterungen der App oder geänderten rechtlichen Vorgaben anzupassen. Die jeweils aktuelle Fassung ist stets in der App und auf dieser Website abrufbar.
+              </p>
+              <p>
+                Im Fall von Abweichungen zwischen der deutschen und der englischen Fassung ist die deutsche Fassung maßgeblich.
               </p>
             </section>
           </div>
@@ -299,7 +302,7 @@ const Privacy = () => {
                 <p className="font-semibold">VAMIT UG (haftungsbeschränkt)</p>
                 <p>Petersfeldstraße 16</p>
                 <p>46395 Bocholt, Germany</p>
-                <p className="pt-2"><strong className="text-gray-300">Managing Director:</strong> Veselin Kolev</p>
+                <p className="pt-2"><strong className="text-gray-300">Managing Directors:</strong> Veselin Kolev</p>
                 <p><strong className="text-gray-300">Commercial Register:</strong> Local Court (Amtsgericht) Coesfeld, HRB 23796</p>
                 <p><strong className="text-gray-300">Privacy &amp; Support Email:</strong> <a href="mailto:info@vam-it.com" className="text-amber-400 hover:underline">info@vam-it.com</a></p>
                 <p><strong className="text-gray-300">Website:</strong> <a href="https://vam-it.com" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">https://vam-it.com</a></p>
@@ -312,7 +315,7 @@ const Privacy = () => {
               <div className="space-y-2">
                 <h3 className="font-semibold text-amber-300">a) Coffee &amp; Caffeine Consumption History</h3>
                 <p>
-                  <strong>Data processed:</strong> Timestamp of entry, selected coffee type (e.g. Espresso, Flat White, Cappuccino), volume in milliliters (ml) or ounces (oz), calculated estimated caffeine amount in milligrams (mg), manually selected location category ("Home", "Office", "Cafe"), and optional notes/tags.
+                  <strong>Data processed:</strong> Timestamp of entry, selected coffee type (e.g. Espresso, Cappuccino, Flat White, Cold Brew), volume in milliliters (ml) or ounces (oz), calculated estimated caffeine amount in milligrams (mg), manually selected location category ("Home", "Office", "Café"), and optional notes/tags.
                 </p>
                 <p>
                   <strong>Purpose:</strong> Calculating your daily caffeine total, charting your daily/weekly progress, and monitoring your personal daily limit.
@@ -351,7 +354,7 @@ const Privacy = () => {
               <div className="space-y-2 p-4 rounded-xl bg-amber-500/10 border border-amber-500/20">
                 <h3 className="font-semibold text-amber-200">d) No GPS / Geographic Location Tracking</h3>
                 <p>
-                  You can categorize individual brews using labels such as <strong>"Home"</strong>, <strong>"Office"</strong>, or <strong>"Cafe"</strong>. These labels are <strong>not location data</strong>. The app never accesses device location services (GPS, Wi-Fi, or cellular networks) and collects no geographic coordinates. It is solely a manually selected categorical tag.
+                  You can categorize individual brews using labels such as <strong>"Home"</strong>, <strong>"Office"</strong>, or <strong>"Café"</strong>. These labels are <strong>not location data</strong>. The app never accesses device location services (GPS, Wi-Fi, or cellular networks) and collects no geographic coordinates. It is solely a manually selected categorical tag.
                 </p>
               </div>
 
@@ -381,7 +384,7 @@ const Privacy = () => {
                 <strong>Purpose &amp; Legal Basis:</strong> Handling your inquiry (Art. 6(1)(b) GDPR or Art. 6(1)(f) GDPR for legitimate interest in providing reliable support).
               </p>
               <p>
-                <strong>Retention:</strong> Your inquiry data is deleted once the matter has been conclusively resolved.
+                <strong>Retention:</strong> Your inquiry data is deleted once the matter has been conclusively resolved, unless statutory retention obligations apply.
               </p>
             </section>
 
@@ -389,10 +392,10 @@ const Privacy = () => {
               <h2 className="text-xl font-bold text-white">5. Storage Locations, Apple Platform &amp; Third Parties</h2>
               <div className="space-y-2">
                 <p>
-                  <strong>a) Local Storage &amp; Widgets:</strong> All data is stored in the sandboxed, private storage on your device. To provide iOS Widgets and Apple Watch complication updates, current totals are stored in a local, app-group container (<code className="text-amber-300 font-mono">group.com.vamit.beanie</code>).
+                  <strong>a) Local Storage &amp; Widgets:</strong> All data is stored in the sandboxed, private storage on your device. To provide iOS Widgets and Apple Watch complication updates, current totals are stored in a local, shared app container on your device.
                 </p>
                 <p>
-                  <strong>b) Apple as Platform Provider:</strong> The distribution and updates are handled through Apple's App Store. If enabled in your iOS Settings ("Share with App Developers"), Apple may provide us with anonymized crash logs. Refer to <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">Apple's Privacy Policy</a> for more details.
+                  <strong>b) Apple as Platform Provider:</strong> The distribution and updates are handled through Apple's App Store. If enabled in your iOS Settings ("Share with App Developers"), Apple may provide us with crash logs and usage statistics, which according to Apple are anonymized. Refer to <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">Apple's Privacy Policy</a> for more details.
                 </p>
                 <p>
                   <strong>c) Apple Watch Synchronization:</strong> Synchronization is performed via Apple's native <code className="text-amber-300 font-mono">WatchConnectivity</code> system service between your paired devices. We receive no data.
@@ -420,7 +423,7 @@ const Privacy = () => {
                 <li><strong>Access (Art. 15 GDPR):</strong> View all stored data directly within the app.</li>
                 <li><strong>Rectification (Art. 16 GDPR):</strong> Correct or update your presets and limits in Settings.</li>
                 <li><strong>Erasure (Art. 17 GDPR):</strong> Delete all data via "Reset All App Data" or app removal.</li>
-                <li><strong>Restriction of Processing (Art. 18 GDPR)</strong> and <strong>Data Portability (Art. 20 GDPR)</strong>.</li>
+                <li><strong>Restriction of Processing (Art. 18 GDPR) and Data Portability (Art. 20 GDPR):</strong> As we do not store your app data on our servers, these rights are primarily exercised directly within the app. The app currently does not offer a data export. You may contact us at any time with questions.</li>
                 <li><strong>Withdrawal of Consent (Art. 7(3) GDPR):</strong> Revoke notification permissions anytime in iOS Settings.</li>
               </ul>
 
@@ -438,6 +441,9 @@ const Privacy = () => {
               <h2 className="text-xl font-bold text-white">8. Changes to this Policy</h2>
               <p>
                 We may update this Privacy Policy from time to time. The latest version will always remain accessible within the app and on this website.
+              </p>
+              <p>
+                In case of discrepancies between the German and English versions, the German version shall prevail.
               </p>
             </section>
           </div>
