@@ -82,7 +82,7 @@ export const translations = {
       },
       privacyBox: {
         badge: 'Transparency & Privacy',
-        title: 'What Beanie Deliberately ',
+        title: 'What CupTrail Deliberately ',
         titleHighlight: 'DOES NOT Do',
         desc:
           'Your coffee habits belong strictly to you. Built with Privacy by Design from day one.',
@@ -108,7 +108,7 @@ export const translations = {
         'Understand your coffee habits with clear daily sums and streak milestones without confusing jargon.',
       card1Title: 'Daily Limit in Check',
       card1Value: '400 mg',
-      card1Desc: 'Standard daily guideline for healthy adults. Beanie keeps the tally.',
+      card1Desc: 'Standard daily guideline for healthy adults. CupTrail keeps the tally.',
       card1Tag: 'Daily Target',
       card2Title: 'Daily Streaks',
       card2Value: '7 Days+',
@@ -132,7 +132,7 @@ export const translations = {
       title1: 'Ready for Your Smart ',
       title2: 'Coffee Companion?',
       subtitle:
-        'Download Beanie on the App Store. Free, private, and 100% on your device.',
+        'Download CupTrail on the App Store. Free, private, and 100% on your device.',
       badgeApple: 'Available on the',
       appStore: 'Apple App Store',
       compatibility: 'Compatible with iOS 17.0+ & watchOS 10.0+',
@@ -168,7 +168,7 @@ export const translations = {
       badge: 'Release in Preparation',
       title: 'Coming Soon to the App Store!',
       desc:
-        'Beanie is currently in final testing for iOS 17+ and watchOS 10+. Get ready for the cleanest coffee companion.',
+        'CupTrail is currently in final testing for iOS 17+ and watchOS 10+. Get ready for the cleanest coffee companion.',
       feature1Title: 'iOS 17+ & watchOS 10+',
       feature1Desc: 'Companion app, lock screen widgets & watch complications.',
       feature2Title: '100% Privacy by Design',
@@ -257,7 +257,7 @@ export const translations = {
       },
       privacyBox: {
         badge: 'Transparenz & Datenschutz',
-        title: 'Was Beanie ganz bewusst ',
+        title: 'Was CupTrail ganz bewusst ',
         titleHighlight: 'NICHT tut',
         desc:
           'Deine Gewohnheiten gehören nur dir. Von Tag eins nach dem Privacy-by-Design-Prinzip gebaut.',
@@ -283,7 +283,7 @@ export const translations = {
         'Verstehe deine Routinen mit klaren Tagessummen und Streak-Meilensteinen ohne Fachchinesisch.',
       card1Title: 'Tageslimit im Blick',
       card1Value: '400 mg',
-      card1Desc: 'Empfohlener Richtwert für Erwachsene. Beanie zählt jede Tasse mit.',
+      card1Desc: 'Empfohlener Richtwert für Erwachsene. CupTrail zählt jede Tasse mit.',
       card1Tag: 'Tages-Sollwert',
       card2Title: 'Tages-Streaks',
       card2Value: '7 Tage+',
@@ -307,7 +307,7 @@ export const translations = {
       title1: 'Bereit für deinen smarten ',
       title2: 'Kaffee-Begleiter?',
       subtitle:
-        'Lade Beanie im App Store. Kostenlos, privat und 100% auf deinem Gerät.',
+        'Lade CupTrail im App Store. Kostenlos, privat und 100% auf deinem Gerät.',
       badgeApple: 'Erhältlich im',
       appStore: 'Apple App Store',
       compatibility: 'Kompatibel mit iOS 17.0+ & watchOS 10.0+',
@@ -343,7 +343,7 @@ export const translations = {
       badge: 'Veröffentlichung in Vorbereitung',
       title: 'Bald im Apple App Store!',
       desc:
-        'Beanie befindet sich im finalen Feinschliff für iOS 17+ und watchOS 10+. Freu dich auf deinen smarten Kaffeebegleiter.',
+        'CupTrail befindet sich im finalen Feinschliff für iOS 17+ und watchOS 10+. Freu dich auf deinen smarten Kaffeebegleiter.',
       feature1Title: 'iOS 17+ & watchOS 10+',
       feature1Desc: 'Begleit-App, Sperrbildschirm-Widgets & Watch-Komplikationen.',
       feature2Title: '100% Datenschutz & Offline',
@@ -374,11 +374,11 @@ export const LanguageProvider = ({ children }) => {
     try {
       localStorage.setItem('beanie_lang', lang);
       document.documentElement.lang = lang;
-      if (document.title.includes('Beanie')) {
+      if (document.title.includes('Beanie') || document.title.includes('CupTrail')) {
         document.title =
           lang === 'de'
-            ? 'Beanie - Dein smarter Kaffee- & Koffein-Begleiter'
-            : 'Beanie - Your Smart Coffee & Caffeine Tracker';
+            ? 'CupTrail - Dein smarter Kaffee- & Koffein-Begleiter'
+            : 'CupTrail - Your Smart Coffee & Caffeine Tracker';
       }
     } catch {
       // storage unavailable

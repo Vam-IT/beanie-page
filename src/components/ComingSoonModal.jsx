@@ -81,7 +81,7 @@ const ComingSoonModal = () => {
                   <div className="w-full h-full bg-[#181411] rounded-[14px] flex items-center justify-center overflow-hidden">
                     <img
                       src={assetUrl('assets/icon-1024.png')}
-                      alt="Beanie App Icon"
+                      alt="CupTrail App Icon"
                       className="w-full h-full object-cover"
                     />
                   </div>

@@ -65,8 +65,8 @@ const Terms = () => {
           </div>
           <p className="text-xs text-amber-200/90 leading-relaxed font-light">
             {lang === 'de'
-              ? 'Beanie ist kein Medizinprodukt und bietet keine medizinische oder therapeutische Diagnostik. Alle Koffeinmengen und Grenzwerte sind reine Orientierungs- und Schätzwerte. Bei gesundheitlichen Beschwerden oder Fragen zu Ihrem Koffeinkonsum konsultieren Sie stets qualifiziertes medizinisches Fachpersonal.'
-              : 'Beanie is not a medical device and provides no medical or diagnostic advice. All caffeine numbers and limits are estimations and general guidance. Always consult a qualified medical professional regarding individual caffeine sensitivity or health conditions.'}
+              ? 'CupTrail ist kein Medizinprodukt und bietet keine medizinische oder therapeutische Diagnostik. Alle Koffeinmengen und Grenzwerte sind reine Orientierungs- und Schätzwerte. Bei gesundheitlichen Beschwerden oder Fragen zu Ihrem Koffeinkonsum konsultieren Sie stets qualifiziertes medizinisches Fachpersonal.'
+              : 'CupTrail is not a medical device and provides no medical or diagnostic advice. All caffeine numbers and limits are estimations and general guidance. Always consult a qualified medical professional regarding individual caffeine sensitivity or health conditions.'}
           </p>
         </div>
 
@@ -78,14 +78,14 @@ const Terms = () => {
                 Nutzungsbedingungen (Terms of Use)
               </h1>
               <p className="text-xs text-amber-400 font-medium">
-                App: Beanie (iOS &amp; watchOS) · Stand: Oktober 2026
+                App: CupTrail (iOS &amp; watchOS) · Stand: Oktober 2026
               </p>
             </div>
 
             <section className="space-y-3 p-5 rounded-2xl bg-white/5 border border-white/5">
               <h2 className="text-xl font-bold text-white">1. Geltungsbereich &amp; Anbieter</h2>
               <p>
-                Diese Nutzungsbedingungen gelten für die Nutzung der iOS- und watchOS-Applikation <strong>„Beanie“</strong> (einschließlich Widgets und Begleit-Apps) der:
+                Diese Nutzungsbedingungen gelten für die Nutzung der iOS- und watchOS-Applikation <strong>„CupTrail“</strong> (einschließlich Widgets und Begleit-Apps) der:
               </p>
               <div className="text-white space-y-1">
                 <p className="font-semibold">VAMIT UG (haftungsbeschränkt)</p>
@@ -121,7 +121,7 @@ const Terms = () => {
             <section className="space-y-3">
               <h2 className="text-xl font-bold text-white">3. Leistungsbeschreibung &amp; Nutzung der App</h2>
               <p>
-                Beanie ist ein persönliches Kaffee- und Koffein-Tagebuch mit Gamification-Elementen (Begleiter „Bean“, Streaks, Level und Errungenschaften).
+                CupTrail ist ein persönliches Kaffee- und Koffein-Tagebuch mit Gamification-Elementen (Begleiter „Bean“, Streaks, Level und Errungenschaften).
               </p>
               <p>
                 Die Datenverarbeitung erfolgt rein lokal auf Ihren persönlichen Endgeräten. Der Anbieter bemüht sich um eine kontinuierliche Verfügbarkeit und Fehlerfreiheit der App, übernimmt jedoch keine Garantie für die ununterbrochene Funktionsfähigkeit auf allen Betriebssystemversionen oder Hardware-Kombinationen.
@@ -143,7 +143,7 @@ const Terms = () => {
             <section className="space-y-3">
               <h2 className="text-xl font-bold text-white">5. In-App-Käufe &amp; Abonnements</h2>
               <p>
-                Die aktuelle Version von Beanie enthält <strong>keine In-App-Käufe, keine Abonnements und keine Bezahlschranken</strong>. Die App ist aktuell kostenlos im Apple App Store erhältlich.
+                Die aktuelle Version von CupTrail enthält <strong>keine In-App-Käufe, keine Abonnements und keine Bezahlschranken</strong>. Die App ist aktuell kostenlos im Apple App Store erhältlich.
               </p>
               <p>
                 Sollten zukünftig optionale kostenpflichtige Erweiterungen eingeführt werden, erfolgt deren Abwicklung transparent über den Apple App Store gemäß den Richtlinien von Apple.
@@ -196,14 +196,14 @@ const Terms = () => {
                 Terms of Use
               </h1>
               <p className="text-xs text-amber-400 font-medium">
-                App: Beanie (iOS &amp; watchOS) · As of: October 2026
+                App: CupTrail (iOS &amp; watchOS) · As of: October 2026
               </p>
             </div>
 
             <section className="space-y-3 p-5 rounded-2xl bg-white/5 border border-white/5">
               <h2 className="text-xl font-bold text-white">1. Scope &amp; Provider</h2>
               <p>
-                These Terms of Use govern the use of the iOS and watchOS application <strong>„Beanie“</strong> (including its widgets and complications), provided by:
+                These Terms of Use govern the use of the iOS and watchOS application <strong>„CupTrail“</strong> (including its widgets and complications), provided by:
               </p>
               <div className="text-white space-y-1">
                 <p className="font-semibold">VAMIT UG (haftungsbeschränkt)</p>
@@ -239,7 +239,7 @@ const Terms = () => {
             <section className="space-y-3">
               <h2 className="text-xl font-bold text-white">3. Description of Services</h2>
               <p>
-                Beanie serves as a personal coffee logging and caffeine tracking tool with interactive mascot companion features.
+                CupTrail serves as a personal coffee logging and caffeine tracking tool with interactive mascot companion features.
               </p>
               <p>
                 All core calculations and storage operate entirely locally on your Apple device. While we strive for high stability and reliability, we do not warrant that the application will be uninterrupted or error-free at all times.
@@ -260,7 +260,7 @@ const Terms = () => {
             <section className="space-y-3">
               <h2 className="text-xl font-bold text-white">5. In-App Purchases &amp; Subscriptions</h2>
               <p>
-                The current version of Beanie contains <strong>no in-app purchases, paid subscriptions, or paywalls</strong>.
+                The current version of CupTrail contains <strong>no in-app purchases, paid subscriptions, or paywalls</strong>.
               </p>
               <p>
                 If premium extensions are introduced in future releases, they will be processed directly through Apple's In-App Purchase system under Apple's App Store terms.

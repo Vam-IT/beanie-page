@@ -7,7 +7,7 @@
 ## Teil 1: Datenschutzerklärung (Deutsch)
 
 ### 1. Präambel & Grundsatz
-Der Schutz Ihrer persönlichen Daten ist uns ein zentrales Anliegen. Die App **„Beanie“** (einschließlich der Widgets und der Begleit-App für die Apple Watch) folgt den Prinzipien von **„Privacy by Design“** und **„Datensparsamkeit“**.
+Der Schutz Ihrer persönlichen Daten ist uns ein zentrales Anliegen. Die App **„CupTrail“** (einschließlich der Widgets und der Begleit-App für die Apple Watch) folgt den Prinzipien von **„Privacy by Design“** und **„Datensparsamkeit“**.
 
 **Das Wichtigste auf einen Blick:**
 - Sämtliche Daten (erfasste Kaffees, geschätzte Koffeinmengen, Tageslimits, Streaks und Erfahrungspunkte) werden **ausschließlich lokal auf Ihren Geräten** gespeichert.
@@ -86,7 +86,7 @@ Der Vertrieb, die Installation und Updates der Applikation erfolgen über den Ap
 Bei der Nutzung der Apple Watch Begleit-App erfolgt der Datenabgleich direkt über den Apple-Systemdienst `WatchConnectivity` zwischen Ihren gekoppelten Geräten. Wir als Entwickler erhalten hierbei keinerlei Daten.
 
 #### d) Keine Drittanbieter-Analyse, Werbung oder Tracker
-Wir geben keinerlei Daten an Dritte weiter. Beanie enthält keine Werbenetzwerke, keine externen Analysedienste (wie Google Firebase, Meta SDK, Mixpanel) und keine Social-Media-Tracker.
+Wir geben keinerlei Daten an Dritte weiter. CupTrail enthält keine Werbenetzwerke, keine externen Analysedienste (wie Google Firebase, Meta SDK, Mixpanel) und keine Social-Media-Tracker.
 
 ---
 
@@ -127,7 +127,7 @@ Wir behalten uns vor, diese Erklärung bei Funktionserweiterungen der App oder g
 ## Part 2: Privacy Policy (English)
 
 ### 1. Overview & Privacy Principles
-Protecting your personal data is a top priority for us. The **"Beanie"** application (including its widgets and Apple Watch companion app) is built strictly following the principles of **Privacy by Design** and **Data Minimization**.
+Protecting your personal data is a top priority for us. The **"CupTrail"** application (including its widgets and Apple Watch companion app) is built strictly following the principles of **Privacy by Design** and **Data Minimization**.
 
 **Key Highlights:**
 - All data (logged coffees, estimated caffeine amounts, daily limits, streaks, and XP) is stored **exclusively locally on your devices**.
@@ -203,10 +203,10 @@ The distribution, installation, and updating of the application are handled thro
 - For more information on data processing by Apple, please refer to Apple's Privacy Policy at [https://www.apple.com/legal/privacy/](https://www.apple.com/legal/privacy/).
 
 #### c) Apple Watch Synchronization
-When using the Beanie Apple Watch companion app, synchronization is performed via Apple's native `WatchConnectivity` system service between your paired devices. We as the provider receive no data in this process.
+When using the CupTrail Apple Watch companion app, synchronization is performed via Apple's native `WatchConnectivity` system service between your paired devices. We as the provider receive no data in this process.
 
 #### d) No Third-Party Analytics, Advertising, or Tracking
-We do not share any data with third parties. Beanie does not integrate any advertising networks, third-party analytics services, or social media tracking libraries.
+We do not share any data with third parties. CupTrail does not integrate any advertising networks, third-party analytics services, or social media tracking libraries.
 
 ---
 

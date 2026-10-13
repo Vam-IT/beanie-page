@@ -191,7 +191,7 @@ const Features = () => {
                 <div className="rounded-[1.8rem] overflow-hidden bg-[#FBF9F1]">
                   <img
                     src={assetUrl('assets/beanie-add-brew.png')}
-                    alt="Beanie Add Brew Screen - Coffee Catalogue &amp; Caffeine Slider"
+                    alt="CupTrail Add Brew Screen - Coffee Catalogue &amp; Caffeine Slider"
                     className="w-full h-auto object-cover"
                     onError={(e) => {
                       e.currentTarget.src = assetUrl('assets/beanie-dashboard.png');

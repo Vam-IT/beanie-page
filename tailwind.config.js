@@ -9,7 +9,7 @@ export default {
       colors: {
         vami: {
           dark: "#141210", // Warm Dark Roast Hintergrund
-          primary: "#FF5722", // Beanie Flame Orange Akzent
+          primary: "#FF5722", // CupTrail Flame Orange Akzent
           secondary: "#25211D", // Warm Mocha Sekundärfarbe
           glass: "rgba(255, 255, 255, 0.08)", // Glassmorphism
         },

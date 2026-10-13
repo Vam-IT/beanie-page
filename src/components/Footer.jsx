@@ -15,7 +15,7 @@ const Footer = () => {
             <div className="w-full h-full bg-[#181411] rounded-[11px] flex items-center justify-center overflow-hidden">
               <img
                 src={assetUrl('assets/icon-1024.png')}
-                alt="Beanie Icon"
+                alt="CupTrail Icon"
                 className="w-full h-full object-cover rounded-[10px]"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
@@ -25,7 +25,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-base font-black text-white tracking-tight">Beanie</span>
+            <span className="text-base font-black text-white tracking-tight">CupTrail</span>
             <span className="text-xs text-gray-500">{t.footer.tagline}</span>
           </div>
         </div>

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Beanie Website is a modern, animated website for the **Beanie** Coffee & Caffeine tracking app for iOS (17.0+) and watchOS (10.0+). Built with React, Vite, Tailwind CSS, and Framer Motion, it showcases the app's features, companion mascot Bean, widgets, and provides comprehensive privacy policy and terms of use pages.
+CupTrail Website is a modern, animated website for the **CupTrail** Coffee & Caffeine tracking app for iOS (17.0+) and watchOS (10.0+). Built with React, Vite, Tailwind CSS, and Framer Motion, it showcases the app's features, companion mascot Bean, widgets, and provides comprehensive privacy policy and terms of use pages.
 
 ## Common Commands
 

@@ -7,7 +7,7 @@
 ## Teil 1: Nutzungsbedingungen (Deutsch)
 
 ### 1. Geltungsbereich & Anbieter
-Diese Nutzungsbedingungen gelten für die Nutzung der iOS- und watchOS-Applikation **„Beanie“** (einschließlich Widgets und Begleit-Apps) der:
+Diese Nutzungsbedingungen gelten für die Nutzung der iOS- und watchOS-Applikation **„CupTrail“** (einschließlich Widgets und Begleit-Apps) der:
 
 **VAMIT UG (haftungsbeschränkt)**  
 Petersfeldstraße 16  
@@ -29,7 +29,7 @@ Die Nutzung der App unterliegt den Bestimmungen des Standard-Endbenutzer-Lizenzv
 ### 2. Wesentlicher Gesundheitshinweis (Keine medizinische Beratung)
 
 > ⚠️ **WICHTIGER HINWEIS:**  
-> **Beanie ist KEIN medizinisches Produkt und bietet KEINE medizinische, pharmazeutische oder gesundheitliche Beratung.**
+> **CupTrail ist KEIN medizinisches Produkt und bietet KEINE medizinische, pharmazeutische oder gesundheitliche Beratung.**
 
 1. **Schätzwerte & Orientierung:** Alle in der App angezeigten Koffeingehalte, Tagessummen und Standard-Tageslimits (z. B. der Richtwert von 400 mg Koffein pro Tag für gesunde Erwachsene) beruhen auf allgemeinen publizierten Durchschnittswerten und theoretischen Modellen. Die App summiert lediglich die von Ihnen erfassten Getränkemengen auf. Es gibt **keine biologische Abbaukurve, keine Halbwertszeitberechnung und keine medizinische Diagnostik**. Der tatsächliche Koffeingehalt eines Heißgetränks variiert in der Realität erheblich je nach Bohnenart (Arabica vs. Robusta), Röstgrad, Mahlgrad, Brühdauer, Extraktion und Portionsgröße.
 2. **Individuelle Unterschiede:** Die individuelle Koffeintoleranz und gesundheitliche Verträglichkeit hängen von zahlreichen biologischen Faktoren ab (u. a. Körpergewicht, Genetik, Alter, Leberstoffwechsel, Einnahme von Medikamenten).
@@ -39,7 +39,7 @@ Die Nutzung der App unterliegt den Bestimmungen des Standard-Endbenutzer-Lizenzv
 ---
 
 ### 3. Leistungsbeschreibung & Nutzung der App
-- Beanie ist ein persönliches Kaffee- und Koffein-Tagebuch mit Gamification-Elementen (Begleiter „Bean“, Streaks, Level und Errungenschaften).
+- CupTrail ist ein persönliches Kaffee- und Koffein-Tagebuch mit Gamification-Elementen (Begleiter „Bean“, Streaks, Level und Errungenschaften).
 - Die Datenverarbeitung erfolgt rein lokal auf Ihren persönlichen Endgeräten.
 - Der Anbieter bemüht sich um eine kontinuierliche Verfügbarkeit und Fehlerfreiheit der App, übernimmt jedoch keine Garantie für die ununterbrochene Funktionsfähigkeit auf allen Betriebssystemversionen oder Hardware-Kombinationen.
 
@@ -53,7 +53,7 @@ Die Nutzung der App unterliegt den Bestimmungen des Standard-Endbenutzer-Lizenzv
 ---
 
 ### 5. In-App-Käufe & Abonnements
-- Die aktuelle Version von Beanie enthält **keine In-App-Käufe, keine Abonnements und keine Bezahlschranken**. 
+- Die aktuelle Version von CupTrail enthält **keine In-App-Käufe, keine Abonnements und keine Bezahlschranken**. 
 - Sollten zukünftig optionale kostenpflichtige Erweiterungen eingeführt werden, erfolgt deren Abwicklung transparent über den Apple App Store gemäß den Richtlinien von Apple.
 
 ---
@@ -82,7 +82,7 @@ Die Nutzung der App unterliegt den Bestimmungen des Standard-Endbenutzer-Lizenzv
 ## Teil 2: Terms of Use (English)
 
 ### 1. Scope & Provider
-These Terms of Use govern the use of the iOS and watchOS application **"Beanie"** (including its widgets and complications), provided by:
+These Terms of Use govern the use of the iOS and watchOS application **"CupTrail"** (including its widgets and complications), provided by:
 
 **VAMIT UG (haftungsbeschränkt)**  
 Petersfeldstraße 16  
@@ -104,7 +104,7 @@ Use of the application is governed by the *Apple Standard Licensed Application E
 ### 2. Critical Health Notice (No Medical Advice)
 
 > ⚠️ **IMPORTANT DISCLAIMER:**  
-> **Beanie is NOT a medical device, and does NOT provide medical, clinical, or pharmaceutical advice.**
+> **CupTrail is NOT a medical device, and does NOT provide medical, clinical, or pharmaceutical advice.**
 
 1. **Approximations & Guidance Only:** All caffeine estimates, daily totals, and default daily limits (such as the standard 400 mg daily reference) are based on general published scientific averages. The app simply sums up your logged beverage intake. There is **no biological decay curve, no half-life calculation, and no clinical diagnostics**. The actual caffeine concentration in any prepared beverage varies significantly depending on bean origin, roast level, grind size, brewing time, and extraction method.
 2. **Individual Variability:** Biological responses to caffeine depend on weight, age, genetic metabolic rates, liver enzyme activity, medications, and individual sensitivity.
@@ -114,7 +114,7 @@ Use of the application is governed by the *Apple Standard Licensed Application E
 ---
 
 ### 3. Description of Services
-- Beanie serves as a personal coffee logging and caffeine tracking tool with interactive mascot companion features.
+- CupTrail serves as a personal coffee logging and caffeine tracking tool with interactive mascot companion features.
 - All core calculations and storage operate entirely locally on your Apple device.
 - While we strive for high stability and reliability, we do not warrant that the application will be uninterrupted or error-free at all times.
 
@@ -128,7 +128,7 @@ Use of the application is governed by the *Apple Standard Licensed Application E
 ---
 
 ### 5. In-App Purchases & Subscriptions
-- The current version of Beanie contains **no in-app purchases, paid subscriptions, or paywalls**.
+- The current version of CupTrail contains **no in-app purchases, paid subscriptions, or paywalls**.
 - If premium extensions are introduced in future releases, they will be processed directly through Apple's In-App Purchase system under Apple's App Store terms.
 
 ---

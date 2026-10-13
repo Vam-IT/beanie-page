@@ -105,14 +105,14 @@ const Privacy = () => {
                 Datenschutzerklärung
               </h1>
               <p className="text-xs text-amber-400 font-medium">
-                App: Beanie (iOS &amp; watchOS) · Stand: Oktober 2026
+                App: CupTrail (iOS &amp; watchOS) · Stand: Oktober 2026
               </p>
             </div>
 
             <section className="space-y-3">
               <h2 className="text-xl font-bold text-white">1. Präambel &amp; Grundsatz</h2>
               <p>
-                Der Schutz Ihrer persönlichen Daten ist uns ein zentrales Anliegen. Die App <strong>„Beanie“</strong> (einschließlich der Widgets und der Begleit-App für die Apple Watch) folgt den Prinzipien von <strong>„Privacy by Design“</strong> und <strong>„Datensparsamkeit“</strong>.
+                Der Schutz Ihrer persönlichen Daten ist uns ein zentrales Anliegen. Die App <strong>„CupTrail“</strong> (einschließlich der Widgets und der Begleit-App für die Apple Watch) folgt den Prinzipien von <strong>„Privacy by Design“</strong> und <strong>„Datensparsamkeit“</strong>.
               </p>
               <p>
                 Sämtliche Daten (erfasste Kaffees, geschätzte Koffeinmengen, Tageslimits, Streaks und Erfahrungspunkte) werden <strong>ausschließlich lokal auf Ihren Endgeräten</strong> gespeichert. Wir betreiben keine eigenen Server, erheben keine Benutzerkonten und setzen keinerlei Analyse-, Tracking- oder Werbe-SDKs ein. Wir haben zu keinem Zeitpunkt Zugriff auf Ihre protokollierten Daten.
@@ -225,7 +225,7 @@ const Privacy = () => {
                   <strong>c) Apple Watch Synchronisation:</strong> Die Synchronisation zwischen iPhone und Apple Watch erfolgt direkt über den Apple-Systemdienst <code className="text-amber-300 font-mono">WatchConnectivity</code> zwischen Ihren gekoppelten Geräten. Wir erhalten dabei keinerlei Daten.
                 </p>
                 <p>
-                  <strong>d) Keine Drittanbieter-Tracker oder Werbenetzwerke:</strong> Beanie bindet keine externen Werbenetzwerke oder Tracking-SDKs (wie Google Firebase, Meta SDK o.ä.) ein.
+                  <strong>d) Keine Drittanbieter-Tracker oder Werbenetzwerke:</strong> CupTrail bindet keine externen Werbenetzwerke oder Tracking-SDKs (wie Google Firebase, Meta SDK o.ä.) ein.
                 </p>
               </div>
             </section>
@@ -278,14 +278,14 @@ const Privacy = () => {
                 Privacy Policy
               </h1>
               <p className="text-xs text-amber-400 font-medium">
-                App: Beanie (iOS &amp; watchOS) · As of: October 2026
+                App: CupTrail (iOS &amp; watchOS) · As of: October 2026
               </p>
             </div>
 
             <section className="space-y-3">
               <h2 className="text-xl font-bold text-white">1. Overview &amp; Privacy Principles</h2>
               <p>
-                Protecting your personal data is a top priority for us. The <strong>„Beanie“</strong> application (including its widgets and Apple Watch companion app) is built strictly following the principles of <strong>Privacy by Design</strong> and <strong>Data Minimization</strong>.
+                Protecting your personal data is a top priority for us. The <strong>„CupTrail“</strong> application (including its widgets and Apple Watch companion app) is built strictly following the principles of <strong>Privacy by Design</strong> and <strong>Data Minimization</strong>.
               </p>
               <p>
                 All data (logged coffees, estimated caffeine amounts, daily limits, streaks, and XP) is stored <strong>exclusively locally on your devices</strong>. We run no remote servers, create no user accounts, and integrate no third-party analytics, tracking, or advertising SDKs. We never have access to your personal logging data.
@@ -398,7 +398,7 @@ const Privacy = () => {
                   <strong>c) Apple Watch Synchronization:</strong> Synchronization is performed via Apple's native <code className="text-amber-300 font-mono">WatchConnectivity</code> system service between your paired devices. We receive no data.
                 </p>
                 <p>
-                  <strong>d) No Third-Party Analytics, Advertising, or Tracking:</strong> Beanie does not integrate any advertising networks, third-party analytics services, or social media tracking libraries.
+                  <strong>d) No Third-Party Analytics, Advertising, or Tracking:</strong> CupTrail does not integrate any advertising networks, third-party analytics services, or social media tracking libraries.
                 </p>
               </div>
             </section>

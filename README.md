@@ -1,6 +1,6 @@
-# Beanie Website
+# CupTrail Website
 
-Eine moderne, animierte und optimierte Website für **Beanie** – die smarte Kaffee- und Koffein-Tracking App für iPhone (ab iOS 17.0) und Apple Watch (ab watchOS 10.0), bereitgestellt von der VAMIT UG (haftungsbeschränkt).
+Eine moderne, animierte und optimierte Website für **CupTrail** – die smarte Kaffee- und Koffein-Tracking App für iPhone (ab iOS 17.0) und Apple Watch (ab watchOS 10.0), bereitgestellt von der VAMIT UG (haftungsbeschränkt).
 
 ## 🚀 Technologie-Stack
 
