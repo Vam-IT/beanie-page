@@ -168,15 +168,21 @@ const Features = () => {
             <div className="flex justify-center">
               <div className="relative max-w-[260px] glass-card rounded-[2.2rem] p-2.5 shadow-2xl border border-white/10">
                 <div className="rounded-[1.8rem] overflow-hidden bg-[#FBF9F1]">
-                  <img
-                    src={assetUrl('assets/beanie-add-brew.png')}
-                    alt="CupTrail Add Brew Screen - Coffee Catalogue &amp; Caffeine Slider"
-                    decoding="async"
-                    className="w-full h-auto object-cover"
-                    onError={(e) => {
-                      e.currentTarget.src = assetUrl('assets/beanie-dashboard.png');
-                    }}
-                  />
+                  <picture>
+                    <source srcSet={assetUrl('assets/beanie-add-brew.webp')} type="image/webp" />
+                    <img
+                      src={assetUrl('assets/beanie-add-brew.png')}
+                      alt="CupTrail Add Brew Screen - Coffee Catalogue &amp; Caffeine Slider"
+                      loading="lazy"
+                      decoding="async"
+                      width="260"
+                      height="563"
+                      className="w-full h-auto object-cover"
+                      onError={(e) => {
+                        e.currentTarget.src = assetUrl('assets/beanie-dashboard.png');
+                      }}
+                    />
+                  </picture>
                 </div>
               </div>
             </div>

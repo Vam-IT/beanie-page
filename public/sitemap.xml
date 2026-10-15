@@ -5,7 +5,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://cuptrail.app/</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -13,7 +13,7 @@
   <!-- Privacy Policy -->
   <url>
     <loc>https://cuptrail.app/privacy</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -21,7 +21,7 @@
   <!-- Terms of Service -->
   <url>
     <loc>https://cuptrail.app/terms</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -29,7 +29,7 @@
   <!-- Imprint -->
   <url>
     <loc>https://cuptrail.app/imprint</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>

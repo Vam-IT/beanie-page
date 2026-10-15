@@ -1,10 +1,15 @@
 import { Outlet } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import SkipToContent from './SkipToContent';
-import ComingSoonModal from './ComingSoonModal';
+import { useLanguage } from '../context/LanguageContext';
+
+const ComingSoonModal = lazy(() => import('./ComingSoonModal'));
 
 const Layout = () => {
+  const { isComingSoonOpen } = useLanguage();
+
   return (
     <div className="min-h-screen bg-vami-dark text-white overflow-x-hidden">
       <SkipToContent />
@@ -13,7 +18,11 @@ const Layout = () => {
         <Outlet />
       </main>
       <Footer />
-      <ComingSoonModal />
+      {isComingSoonOpen && (
+        <Suspense fallback={null}>
+          <ComingSoonModal />
+        </Suspense>
+      )}
     </div>
   );
 };

@@ -91,15 +91,21 @@ const StatsShowcase = () => {
               <div className="relative mx-auto w-[250px] sm:w-[280px]">
                 <div className="glass-card rounded-[2.8rem] p-3 shadow-2xl border border-white/15 bg-gradient-to-b from-white/10 via-black/40 to-black/80">
                   <div className="rounded-[2.2rem] overflow-hidden bg-[#FBF9F1] aspect-[9/19.5]">
-                    <img
-                      src={assetUrl('assets/beanie-stats.png')}
-                      alt="CupTrail Stats Screen - Weekly Intake &amp; Caffeine Breakdown"
-                      decoding="async"
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        e.currentTarget.src = assetUrl('assets/beanie-dashboard.png');
-                      }}
-                    />
+                    <picture>
+                      <source srcSet={assetUrl('assets/beanie-stats.webp')} type="image/webp" />
+                      <img
+                        src={assetUrl('assets/beanie-stats.png')}
+                        alt="CupTrail Stats Screen - Weekly Intake &amp; Caffeine Breakdown"
+                        loading="lazy"
+                        decoding="async"
+                        width="280"
+                        height="606"
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.currentTarget.src = assetUrl('assets/beanie-dashboard.png');
+                        }}
+                      />
+                    </picture>
                   </div>
                 </div>
               </div>

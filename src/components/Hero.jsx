@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Coffee, ShieldCheck, Flame, Watch, Sparkles } from 'lucide-react';
 import { useState } from 'react';
 import { assetUrl } from '../utils/assetUrl';
@@ -43,21 +42,26 @@ import { useLanguage } from '../context/LanguageContext';
                     <Coffee className="w-10 h-10 text-amber-500/40 animate-bounce" />
                   </div>
                 )}
-                <img
-                  src={assetUrl('assets/beanie-dashboard.png')}
-                  alt="CupTrail App Dashboard - 143mg / 400mg with Mascot Bean"
-                  fetchPriority="high"
-                  decoding="async"
-                  ref={(img) => {
-                    if (img && img.complete && !imgLoaded) {
-                      setImgLoaded(true);
-                    }
-                  }}
-                  onLoad={() => setImgLoaded(true)}
-                  className={`w-full h-full object-cover transition-opacity duration-300 ${
-                    imgLoaded ? 'opacity-100' : 'opacity-0'
-                  }`}
-                />
+                <picture className="w-full h-full">
+                  <source srcSet={assetUrl('assets/beanie-dashboard.webp')} type="image/webp" />
+                  <img
+                    src={assetUrl('assets/beanie-dashboard.png')}
+                    alt="CupTrail App Dashboard - 143mg / 400mg with Mascot Bean"
+                    fetchPriority="high"
+                    decoding="async"
+                    width="280"
+                    height="606"
+                    ref={(img) => {
+                      if (img && img.complete && !imgLoaded) {
+                        setImgLoaded(true);
+                      }
+                    }}
+                    onLoad={() => setImgLoaded(true)}
+                    className={`w-full h-full object-cover transition-opacity duration-300 ${
+                      imgLoaded ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  />
+                </picture>
               </div>
             </div>
 
@@ -142,12 +146,10 @@ import { useLanguage } from '../context/LanguageContext';
 
         {/* CTA Button */}
         <div className="flex justify-center items-center w-full max-w-xs mx-auto">
-          <motion.button
+          <button
             type="button"
             onClick={openComingSoon}
-            whileTap={{ scale: 0.97 }}
-            whileHover={{ scale: 1.02 }}
-            className="w-full bg-black hover:bg-neutral-900 text-white px-8 py-3.5 rounded-2xl transition-all shadow-2xl flex items-center justify-center gap-3 touch-manipulation border border-white/20 cursor-pointer"
+            className="w-full bg-black hover:bg-neutral-900 active:scale-95 hover:scale-[1.02] text-white px-8 py-3.5 rounded-2xl transition-all duration-200 shadow-2xl flex items-center justify-center gap-3 touch-manipulation border border-white/20 cursor-pointer"
             style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'manipulation' }}
             aria-label="Download CupTrail on the Apple App Store (Coming Soon)"
           >
@@ -158,7 +160,7 @@ import { useLanguage } from '../context/LanguageContext';
               <div className="text-[10px] leading-tight text-gray-400">{t.hero.downloadPrompt}</div>
               <div className="text-base font-bold leading-tight tracking-tight">{t.hero.appStore}</div>
             </div>
-          </motion.button>
+          </button>
         </div>
 
         {/* Small Disclaimers & Info */}

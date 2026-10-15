@@ -359,7 +359,7 @@ export const LanguageProvider = ({ children }) => {
   // Default to English as explicitly requested:
   const [lang, setLang] = useState(() => {
     try {
-      const saved = localStorage.getItem('beanie_lang');
+      const saved = localStorage.getItem('cuptrail_lang') || localStorage.getItem('beanie_lang');
       return saved === 'de' ? 'de' : 'en';
     } catch {
       return 'en';
@@ -372,7 +372,7 @@ export const LanguageProvider = ({ children }) => {
 
   useEffect(() => {
     try {
-      localStorage.setItem('beanie_lang', lang);
+      localStorage.setItem('cuptrail_lang', lang);
       document.documentElement.lang = lang;
       if (document.title.includes('Beanie') || document.title.includes('CupTrail')) {
         document.title =

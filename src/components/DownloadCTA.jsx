@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import { assetUrl } from '../utils/assetUrl';
 import { useLanguage } from '../context/LanguageContext';
@@ -24,15 +23,21 @@ const DownloadCTA = () => {
             <div
               className="inline-block p-1 bg-gradient-to-br from-amber-400 via-orange-500 to-amber-600 rounded-3xl mb-6 shadow-xl shadow-orange-500/20"
             >
-              <img
-                src={assetUrl('assets/icon-256.png')}
-                alt="CupTrail Logo"
-                decoding="async"
-                className="w-16 h-16 md:w-20 md:h-20 rounded-[22px] object-cover"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
-              />
+              <picture>
+                <source srcSet={assetUrl('assets/icon-256.webp')} type="image/webp" />
+                <img
+                  src={assetUrl('assets/icon-256.png')}
+                  alt="CupTrail Logo"
+                  loading="lazy"
+                  decoding="async"
+                  width="80"
+                  height="80"
+                  className="w-16 h-16 md:w-20 md:h-20 rounded-[22px] object-cover"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              </picture>
             </div>
 
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-black mb-4 tracking-tight text-white leading-tight">
@@ -46,12 +51,11 @@ const DownloadCTA = () => {
 
             {/* Download CTA Button */}
             <div className="flex flex-col gap-4 justify-center items-center mb-8 max-w-sm mx-auto">
-              <motion.button
+              <button
                 type="button"
                 onClick={openComingSoon}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="w-full bg-black hover:bg-neutral-900 text-white px-8 py-4 rounded-2xl font-medium transition-all shadow-2xl flex items-center justify-center gap-3 touch-manipulation border border-white/20 group cursor-pointer"
+                className="w-full bg-black hover:bg-neutral-900 active:scale-95 hover:scale-[1.02] text-white px-8 py-4 rounded-2xl font-medium transition-all duration-200 shadow-2xl flex items-center justify-center gap-3 touch-manipulation border border-white/20 group cursor-pointer"
+                style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'manipulation' }}
                 aria-label="Download CupTrail on the Apple App Store (Coming Soon)"
               >
                 <svg className="w-8 h-8 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
@@ -61,7 +65,7 @@ const DownloadCTA = () => {
                   <div className="text-[10px] leading-tight text-gray-400">{t.cta.badgeApple}</div>
                   <div className="text-xl font-bold leading-tight">{t.cta.appStore}</div>
                 </div>
-              </motion.button>
+              </button>
 
               <span className="text-xs text-gray-400">
                 {t.cta.compatibility}

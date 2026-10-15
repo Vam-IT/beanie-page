@@ -79,14 +79,17 @@ const ComingSoonModal = () => {
               <div className="relative inline-block mb-4">
                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-amber-600 p-[2px] shadow-xl shadow-orange-500/30">
                   <div className="w-full h-full bg-[#181411] rounded-[14px] flex items-center justify-center overflow-hidden">
-                    <img
-                      src={assetUrl('assets/icon-256.png')}
-                      alt="CupTrail App Icon"
-                      width="80"
-                      height="80"
-                      decoding="async"
-                      className="w-full h-full object-cover"
-                    />
+                    <picture>
+                      <source srcSet={assetUrl('assets/icon-256.webp')} type="image/webp" />
+                      <img
+                        src={assetUrl('assets/icon-256.png')}
+                        alt="CupTrail App Icon"
+                        width="80"
+                        height="80"
+                        decoding="async"
+                        className="w-full h-full object-cover"
+                      />
+                    </picture>
                   </div>
                 </div>
                 <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white p-1.5 rounded-full shadow-lg border border-black/40">

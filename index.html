@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="%BASE_URL%assets/icon-256.png" />
+    <title>CupTrail - Your Smart Coffee &amp; Caffeine Tracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
     <meta name="description" content="CupTrail - Your smart coffee &amp; caffeine companion for iPhone &amp; Apple Watch. Quick brew logging, daily caffeine limit, charming mascot Bean, iOS widgets, and 100% on-device privacy." />
     <meta name="keywords" content="Coffee Tracker, Caffeine App, CupTrail, Apple Watch Coffee Tracker, Caffeine Limit, Coffee Diary, WidgetKit, VAMIT UG, Caffeine Counter, Espresso Log" />
@@ -11,11 +11,12 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="format-detection" content="telephone=no" />
     
-    <!-- iOS Meta Tags -->
+    <!-- Favicon & Touch Icon -->
+    <link rel="icon" type="image/png" sizes="256x256" href="%BASE_URL%assets/icon-256.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%BASE_URL%apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="CupTrail" />
-    <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
     <link rel="canonical" href="https://cuptrail.app/" />
 
     <!-- Open Graph / Social Media -->
@@ -24,16 +25,16 @@
     <meta property="og:site_name" content="CupTrail" />
     <meta property="og:title" content="CupTrail - Your Smart Coffee &amp; Caffeine Tracker" />
     <meta property="og:description" content="Log coffee in seconds, track your caffeine limits, and stay in your productivity sweet spot with mascot Bean. For iPhone &amp; Apple Watch." />
-    <meta property="og:image" content="%BASE_URL%assets/icon-512.png" />
+    <meta property="og:image" content="https://cuptrail.app/assets/icon-512.png" />
     <meta property="og:image:width" content="512" />
     <meta property="og:image:height" content="512" />
     <meta property="og:locale" content="en_US" />
 
-    <!-- Twitter -->
+    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="CupTrail - Your Smart Coffee &amp; Caffeine Tracker" />
     <meta name="twitter:description" content="Log coffee in seconds, track caffeine limits, and stay motivated with mascot Bean. For iOS &amp; watchOS." />
-    <meta name="twitter:image" content="%BASE_URL%assets/icon-512.png" />
+    <meta name="twitter:image" content="https://cuptrail.app/assets/icon-512.png" />
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -49,7 +50,8 @@
         "priceCurrency": "USD"
       },
       "description": "Smart coffee and caffeine tracker for iPhone & Apple Watch with interactive mascot Bean, widgets, and 100% privacy.",
-      "screenshot": "%BASE_URL%assets/beanie-dashboard.png",
+      "image": "https://cuptrail.app/assets/icon-512.png",
+      "screenshot": "https://cuptrail.app/assets/beanie-dashboard.png",
       "author": {
         "@type": "Organization",
         "name": "VAMIT UG (haftungsbeschränkt)",
@@ -58,10 +60,14 @@
     }
     </script>
 
-    <!-- Performance & Fonts -->
+    <!-- Performance: Preconnect & Non-Blocking Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+    </noscript>
     <link rel="dns-prefetch" href="https://apps.apple.com" />
 
     <!-- GitHub Pages SPA Redirect Support -->
@@ -69,8 +75,6 @@
       // Single Page Apps for GitHub Pages
       // MIT License
       // https://github.com/rafgraph/spa-github-pages
-      // This script checks to see if a redirect is present in the query string,
-      // converts it back to the correct url and adds it to the browser's history
       (function(l) {
         if (l.search[1] === '/' ) {
           var decoded = l.search.slice(1).split('&').map(function(s) { 
@@ -82,14 +86,9 @@
         }
       }(window.location))
     </script>
-
-    <title>CupTrail - Your Smart Coffee &amp; Caffeine Tracker</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
-
-
-
 </html>
