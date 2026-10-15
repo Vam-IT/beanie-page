@@ -1,11 +1,12 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import Layout from './components/Layout';
 import Home from './components/Home';
-import Privacy from './components/Privacy';
-import Terms from './components/Terms';
-import Imprint from './components/Imprint';
+
+const Privacy = lazy(() => import('./components/Privacy'));
+const Terms = lazy(() => import('./components/Terms'));
+const Imprint = lazy(() => import('./components/Imprint'));
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -46,9 +47,30 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="privacy" element={<Privacy />} />
-            <Route path="terms" element={<Terms />} />
-            <Route path="imprint" element={<Imprint />} />
+            <Route
+              path="privacy"
+              element={
+                <Suspense fallback={<div className="min-h-screen" />}>
+                  <Privacy />
+                </Suspense>
+              }
+            />
+            <Route
+              path="terms"
+              element={
+                <Suspense fallback={<div className="min-h-screen" />}>
+                  <Terms />
+                </Suspense>
+              }
+            />
+            <Route
+              path="imprint"
+              element={
+                <Suspense fallback={<div className="min-h-screen" />}>
+                  <Imprint />
+                </Suspense>
+              }
+            />
           </Route>
         </Routes>
       </BrowserRouter>

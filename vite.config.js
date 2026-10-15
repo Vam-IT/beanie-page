@@ -17,11 +17,20 @@ export default defineConfig(({ mode }) => ({
         imprint: 'imprint/index.html',
       },
       output: {
-        manualChunks: {
-          // Vendor Splitting für besseres Caching
-          'react-vendor': ['react', 'react-dom'],
-          'router-vendor': ['react-router-dom'],
-          'animation-vendor': ['framer-motion'],
+        manualChunks(id) {
+          if (id.includes('node_modules/framer-motion')) {
+            return 'animation-vendor';
+          }
+          if (id.includes('node_modules/react-router') || id.includes('node_modules/react-router-dom')) {
+            return 'router-vendor';
+          }
+          if (
+            id.includes('node_modules/react/') ||
+            id.includes('node_modules/react-dom/') ||
+            id.includes('node_modules/scheduler/')
+          ) {
+            return 'react-vendor';
+          }
         },
       },
     },

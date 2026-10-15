@@ -190,8 +190,8 @@ export const translations = {
     },
     hero: {
       pill: 'iOS 17 & watchOS 10 • 100% Lokal & Privat',
-      title1: 'Track Your Brew. ',
-      title2: 'Meet Bean.',
+      title1: 'Tracke deinen Kaffee. ',
+      title2: 'Triff Bean.',
       subtitle:
         'Dein smartes Kaffee- & Koffeintagebuch für iPhone und Apple Watch. Sekundenschnell erfassen, Tageslimit treffen und mit Bean motiviert bleiben.',
       badgeDiary: 'Kaffee- & Koffein-Tagebuch',
