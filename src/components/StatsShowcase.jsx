@@ -1,19 +1,9 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
 import { Flame, Award, Coffee, TrendingUp } from 'lucide-react';
 import { assetUrl } from '../utils/assetUrl';
 import { useLanguage } from '../context/LanguageContext';
 
 const StatsShowcase = () => {
-  const ref = useRef(null);
   const { t } = useLanguage();
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'end start'],
-  });
-
-  const y1 = useTransform(scrollYProgress, [0, 1], [25, -25]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [-20, 20]);
 
   const statsCards = [
     {
@@ -43,16 +33,16 @@ const StatsShowcase = () => {
   ];
 
   return (
-    <section id="stats" ref={ref} className="relative py-20 md:py-32 px-6 overflow-hidden scroll-mt-24">
+    <section id="stats" className="relative py-20 md:py-32 px-6 overflow-hidden scroll-mt-24">
       {/* Background Gradients */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#13100E] via-[#181411]/50 to-[#13100E] pointer-events-none" />
       <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-96 h-96 bg-amber-600/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto relative z-10 max-w-6xl">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: Stats Cards with Subtle Parallax */}
+          {/* Left: Stats Cards */}
           <div className="relative">
-            <motion.div style={{ y: y1 }} className="space-y-6">
+            <div className="space-y-6">
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs text-amber-300 font-medium mb-4">
                   <TrendingUp className="w-3.5 h-3.5" />
@@ -68,12 +58,8 @@ const StatsShowcase = () => {
               </div>
 
               {statsCards.map((stat, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '150px' }}
-                  transition={{ duration: 0.35, delay: index * 0.06 }}
                   className={`glass-ultra rounded-2xl p-6 border ${stat.color} hover:bg-white/5 transition-all`}
                 >
                   <div className="flex items-center justify-between mb-2">
@@ -93,20 +79,14 @@ const StatsShowcase = () => {
                   <p className="text-xs text-gray-400 leading-relaxed font-light">
                     {stat.desc}
                   </p>
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
+            </div>
           </div>
 
           {/* Right: Phone Frame with User's Stats Screenshot */}
-          <motion.div style={{ y: y2 }} className="relative flex justify-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.98 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: '150px' }}
-              transition={{ duration: 0.4 }}
-              className="relative max-w-sm w-full"
-            >
+          <div className="relative flex justify-center">
+            <div className="relative max-w-sm w-full">
               {/* Primary Screenshot: Stats Screen */}
               <div className="relative mx-auto w-[250px] sm:w-[280px]">
                 <div className="glass-card rounded-[2.8rem] p-3 shadow-2xl border border-white/15 bg-gradient-to-b from-white/10 via-black/40 to-black/80">
@@ -114,7 +94,6 @@ const StatsShowcase = () => {
                     <img
                       src={assetUrl('assets/beanie-stats.png')}
                       alt="CupTrail Stats Screen - Weekly Intake &amp; Caffeine Breakdown"
-                      loading="lazy"
                       decoding="async"
                       className="w-full h-full object-cover"
                       onError={(e) => {
@@ -127,18 +106,12 @@ const StatsShowcase = () => {
 
               {/* Background Aura */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-orange-500/15 rounded-full blur-3xl -z-10" />
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
 
         {/* Highlight Metrics Bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '150px' }}
-          transition={{ duration: 0.4 }}
-          className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4"
-        >
+        <div className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { value: t.stats.metric1Value, label: t.stats.metric1Label },
             { value: t.stats.metric2Value, label: t.stats.metric2Label },
@@ -155,7 +128,7 @@ const StatsShowcase = () => {
               <div className="text-xs text-gray-400 font-light">{item.label}</div>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

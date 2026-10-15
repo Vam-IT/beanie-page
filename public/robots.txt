@@ -1,9 +1,9 @@
-# robots.txt for vami.app
+# robots.txt for cuptrail.app
 User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://vami.app/sitemap.xml
+Sitemap: https://cuptrail.app/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 0

@@ -63,8 +63,13 @@ import { useLanguage } from '../context/LanguageContext';
                   alt="CupTrail App Dashboard - 143mg / 400mg with Mascot Bean"
                   fetchPriority="high"
                   decoding="async"
+                  ref={(img) => {
+                    if (img && img.complete && !imgLoaded) {
+                      setImgLoaded(true);
+                    }
+                  }}
                   onLoad={() => setImgLoaded(true)}
-                  className={`w-full h-full object-cover transition-opacity duration-500 ${
+                  className={`w-full h-full object-cover transition-opacity duration-300 ${
                     imgLoaded ? 'opacity-100' : 'opacity-0'
                   }`}
                 />

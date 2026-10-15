@@ -12,11 +12,7 @@ const DownloadCTA = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-[#13100E] via-[#1A1613]/80 to-[#13100E] pointer-events-none" />
 
       <div className="container mx-auto relative z-10 max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '150px' }}
-          transition={{ duration: 0.4 }}
+        <div
           className="relative glass-ultra rounded-3xl p-8 md:p-16 text-center overflow-hidden border border-amber-500/20 shadow-2xl"
         >
           {/* Ambient Glowing Blobs */}
@@ -25,24 +21,19 @@ const DownloadCTA = () => {
 
           <div className="relative z-10">
             {/* App Icon Avatar */}
-            <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true, margin: '150px' }}
-              transition={{ duration: 0.35, delay: 0.05 }}
+            <div
               className="inline-block p-1 bg-gradient-to-br from-amber-400 via-orange-500 to-amber-600 rounded-3xl mb-6 shadow-xl shadow-orange-500/20"
             >
               <img
                 src={assetUrl('assets/icon-256.png')}
                 alt="CupTrail Logo"
-                loading="lazy"
                 decoding="async"
                 className="w-16 h-16 md:w-20 md:h-20 rounded-[22px] object-cover"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                 }}
               />
-            </motion.div>
+            </div>
 
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-black mb-4 tracking-tight text-white leading-tight">
               {t.cta.title1}
@@ -97,7 +88,7 @@ const DownloadCTA = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

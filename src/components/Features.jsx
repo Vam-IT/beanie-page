@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { 
   Coffee, 
   Sparkles, 
@@ -64,13 +63,7 @@ const Features = () => {
 
       <div className="container mx-auto relative z-10 max-w-6xl">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '150px' }}
-          transition={{ duration: 0.4 }}
-          className="text-center mb-16 md:mb-20"
-        >
+        <div className="text-center mb-16 md:mb-20">
           <div className="inline-flex items-center gap-2 glass-ultra px-5 py-2 rounded-full mb-6 border border-amber-500/20 text-xs font-semibold text-amber-300">
             <Sparkles className="w-4 h-4 text-amber-400" />
             <span>{t.features.badge}</span>
@@ -83,21 +76,13 @@ const Features = () => {
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
             {t.features.subtitle}
           </p>
-        </motion.div>
+        </div>
 
         {/* 3 Main Feature Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 md:mb-20">
           {mainFeatures.map((feature, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '150px' }}
-              transition={{
-                duration: 0.35,
-                delay: index * 0.06,
-                ease: [0.25, 0.4, 0.25, 1],
-              }}
               className="flex"
             >
               <div className="group relative glass-card rounded-3xl p-8 flex flex-col justify-between w-full overflow-hidden border border-white/10 hover:border-amber-500/30 transition-all duration-500">
@@ -141,18 +126,12 @@ const Features = () => {
                   </ul>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Feature Spotlight: User's Add Brew Screenshot */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '150px' }}
-          transition={{ duration: 0.4 }}
-          className="glass-ultra rounded-3xl p-8 md:p-12 border border-white/10 mb-16 md:mb-20 relative overflow-hidden"
-        >
+        <div className="glass-ultra rounded-3xl p-8 md:p-12 border border-white/10 mb-16 md:mb-20 relative overflow-hidden">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs text-amber-300 font-medium mb-4">
@@ -192,7 +171,6 @@ const Features = () => {
                   <img
                     src={assetUrl('assets/beanie-add-brew.png')}
                     alt="CupTrail Add Brew Screen - Coffee Catalogue &amp; Caffeine Slider"
-                    loading="lazy"
                     decoding="async"
                     className="w-full h-auto object-cover"
                     onError={(e) => {
@@ -203,15 +181,10 @@ const Features = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* What the App DOES NOT do / 100% Privacy by Design Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '150px' }}
-          transition={{ duration: 0.4 }}
-        >
+        <div>
           <div className="relative glass-ultra rounded-3xl p-5 sm:p-8 md:p-14 border border-emerald-500/20 overflow-hidden">
             {/* Ambient emerald glow */}
             <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -277,7 +250,7 @@ const Features = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
