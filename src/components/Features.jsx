@@ -65,11 +65,11 @@ const Features = () => {
       <div className="container mx-auto relative z-10 max-w-6xl">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          viewport={{ once: true, margin: '150px' }}
+          transition={{ duration: 0.4 }}
+          className="text-center mb-16 md:mb-20"
         >
           <div className="inline-flex items-center gap-2 glass-ultra px-5 py-2 rounded-full mb-6 border border-amber-500/20 text-xs font-semibold text-amber-300">
             <Sparkles className="w-4 h-4 text-amber-400" />
@@ -86,16 +86,16 @@ const Features = () => {
         </motion.div>
 
         {/* 3 Main Feature Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 md:mb-20">
           {mainFeatures.map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
+              viewport={{ once: true, margin: '150px' }}
               transition={{
-                duration: 0.7,
-                delay: index * 0.15,
+                duration: 0.35,
+                delay: index * 0.06,
                 ease: [0.25, 0.4, 0.25, 1],
               }}
               className="flex"
@@ -147,11 +147,11 @@ const Features = () => {
 
         {/* Feature Spotlight: User's Add Brew Screenshot */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="glass-ultra rounded-3xl p-8 md:p-12 border border-white/10 mb-20 relative overflow-hidden"
+          viewport={{ once: true, margin: '150px' }}
+          transition={{ duration: 0.4 }}
+          className="glass-ultra rounded-3xl p-8 md:p-12 border border-white/10 mb-16 md:mb-20 relative overflow-hidden"
         >
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
@@ -192,6 +192,8 @@ const Features = () => {
                   <img
                     src={assetUrl('assets/beanie-add-brew.png')}
                     alt="CupTrail Add Brew Screen - Coffee Catalogue &amp; Caffeine Slider"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-auto object-cover"
                     onError={(e) => {
                       e.currentTarget.src = assetUrl('assets/beanie-dashboard.png');
@@ -205,10 +207,10 @@ const Features = () => {
 
         {/* What the App DOES NOT do / 100% Privacy by Design Card */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: '150px' }}
+          transition={{ duration: 0.4 }}
         >
           <div className="relative glass-ultra rounded-3xl p-5 sm:p-8 md:p-14 border border-emerald-500/20 overflow-hidden">
             {/* Ambient emerald glow */}

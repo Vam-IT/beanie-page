@@ -12,9 +12,8 @@ const StatsShowcase = () => {
     offset: ['start end', 'end start'],
   });
 
-  const y1 = useTransform(scrollYProgress, [0, 1], [60, -60]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [-40, 40]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.6, 1, 0.6]);
+  const y1 = useTransform(scrollYProgress, [0, 1], [25, -25]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [-20, 20]);
 
   const statsCards = [
     {
@@ -44,15 +43,15 @@ const StatsShowcase = () => {
   ];
 
   return (
-    <section id="stats" ref={ref} className="relative py-24 md:py-36 px-6 overflow-hidden scroll-mt-24">
+    <section id="stats" ref={ref} className="relative py-20 md:py-32 px-6 overflow-hidden scroll-mt-24">
       {/* Background Gradients */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#13100E] via-[#181411]/50 to-[#13100E] pointer-events-none" />
       <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-96 h-96 bg-amber-600/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto relative z-10 max-w-6xl">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: Stats Cards with Parallax */}
-          <motion.div style={{ opacity }} className="relative">
+          {/* Left: Stats Cards with Subtle Parallax */}
+          <div className="relative">
             <motion.div style={{ y: y1 }} className="space-y-6">
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs text-amber-300 font-medium mb-4">
@@ -71,10 +70,10 @@ const StatsShowcase = () => {
               {statsCards.map((stat, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '150px' }}
+                  transition={{ duration: 0.35, delay: index * 0.06 }}
                   className={`glass-ultra rounded-2xl p-6 border ${stat.color} hover:bg-white/5 transition-all`}
                 >
                   <div className="flex items-center justify-between mb-2">
@@ -97,15 +96,15 @@ const StatsShowcase = () => {
                 </motion.div>
               ))}
             </motion.div>
-          </motion.div>
+          </div>
 
           {/* Right: Phone Frame with User's Stats Screenshot */}
           <motion.div style={{ y: y2 }} className="relative flex justify-center">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: '150px' }}
+              transition={{ duration: 0.4 }}
               className="relative max-w-sm w-full"
             >
               {/* Primary Screenshot: Stats Screen */}
@@ -115,6 +114,8 @@ const StatsShowcase = () => {
                     <img
                       src={assetUrl('assets/beanie-stats.png')}
                       alt="CupTrail Stats Screen - Weekly Intake &amp; Caffeine Breakdown"
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         e.currentTarget.src = assetUrl('assets/beanie-dashboard.png');
@@ -132,11 +133,11 @@ const StatsShowcase = () => {
 
         {/* Highlight Metrics Bar */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4"
+          viewport={{ once: true, margin: '150px' }}
+          transition={{ duration: 0.4 }}
+          className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4"
         >
           {[
             { value: t.stats.metric1Value, label: t.stats.metric1Label },

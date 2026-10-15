@@ -14,8 +14,12 @@ const Footer = () => {
           <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-400 via-orange-500 to-amber-600 p-[1px] shadow-lg shadow-orange-500/20">
             <div className="w-full h-full bg-[#181411] rounded-[11px] flex items-center justify-center overflow-hidden">
               <img
-                src={assetUrl('assets/icon-1024.png')}
+                src={assetUrl('assets/icon-256.png')}
                 alt="CupTrail Icon"
+                width="32"
+                height="32"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover rounded-[10px]"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';

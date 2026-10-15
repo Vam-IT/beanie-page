@@ -18,23 +18,12 @@ import { useLanguage } from '../context/LanguageContext';
       <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-orange-600/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto relative z-10 flex flex-col items-center text-center max-w-4xl">
-        {/* Release Pill Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-ultra border border-amber-500/20 text-xs text-amber-200 mb-6 shadow-lg shadow-amber-950/20"
-        >
-          <span className="flex h-2 w-2 rounded-full bg-amber-400 animate-pulse" />
-          <span className="font-medium">{t.hero.pill}</span>
-        </motion.div>
-
         {/* Main Headline */}
         <motion.h1
           className="text-4xl sm:text-6xl md:text-7xl font-black mb-5 leading-[1.08] tracking-tight text-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15, duration: 0.7 }}
+          transition={{ duration: 0.6 }}
         >
           {t.hero.title1}
           <span className="text-gradient-coffee block sm:inline">
@@ -72,8 +61,10 @@ import { useLanguage } from '../context/LanguageContext';
                 <img
                   src={assetUrl('assets/beanie-dashboard.png')}
                   alt="CupTrail App Dashboard - 143mg / 400mg with Mascot Bean"
+                  fetchPriority="high"
+                  decoding="async"
                   onLoad={() => setImgLoaded(true)}
-                  className={`w-full h-full object-cover transition-opacity duration-700 ${
+                  className={`w-full h-full object-cover transition-opacity duration-500 ${
                     imgLoaded ? 'opacity-100' : 'opacity-0'
                   }`}
                 />
@@ -152,6 +143,7 @@ import { useLanguage } from '../context/LanguageContext';
         <div className="md:hidden w-full max-w-sm mx-auto overflow-hidden relative py-2 mb-8">
           <motion.div
             className="flex gap-2.5 w-max"
+            style={{ willChange: 'transform', transform: 'translateZ(0)' }}
             animate={{ x: ['0%', '-33.333%'] }}
             transition={{
               ease: 'linear',
